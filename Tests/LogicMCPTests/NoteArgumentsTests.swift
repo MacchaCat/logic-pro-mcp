@@ -129,3 +129,78 @@ struct NoteToolTests {
         #expect(sent.count == 3)
     }
 }
+
+@Suite("write_midi controller arguments")
+struct ControllerArgumentsTests {
+    let base: [String: Value] = ["track": 2, "expected_name": "Inst 2", "start_bar": 9]
+
+    func parse(_ controllers: [Value], notes: [Value]? = nil) -> Result<NoteWriteRequest, NoteArguments.Problem> {
+        var arguments = base
+        arguments["controllers"] = .array(controllers)
+        if let notes { arguments["notes"] = .array(notes) }
+        return NoteArguments.request(arguments)
+    }
+
+    func problem(_ controller: [String: Value]) -> String? {
+        if case .failure(let problem) = parse([.object(controller)]) { return problem.message }
+        return nil
+    }
+
+    @Test func controllersParseAlongsideNotes() throws {
+        let request = try parse([
+            ["type": "cc", "controller": 64, "start_beat": 0, "value": 127],
+            ["type": "cc", "controller": 1, "start_beat": 0.5, "value": 0, "to_value": 127, "duration_beats": 2],
+            ["type": "pitch_bend", "start_beat": 1, "value": -4096],
+        ], notes: [["pitch": "C4", "start_beat": 0, "duration_beats": 1]]).get()
+        #expect(request.notes.count == 1)
+        #expect(request.controllers == [
+            .controlChange(64, at: 0, 127),
+            ControllerSpec(kind: .controlChange(1), startBeat: 0.5, value: 0, toValue: 127, durationBeats: 2),
+            .pitchBend(at: 1, -4096),
+        ])
+    }
+
+    @Test func controllersAloneAreEnough() throws {
+        let request = try parse([["type": "pitch_bend", "start_beat": 0, "value": 0]]).get()
+        #expect(request.notes.isEmpty)
+        #expect(request.controllers.count == 1)
+        if case .failure(let problem) = NoteArguments.request(base) {
+            #expect(problem.message.contains("\"notes\"") && problem.message.contains("\"controllers\""))
+        } else {
+            Issue.record("a request with neither notes nor controllers was accepted")
+        }
+        var notArray = base
+        notArray["controllers"] = "cc 1"
+        if case .success = NoteArguments.request(notArray) { Issue.record("controllers must be an array") }
+    }
+
+    @Test func controllerFieldsAreChecked() {
+        #expect(problem(["start_beat": 0, "value": 1])?.contains("\"type\"") == true)
+        #expect(problem(["type": "aftertouch", "start_beat": 0, "value": 1])?.contains("\"type\"") == true)
+        #expect(problem(["type": "cc", "start_beat": 0, "value": 1])?.contains("\"controller\"") == true)
+        #expect(problem(["type": "cc", "controller": 200, "start_beat": 0, "value": 1])?.contains("\"controller\"") == true)
+        #expect(problem(["type": "pitch_bend", "controller": 1, "start_beat": 0, "value": 1])?.contains("only for type \"cc\"") == true)
+        #expect(problem(["type": "cc", "controller": 1, "value": 1])?.contains("start_beat") == true)
+        #expect(problem(["type": "cc", "controller": 1, "start_beat": 0])?.contains("\"value\"") == true)
+        #expect(problem(["type": "cc", "controller": 1, "start_beat": 0, "value": 1.5])?.contains("\"value\"") == true)
+        #expect(problem(["type": "cc", "controller": 1, "start_beat": 0, "value": 1, "to_value": "high"])?.contains("to_value") == true)
+        #expect(problem(["type": "cc", "controller": 1, "start_beat": 0, "value": 1, "channel": 2])?.contains("controllers[0]: unknown field \"channel\"") == true)
+    }
+
+    @Test func consoleWriteTakesControllers() throws {
+        let request = try #require(Console.parseWrite(["2", "9", "C4:0:1", "cc=64:0:127,1:0:0>127:4", "bend=1:0>8191:1,3:0", "Inst", "2"]))
+        #expect(request.expectedName == "Inst 2")
+        #expect(request.controllers == [
+            .controlChange(64, at: 0, 127),
+            ControllerSpec(kind: .controlChange(1), startBeat: 0, value: 0, toValue: 127, durationBeats: 4),
+            ControllerSpec(kind: .pitchBend, startBeat: 1, value: 0, toValue: 8191, durationBeats: 1),
+            .pitchBend(at: 3, 0),
+        ])
+        let only = try #require(Console.parseWrite(["2", "9", "-", "cc=11:0:100"]))
+        #expect(only.notes.isEmpty && only.controllers.count == 1)
+        #expect(Console.parseWrite(["2", "9", "-"]) == nil)
+        #expect(Console.parseWrite(["2", "9", "C4:0:1", "cc=64:0"]) == nil)
+        #expect(Console.parseWrite(["2", "9", "C4:0:1", "cc=1:0:0>127"]) == nil)
+        #expect(Console.parseWrite(["2", "9", "C4:0:1", "bend=0:x"]) == nil)
+    }
+}

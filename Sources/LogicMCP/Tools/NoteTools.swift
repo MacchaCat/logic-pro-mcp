@@ -64,8 +64,9 @@ private struct DiscardingOutput: MIDIOutput {
 enum NoteArguments {
     struct Problem: Error { let message: String }
 
-    static let fields: Set<String> = ["track", "expected_name", "start_bar", "notes", "confirmation_token"]
+    static let fields: Set<String> = ["track", "expected_name", "start_bar", "notes", "controllers", "confirmation_token"]
     static let noteFields: Set<String> = ["pitch", "start_beat", "duration_beats", "velocity"]
+    static let controllerFields: Set<String> = ["type", "controller", "start_beat", "value", "to_value", "duration_beats"]
 
     static func request(_ arguments: [String: Value]) -> Result<NoteWriteRequest, Problem> {
         if let unknown = arguments.keys.sorted().first(where: { !fields.contains($0) }) {
@@ -83,8 +84,21 @@ enum NoteArguments {
         guard let barValue = arguments["start_bar"], let bar = MixerArguments.integer(barValue) else {
             return .failure(Problem(message: "\"start_bar\" (a whole number, 2–999) is required."))
         }
-        guard let items = arguments["notes"]?.arrayValue, !items.isEmpty else {
-            return .failure(Problem(message: "\"notes\" must be a non-empty array."))
+        var items: [Value] = []
+        if let value = arguments["notes"] {
+            guard let array = value.arrayValue else { return .failure(Problem(message: "\"notes\" must be an array.")) }
+            items = array
+        }
+        var changeItems: [Value] = []
+        if let value = arguments["controllers"] {
+            guard let array = value.arrayValue else { return .failure(Problem(message: "\"controllers\" must be an array.")) }
+            changeItems = array
+        }
+        guard !items.isEmpty || !changeItems.isEmpty else {
+            return .failure(Problem(message: "Give at least one note in \"notes\" or one change in \"controllers\"."))
+        }
+        guard changeItems.count <= NoteWriteRequest.maxControllers else {
+            return .failure(Problem(message: "At most \(NoteWriteRequest.maxControllers) controller changes per call (got \(changeItems.count))."))
         }
         guard items.count <= NoteWriteRequest.maxNotes else {
             return .failure(Problem(message: "At most \(NoteWriteRequest.maxNotes) notes per call (got \(items.count))."))
@@ -96,7 +110,55 @@ enum NoteArguments {
             case .failure(let problem): return .failure(Problem(message: "notes[\(index)]: \(problem.message)"))
             }
         }
-        return .success(NoteWriteRequest(track: track, expectedName: name, startBar: bar, notes: notes))
+        var controllers: [ControllerSpec] = []
+        for (index, item) in changeItems.enumerated() {
+            switch controller(item) {
+            case .success(let change): controllers.append(change)
+            case .failure(let problem): return .failure(Problem(message: "controllers[\(index)]: \(problem.message)"))
+            }
+        }
+        return .success(NoteWriteRequest(track: track, expectedName: name, startBar: bar, notes: notes, controllers: controllers))
+    }
+
+    static func controller(_ item: Value) -> Result<ControllerSpec, Problem> {
+        guard let object = item.objectValue else { return .failure(Problem(message: "must be an object.")) }
+        if let unknown = object.keys.sorted().first(where: { !controllerFields.contains($0) }) {
+            return .failure(Problem(message: "unknown field \"\(unknown)\"."))
+        }
+        let kind: ControllerSpec.Kind
+        switch object["type"]?.stringValue {
+        case "cc"?:
+            guard let value = object["controller"], let number = MixerArguments.integer(value), (0...127).contains(number) else {
+                return .failure(Problem(message: "\"controller\" (the Control Change number, 0–119) is required with type \"cc\"."))
+            }
+            kind = .controlChange(UInt8(number))
+        case "pitch_bend"?:
+            guard object["controller"] == nil else {
+                return .failure(Problem(message: "\"controller\" is only for type \"cc\"; pitch bend has no controller number."))
+            }
+            kind = .pitchBend
+        default:
+            return .failure(Problem(message: "\"type\" must be \"cc\" (Control Change) or \"pitch_bend\"."))
+        }
+        guard let startValue = object["start_beat"], let start = MixerArguments.number(startValue), start >= 0 else {
+            return .failure(Problem(message: "\"start_beat\" (quarter notes from the start bar, 0 or more) is required."))
+        }
+        guard let valueField = object["value"], let value = MixerArguments.integer(valueField) else {
+            return .failure(Problem(message: kind == .pitchBend
+                ? "\"value\" (a whole number from −8192 to 8191, 0 = centre) is required."
+                : "\"value\" (a whole number from 0 to 127) is required."))
+        }
+        var toValue: Int?
+        if let field = object["to_value"] {
+            guard let number = MixerArguments.integer(field) else { return .failure(Problem(message: "\"to_value\" must be a whole number.")) }
+            toValue = number
+        }
+        var duration: Double?
+        if let field = object["duration_beats"] {
+            guard let number = MixerArguments.number(field) else { return .failure(Problem(message: "\"duration_beats\" must be a number.")) }
+            duration = number
+        }
+        return .success(ControllerSpec(kind: kind, startBeat: start, value: value, toValue: toValue, durationBeats: duration))
     }
 
     static func note(_ item: Value) -> Result<NoteSpec, Problem> {
@@ -161,7 +223,19 @@ enum NoteToolSchemas {
             region. The track type cannot be checked either: use a software instrument (or \
             external MIDI) track; on an audio track Logic would record audio. At most 2000 notes \
             and 64 bars; the same pitch cannot overlap itself (the earlier note is shortened). No \
-            quantize: quantize the region in Logic afterwards if needed.
+            quantize: quantize the region in Logic afterwards if needed. \
+            "controllers" adds Control Changes and pitch bends to the same recording (MIDI channel \
+            1, like the notes), each at start_beat, or as a straight ramp from value to to_value \
+            over duration_beats (sent every 1/48 quarter note where the value changes). At one \
+            position note-offs go first, then controller changes, then note-ons. Pitch bend runs \
+            from -8192 to 8191 with 0 = centre (how many semitones that is depends on the \
+            instrument's bend range). Changes of one controller must not overlap. CC 120–127 \
+            (channel mode) are refused, and so are CC 20–39 for now (they trigger the server's \
+            learned key commands; not yet checked that they are safe on LogicMCP Notes). After \
+            Stop the server releases the sustain pedal and centres the bend if the material used \
+            them; that is not recorded, so end the material with the values the region should \
+            end with. A call may have only controllers (no notes). Controller recording is not \
+            yet verified on real Logic.
             """,
         inputSchema: .object([
             "type": "object",
@@ -171,7 +245,6 @@ enum NoteToolSchemas {
                 "start_bar": .object(["type": "integer", "minimum": 2, "maximum": 999, "description": "Bar whose first beat is beat 0 of the notes. At least 2 (Logic pre-rolls one bar)."]),
                 "notes": .object([
                     "type": "array",
-                    "minItems": 1,
                     "maxItems": 2000,
                     "items": .object([
                         "type": "object",
@@ -188,9 +261,27 @@ enum NoteToolSchemas {
                         "additionalProperties": false,
                     ]),
                 ]),
+                "controllers": .object([
+                    "type": "array",
+                    "maxItems": 2000,
+                    "description": "Control Changes and pitch bends recorded with the notes.",
+                    "items": .object([
+                        "type": "object",
+                        "properties": .object([
+                            "type": .object(["type": "string", "enum": .array(["cc", "pitch_bend"])]),
+                            "controller": .object(["type": "integer", "minimum": 0, "maximum": 119, "description": "Control Change number (type cc only), e.g. 1 = modulation, 11 = expression, 64 = sustain pedal. 20–39 are refused for now."]),
+                            "start_beat": .object(["type": "number", "minimum": 0, "description": "Quarter notes after the first beat of start_bar."]),
+                            "value": .object(["type": "integer", "minimum": -8192, "maximum": 8191, "description": "cc: 0–127. pitch_bend: -8192–8191, 0 = centre. The ramp's start value when to_value is given."]),
+                            "to_value": .object(["type": "integer", "minimum": -8192, "maximum": 8191, "description": "Ramp end value (same range as value); needs duration_beats."]),
+                            "duration_beats": .object(["type": "number", "exclusiveMinimum": 0, "description": "Ramp length in quarter notes; only with to_value."]),
+                        ]),
+                        "required": .array(["type", "start_beat", "value"]),
+                        "additionalProperties": false,
+                    ]),
+                ]),
                 "confirmation_token": .object(["type": "string", "description": "Token from a previous needs_confirmation result for the same call, after the user agreed in chat."]),
             ]),
-            "required": .array(["track", "expected_name", "start_bar", "notes"]),
+            "required": .array(["track", "expected_name", "start_bar"]),
             "additionalProperties": false,
         ]),
         // Destructive: in Replace mode (or when its state is unknown, behind the confirmation)

@@ -230,6 +230,15 @@ public final class FakeTransportClock: Sendable {
     }
 }
 
+/// A Control Change or pitch bend the fake recorded from `LogicMCP Notes` (All Notes Off is
+/// not recorded: it only ends notes).
+public struct FakeRecordedControl: Sendable, Equatable {
+    public var message: MIDIMessage
+    public var tick: Double
+    public var tracks: [Int]
+    var run: Int
+}
+
 /// What the fake recorded from `LogicMCP Notes`.
 public struct FakeRecordedNote: Sendable, Equatable {
     public var pitch: UInt8
@@ -262,6 +271,7 @@ public final class FakeNoteRecorder: MIDIOutput, Sendable {
     private struct State {
         var received: [Received] = []
         var notes: [FakeRecordedNote] = []
+        var controls: [FakeRecordedControl] = []
         /// (channel << 8 | pitch) → index into `notes` of the sounding note.
         var open: [Int: Int] = [:]
     }
@@ -294,6 +304,8 @@ public final class FakeNoteRecorder: MIDIOutput, Sendable {
                 case let .controlChange(channel, 123, _):
                     for (key, open) in state.open where key >> 8 == Int(channel) { state.notes[open].endTick = context.tick }
                     state.open = state.open.filter { $0.key >> 8 != Int(channel) }
+                case .controlChange, .pitchBend:
+                    state.controls.append(FakeRecordedControl(message: message, tick: context.tick, tracks: context.tracks, run: context.run))
                 default:
                     break
                 }
@@ -303,6 +315,9 @@ public final class FakeNoteRecorder: MIDIOutput, Sendable {
 
     /// Everything that arrived, in order.
     public var received: [Received] { state.withLock { $0.received } }
+
+    /// Control Changes and pitch bends recorded, in order.
+    public var controls: [FakeRecordedControl] { state.withLock { $0.controls } }
 
     /// Recorded notes; notes still open when their run stopped end at the stop position.
     public var notes: [FakeRecordedNote] {

@@ -23,7 +23,7 @@ final class SchedulerControl: Sendable {
     var isFinished: Bool { state.withLock { $0.finished } }
 }
 
-/// Sends timed note groups on `LogicMCP Notes` from a dedicated high-priority thread, each when
+/// Sends timed groups of notes and controller changes on `LogicMCP Notes` from a dedicated high-priority thread, each when
 /// Logic's MIDI clock (from `SyncTimeline`) reaches its tick: at the predicted time, or at the
 /// time of the clock seen at or past the tick, interpolating between clocks by time. Clock
 /// times are Logic's CoreMIDI timestamps when it sets them, so a clock delivered ahead of time
@@ -57,6 +57,8 @@ final class NoteScheduler: Sendable {
         var messages: [MIDIMessage]
         var on: [UInt8]
         var off: [UInt8]
+        /// Control Change and pitch bend messages in `messages`.
+        var controls: Int = 0
     }
 
     struct Sent: Sendable {
@@ -69,6 +71,7 @@ final class NoteScheduler: Sendable {
         var sent: [Sent] = []
         var noteOns = 0
         var noteOffs = 0
+        var controls = 0
         /// Pitches with a note-on but no note-off yet (stopped early).
         var sounding: [UInt8] = []
         var abortReason: String?
@@ -169,6 +172,7 @@ final class NoteScheduler: Sendable {
             outcome.sent.append(Sent(group: index, tick: group.tick, time: time))
             outcome.noteOns += group.on.count
             outcome.noteOffs += group.off.count
+            outcome.controls += group.controls
             for pitch in group.off { sounding[pitch, default: 0] = max(0, sounding[pitch, default: 0] - 1) }
             for pitch in group.on { sounding[pitch, default: 0] += 1 }
         }

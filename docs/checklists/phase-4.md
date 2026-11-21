@@ -21,9 +21,9 @@ Project setup (called “project R” below): 120 BPM, 4/4, 5 tracks:
 | 4 | External MIDI (can be created without an external device) | `Ext` | Off |
 | 5 | Software Instrument | `シンセ` (“Synth”; a name entirely in Japanese) | Off |
 
-Console command format: `write <track> <start_bar> <pitch:start:dur[:vel],...> [offset=<ms>] [expected name]`. Beats are **quarter notes**, counted from the first beat of the start bar; a pitch can be written as `60` or `C4` (C4 = 60). `write!` confirms recording in Replace mode. Example: `write 1 9 C4:0:1,E4:1:1,G4:2:1,C5:3:1 Piano`.
+Console command format: `write <track> <start_bar> <pitch:start:dur[:vel],...|-> [cc=...] [bend=...] [offset=<ms>] [expected name]` (`cc=` / `bend=` and `-` for “no notes” are used in N; type `write` alone for the details). Beats are **quarter notes**, counted from the first beat of the start bar; a pitch can be written as `60` or `C4` (C4 = 60). `write!` confirms recording in Replace mode. Example: `write 1 9 C4:0:1,E4:1:1,G4:2:1,C5:3:1 Piano`.
 
-For each item, fill in what you actually see. Keep the console logs (`~/logic-pro-mcp/var/logs/console-*.log`, which contain `SYNC` and `NOTES` lines) and give Claude their paths when you are done. A–L use the console, M uses Claude.
+For each item, fill in what you actually see. Keep the console logs (`~/logic-pro-mcp/var/logs/console-*.log`, which contain `SYNC` and `NOTES` lines) and give Claude their paths when you are done. A–L and N use the console, M uses Claude.
 
 **How to read position errors**: Logic's Event List shows `bar beat division tick`; 1 sixteenth note = 240 ticks (960 ppq). To convert an error in ticks to milliseconds: `tick × 62.5 / BPM` (at 120 BPM, 1 tick ≈ 0.52 ms).
 
@@ -151,6 +151,23 @@ Quit the console and start a Claude Code session in `~/logic-pro-mcp`:
 | M1 | “Write a C major scale (eighth notes) at bar 9 on the Piano track” | Claude calls `write_midi` (with `expected_name`), gets `partial`, and explains that the content was not read back; 8 notes appear in Logic | |
 | M2 | With Replace on, say “Write a C chord at bar 17 on Piano” | After receiving `needs_confirmation`, Claude asks you in the chat; if you agree, it calls again with the token and records; if you do not, nothing is recorded | |
 | M3 | Have Claude write a longer melody, and press Stop in Logic in the middle of recording | The tool returns `failed`, and Claude truthfully says that only part of it was recorded | |
+| M4 | (after N) “Write a two-bar melody at bar 41 on Synth with a modulation swell and a pitch bend up into the last note” | Claude passes `controllers` (CC 1 ramp, pitch-bend ramp, and a bend back to 0 at the end), gets `partial`; the region has the notes, CC 1 and pitch bend events | |
+
+## N. Control Change and pitch bend (added 2026-11-21, not yet run)
+
+Before N: the feature is newer than the build the server last ran from. Run `swift build -c release` and restart the console (or the Claude Code session) first. Use track 2 `Synth` (an instrument that responds to the modulation wheel, pitch bend and the sustain pedal), and open the new region in the Event List after each item.
+
+| # | Action | Expected | Actual |
+|---|---|---|---|
+| N1 | **Run first, without sending anything**: open Logic Pro > Control Surfaces > Controller Assignments…, switch to Expert View, select the assignment learned for Delete Track (`CC 29`) | Record the input port and MIDI channel it is bound to. Expected: `LogicMCP Keys`, channel 16. If so, CC 20–39 on channel 1 of `LogicMCP Notes` cannot trigger the key commands, and the server's refusal of CC 20–39 can be lifted **[#41]** | |
+| N2 | `write 2 9 C4:0:4 cc=1:0:0>127:4 Synth` | `partial`; the region has C4 at `9 1 1 1` and CC 1 (modulation) events rising from 0 at `9 1 1 1` to 127 near `10 1 1 1`, about 128 events; the modulation is heard while recording **[#42][#43]** | |
+| N3 | `write 2 9 C4:0:2 bend=0.5:0>8191:0.5,1:0 Synth` | Pitch bend events rising from the centre at `9 1 3 1` to the top at `9 2 1 1`, then back to the centre at `9 2 1 1`; the bend is heard going up and snapping back **[#42][#44]** | |
+| N4 | `write 2 9 C4:0:1,E4:1:1 cc=64:1:127,64:3:0 bend=1:2000,2:0 Synth` | At `9 2 1 1` the CC 64 and pitch bend events come before E4's note-on in the Event List, and E4 sounds bent from its start; E4 rings on (sustain) until about `9 4 1 1` **[#45]** | |
+| N5 | `write 2 17 - cc=11:0:100>40:4 Synth` (controllers only, no notes) | `partial`, and the summary counts controller messages; a region with only CC 11 (expression) events falling from 100 to 40 appears at bar 17 (or is merged, according to the Overlapping MIDI Recordings setting) **[#46]** | |
+| N6 | `tracks`, note track 2's volume and pan; `write 2 25 - cc=7:0:64,10:0:20 Synth`; `tracks` again and look at track 2's channel strip | The result warns about CC 7 / CC 10. Record whether track 2's fader and pan moved. In File > Project Settings > MIDI, find the setting that decides whether CC 7 / 10 control the channel strip's volume / pan (name not yet seen on this Mac) and record its name and value **[#47]**. Restore volume and pan afterwards | |
+| N7 | `write 2 33 C4:0:8 cc=64:0:127 bend=0:0>8191:8 Synth`; press Stop in Logic about two beats in | `failed` (“Stopped after …”); in the console log, after the stop: `B0 40 00` (sustain off), `E0 00 40` (bend centre), then `B0 7B 00` (All Notes Off). Afterwards, play track 2 with Musical Typing (⌘K): no pedal held, no bend. The region has no events after the stop point **[#48]** | |
+| N8 | `write 2 9 - cc=29:0:127 Synth`, then `write 2 9 - cc=123:0:0 Synth` | Both return `failed` with nothing sent: CC 20–39 are refused for now, CC 120–127 are channel mode messages. No region is recorded, the playhead does not move | |
+| N9 | Only if N2 or N3 recorded no controller events: check the input filter in File > Project Settings > MIDI (name not yet seen on this Mac) | Record whether Control Change / Pitch Bend are filtered; they must not be **[#42]** | |
 
 ---
 
@@ -209,3 +226,11 @@ Quit the console and start a Claude Code session in `~/logic-pro-mcp`:
 | #38 | When only recording is turned off during recording and playback continues (Record LED off, Play LED on), Logic stops recording from that moment; the server stops sending, waits about 300 ms and presses Stop; note-offs sent in between are not recorded | Monitoring (Record LED), `waitForOwnStop` | J8 |
 | #39 | When the playhead jumps during recording, Logic sends a new SPP (or Stop / Continue / Start) on the Sync port; any of these makes the server stop sending | `NoteScheduler.transportProblem` | J9 |
 | #40 | The timestamps Logic puts on Clock messages are never more than 1 second away from the arrival time. For a timestamp more than 1 second away, the server **silently** falls back to the arrival time (so that a bad timestamp cannot push sending far into the future); in that case alignment falls back to the “real-time arrival” assumption of #3 | `HostTime.instant` | A7 (`clock_timestamp_lead_max_ms` / `_min_ms` should both be within ±1000, and `clocks_with_timestamp` should equal the total number of Clocks) |
+| #41 | Logic's controller assignments match the input port and MIDI channel: the assignments learned from `LogicMCP Keys` channel 16 do not react to the same CC number on `LogicMCP Notes` channel 1 | Refusing CC 20–39 (`ControllerSpec.reservedControllers`) is only a precaution until this holds | N1 |
+| #42 | Control Change and pitch bend messages that arrive on `LogicMCP Notes` while recording are recorded into the same region as the notes, at their arrival positions; Logic's default input filter lets them through | Controller recording | N2, N3, N9 |
+| #43 | Ramp steps (at most one every 1/48 quarter note, only where the value changes) are recorded as separate events; Logic does not thin them out while recording | Ramp expansion in `NotePlan.expand` | N2 |
+| #44 | Pitch bend is 14-bit with 8192 = centre (value 0 in the tool, −8192…8191); how many semitones that is depends on the instrument's bend range | Pitch bend conversion | N3 |
+| #45 | Events at one position keep the order they arrived in (note-offs, controller changes, note-ons) when Logic records and plays them back | Same-position order in `NotePlan.Group.messages` | N4 |
+| #46 | A recording with only controller events still creates a region (it is not dropped as empty) | Calls with controllers but no notes | N5 |
+| #47 | CC 7 / CC 10 may also move the channel strip's volume / pan, depending on a project MIDI setting | The CC 7 / 10 warning | N6 |
+| #48 | Sustain off and pitch-bend centre sent after Stop are not recorded and return the instrument to normal; CC 64 = 0 releases notes the pedal holds (All Notes Off alone does not) | Resets after Stop (`NoteWriter.resetMessages`) | N7 |

@@ -74,8 +74,9 @@ private let consoleHelp = """
       mixer <track> <volume|pan|mute|solo> <value> [expected name]
                                  verified mixer change, same as mixer_set, e.g. "mixer 3 volume -6.5",
                                  "mixer 3 volume -inf", "mixer 2 pan -20", "mixer 1 mute on"
-      write <track> <start_bar> <pitch:start:dur[:vel],...> [offset=<ms>] [expected name]
-                                 record notes in real time, same as write_midi ("write!" confirms Replace)
+      write <track> <start_bar> <pitch:start:dur[:vel],...|-> [cc=...] [bend=...] [offset=<ms>] [expected name]
+                                 record notes, Control Changes and pitch bend in real time, same as write_midi
+                                 ("write!" confirms Replace; "write" alone prints the details)
     \(Console.commandHelp)
       jog <ticks>                turn the jog wheel, negative = backwards
       chord <mod>... <button>    hold modifiers while pressing a button, e.g. "chord option bankLeft"

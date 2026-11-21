@@ -235,6 +235,39 @@ struct NoteWriterTests {
         #expect(presses.count == 4 && presses[0] == presses[3] && presses[1] == presses[2])
     }
 
+    @Test func controllerChangesLandWithTheNotesAndAreResetAfterStop() async throws {
+        let h = await NoteHarness.make()
+        let notes = [NoteSpec(pitch: 60, startBeat: 0, durationBeats: 1), NoteSpec(pitch: 64, startBeat: 1, durationBeats: 1)]
+        let controllers: [ControllerSpec] = [
+            .controlChange(64, at: 0, 127),
+            ControllerSpec(kind: .pitchBend, startBeat: 0.5, value: 0, toValue: 8191, durationBeats: 0.5),
+            .pitchBend(at: 1, 0),
+            .controlChange(64, at: 2, 0),
+        ]
+        let request = NoteWriteRequest(track: 2, expectedName: inst2, startBar: startBar, notes: notes,
+                                       controllers: controllers, timingOffsetMs: 0)
+        let planned = try NotePlan.make(request).get().groups.flatMap(\.controls)
+        let result = await h.writer.write(request, replaceConfirmed: false)
+        #expect(result.status == .partial, "\(result.summary) \(result.warnings)")
+        expectPlaced(h.recorder.notes, notes)
+        // Every controller message recorded on the target, in order, near its tick.
+        let recorded = h.recorder.controls
+        #expect(recorded.map(\.message) == planned.map(\.message))
+        for (got, want) in zip(recorded, planned) {
+            #expect(abs(beats(got.tick) - want.tick / 24) < tolerance, "\(got.message) at beat \(beats(got.tick)), wanted \(want.tick / 24)")
+            #expect(got.tracks == [1])
+        }
+        #expect(result.after?.controllerChangesRequested == 4)
+        #expect(result.after?.controllerMessagesSent == planned.count)
+        #expect(result.summary.contains("2 notes and \(planned.count) controller messages"), "\(result.summary)")
+        // After Stop, not recorded: the pedal up, then the bend centred.
+        let afterStop = h.recorder.received.filter { !$0.whileRecording }.map(\.message)
+        #expect(afterStop == [.controlChange(channel: 0, controller: 64, value: 0), .pitchBend(channel: 0, value: 8192)])
+        #expect(result.evidence.contains { $0.contains("sent sustain off (CC 64 = 0) and pitch bend centre on LogicMCP Notes after Stop") })
+        #expect(result.evidence.contains { $0.contains("\(planned.count) controller message(s)") })
+        #expect(result.warnings.contains(NoteWriter.contentNote))
+    }
+
     @Test func replaceModeNeedsConfirmationAndSendsNothingUntilConfirmed() async {
         let h = await NoteHarness.make { $0.replaceOn = true }
         let notes = [NoteSpec(pitch: 62, startBeat: 0.5, durationBeats: 0.5)]

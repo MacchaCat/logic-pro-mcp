@@ -17,6 +17,8 @@ solo).
 `learn_command`): a catalog of 20 commands on `LogicMCP Keys`, all learned on this Mac, verified
 where Logic's control surface shows the effect.
 **Phase 4** — `write_midi`: notes recorded in real time along Logic's MIDI clock (+3 ms calibration).
+Control Changes and pitch bend can be recorded with the notes too (tested against FakeLogic only, not
+yet on real Logic).
 **Phase 5** — `analyze_audio` / `list_analysis_instances` with the LogicMCP Meter AUv3 plug-in
 (`Plugin/`, BS.1770-5 / EBU R 128 loudness, true peak, spectrum per bar range).
 See `docs/design.md` for the plan, `docs/research.md` for sources and

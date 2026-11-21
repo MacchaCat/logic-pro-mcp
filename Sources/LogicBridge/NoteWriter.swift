@@ -110,7 +110,7 @@ public actor NoteWriter {
         var time: ContinuousClock.Instant
     }
 
-    public static let contentNote = "The notes were played into Logic in real time; Mackie Control cannot see regions or notes, so what Logic recorded is not read back. Check the new region on the target track (for example in the Event List)."
+    public static let contentNote = "The material was played into Logic in real time; Mackie Control cannot see regions, notes or controller events, so what Logic recorded is not read back. Check the new region on the target track (for example in the Event List)."
     public static let trackTypeNote = "The track type cannot be checked over Mackie Control: a software instrument (or external MIDI) track records the notes; on an audio track Logic would record audio from its input instead."
 
     /// The action a confirmation token is bound to: the same track, bar and notes.
@@ -119,7 +119,11 @@ public actor NoteWriter {
         func mix(_ text: String) { for byte in text.utf8 { hash = (hash ^ UInt32(byte)) &* 0x0100_0193 } }
         mix("\(request.track)|\(request.expectedName ?? "")|\(request.startBar)|\(request.timingOffsetMs)")
         for note in request.notes { mix("|\(note.pitch),\(note.startBeat),\(note.durationBeats),\(note.velocity)") }
-        return "write_midi in Replace mode: \(request.notes.count) note(s) on track \(request.track) from bar \(request.startBar) [\(String(hash, radix: 16))]"
+        for change in request.controllers {
+            mix("|\(change.kind),\(change.startBeat),\(change.value),\(change.toValue.map(String.init) ?? "-"),\(change.durationBeats.map { "\($0)" } ?? "-")")
+        }
+        let controllers = request.controllers.isEmpty ? "" : " and \(request.controllers.count) controller change(s)"
+        return "write_midi in Replace mode: \(request.notes.count) note(s)\(controllers) on track \(request.track) from bar \(request.startBar) [\(String(hash, radix: 16))]"
     }
 
     public func write(_ request: NoteWriteRequest, replaceConfirmed: Bool) async -> Result {
@@ -136,7 +140,8 @@ public actor NoteWriter {
         }
         var run = Run(report: NoteWriteReport(
             track: request.track, trackName: nil, startBar: request.startBar, notesRequested: plan.noteCount,
-            noteOnsSent: 0, noteOffsSent: 0, timing: .init(timingOffsetMs: request.timingOffsetMs),
+            noteOnsSent: 0, noteOffsSent: 0, controllerChangesRequested: request.controllers.count,
+            timing: .init(timingOffsetMs: request.timingOffsetMs),
             armBefore: [], armAfter: [], transport: nil))
         run.warnings += plan.warnings
 
@@ -190,7 +195,7 @@ public actor NoteWriter {
 
     private func finish(_ status: Result.Status, _ summary: String, _ run: Run, _ extra: [String] = []) -> Result {
         var warnings = run.warnings + extra
-        if run.report.noteOnsSent > 0 { warnings.append(Self.contentNote) }
+        if run.report.noteOnsSent > 0 || run.report.controllerMessagesSent > 0 { warnings.append(Self.contentNote) }
         if run.recordPressed { warnings.append(Self.trackTypeNote) }
         return Result(status: status, summary: summary, after: run.report, evidence: run.evidence, warnings: warnings)
     }
@@ -430,6 +435,21 @@ public actor NoteWriter {
         var stopSummary: String
         var noteOns: Int
         var noteOffs: Int
+        var controls: Int
+    }
+
+    /// Resets after Stop for what the material used: the sustain pedal up, then the pitch bend
+    /// centred. They leave the instrument as it was; after Stop Logic does not record them.
+    static func resetMessages(_ plan: NotePlan) -> [MIDIMessage] {
+        var messages: [MIDIMessage] = []
+        if plan.usesSustain { messages.append(.controlChange(channel: 0, controller: 64, value: 0)) }
+        if plan.usesPitchBend { messages.append(.pitchBend(channel: 0, value: 8192)) }
+        return messages
+    }
+
+    static func describeResets(_ plan: NotePlan) -> String {
+        [plan.usesSustain ? "sustain off (CC 64 = 0)" : nil, plan.usesPitchBend ? "pitch bend centre" : nil]
+            .compactMap { $0 }.joined(separator: " and ")
     }
 
     /// Presses Record, sends the notes along Logic's clock and stops. Throws only before
@@ -472,9 +492,10 @@ public actor NoteWriter {
                 let groups = plan.groups.map { group in
                     NoteScheduler.Group(
                         tick: Double(startTick) + group.tick,
-                        messages: group.events.map(\.message),
+                        messages: group.messages,
                         on: group.events.filter(\.isOn).map(\.pitch),
-                        off: group.events.filter { !$0.isOn }.map(\.pitch))
+                        off: group.events.filter { !$0.isOn }.map(\.pitch),
+                        controls: group.controls.count)
                 }
                 let control = SchedulerControl()
                 let scheduler = NoteScheduler(
@@ -517,7 +538,8 @@ public actor NoteWriter {
             if stopped {
                 run.evidence += stopResult.evidence.map { "stop: " + $0 }
             } else {
-                run.warnings.append("Logic did not confirm Stop: \(stopResult.summary) Logic may still be recording: press Stop in Logic. All Notes Off was not sent (it would be recorded).")
+                let resets = Self.resetMessages(plan).isEmpty ? "All Notes Off was" : "All Notes Off and the pitch bend / sustain resets were"
+                run.warnings.append("Logic did not confirm Stop: \(stopResult.summary) Logic may still be recording: press Stop in Logic. \(resets) not sent (they would be recorded).")
                 run.warnings += stopResult.warnings
             }
         }
@@ -526,8 +548,14 @@ public actor NoteWriter {
             await mcu.waitForTimecodeQuiet()
             run.report.timing.displayAtStop = await transport.snapshot().display
             run.evidence.append("after Stop: Song Position Pointer right after Logic's MIDI Stop \(run.report.timing.stopSongPosition.map { "= \($0)" } ?? "not received"), time display \(run.report.timing.displayAtStop ?? "?")")
+            // Only after Stop is confirmed: while recording, these would be recorded.
+            let resets = Self.resetMessages(plan)
+            if !resets.isEmpty {
+                // Sustain off before All Notes Off: All Notes Off does not end notes the pedal holds.
+                try? notes.send(resets)
+                run.evidence.append("sent \(Self.describeResets(plan)) on LogicMCP Notes after Stop")
+            }
             if abortReason != nil {
-                // Only after Stop is confirmed: while recording, CC 123 would be recorded.
                 try? notes.send([.controlChange(channel: 0, controller: 123, value: 0)])
                 run.evidence.append("sent All Notes Off (CC 123) on LogicMCP Notes after Stop")
             }
@@ -536,11 +564,12 @@ public actor NoteWriter {
 
         run.report.noteOnsSent = outcome.noteOns
         run.report.noteOffsSent = outcome.noteOffs
+        run.report.controllerMessagesSent = outcome.controls
         if let runSequence {
             analyse(capture, after: runSequence, outcome: outcome, samples: samples, startTick: startTick, run: &run)
         }
         return Recording(abortReason: abortReason, stopped: stopped, stopSummary: stopSummary,
-                         noteOns: outcome.noteOns, noteOffs: outcome.noteOffs)
+                         noteOns: outcome.noteOns, noteOffs: outcome.noteOffs, controls: outcome.controls)
     }
 
     struct OwnStop {
@@ -710,7 +739,10 @@ public actor NoteWriter {
             run.report.timing.clockTimestampLeadMeanMs = (leads.reduce(0, +) / Double(leads.count) * 100).rounded() / 100
         }
         if !outcome.sent.isEmpty {
-            run.evidence.append("sent \(outcome.noteOns) note-on(s) and \(outcome.noteOffs) note-off(s) in \(outcome.sent.count) group(s) on LogicMCP Notes between song positions \(Self.sixteenths(outcome.sent.first!.tick)) and \(Self.sixteenths(outcome.sent.last!.tick)); right before each send Logic's clock was running with no Stop, jump or restart, and the Record LED, polled every \(timings.monitorInterval.milliseconds) ms, was not seen off before the last send")
+            let messages = outcome.controls > 0
+                ? "\(outcome.noteOns) note-on(s), \(outcome.noteOffs) note-off(s) and \(outcome.controls) controller message(s)"
+                : "\(outcome.noteOns) note-on(s) and \(outcome.noteOffs) note-off(s)"
+            run.evidence.append("sent \(messages) in \(outcome.sent.count) group(s) on LogicMCP Notes between song positions \(Self.sixteenths(outcome.sent.first!.tick)) and \(Self.sixteenths(outcome.sent.last!.tick)); right before each send Logic's clock was running with no Stop, jump or restart, and the Record LED, polled every \(timings.monitorInterval.milliseconds) ms, was not seen off before the last send")
             if leads.isEmpty {
                 run.evidence.append("Logic's clock messages carried no CoreMIDI timestamps (\(clocks.count) clocks): notes were timed by when the clock reached the server")
             } else {
@@ -733,16 +765,26 @@ public actor NoteWriter {
 
     static func describe(_ recording: Recording, plan: NotePlan, request: NoteWriteRequest, run: Run) -> (Result.Status, String) {
         let target = "track \(request.track)" + (run.report.trackName.map { " " + ProjectText.quoted($0) } ?? "")
+        let notes = "\(plan.noteCount) notes"
+        let controls = "\(plan.controlCount) controller messages"
+        let material = plan.controlCount == 0 ? notes : plan.noteCount == 0 ? controls : "\(notes) and \(controls)"
         if let reason = recording.abortReason {
             let stopped = recording.stopped ? "Logic was stopped" : "Logic did NOT confirm Stop and may still be recording: press Stop in Logic"
-            if recording.noteOns == 0 {
-                return (.failed, "Stopped before any note was sent: \(reason) \(stopped).")
+            if recording.noteOns == 0, recording.controls == 0 {
+                return (.failed, "Stopped before \(plan.controlCount == 0 ? "any note" : "anything") was sent: \(reason) \(stopped).")
             }
-            return (.failed, "Stopped after \(recording.noteOns) of \(plan.noteCount) notes: \(reason) \(stopped). Logic has recorded the notes sent so far on \(target); undo the recording in Logic if it is not wanted.")
+            let progress: String
+            switch (plan.noteCount, plan.controlCount) {
+            case (_, 0): progress = "\(recording.noteOns) of \(notes)"
+            case (0, _): progress = "\(recording.controls) of \(controls)"
+            default: progress = "\(recording.noteOns) of \(notes) and \(recording.controls) of \(controls)"
+            }
+            let sent = plan.controlCount == 0 ? "the notes" : "what was"
+            return (.failed, "Stopped after \(progress): \(reason) \(stopped). Logic has recorded \(sent) sent so far on \(target); undo the recording in Logic if it is not wanted.")
         }
         guard recording.stopped else {
-            return (.failed, "All \(plan.noteCount) notes were sent to \(target) while Logic recorded, but Logic did not confirm Stop (\(recording.stopSummary)). Logic may still be recording: press Stop in Logic.")
+            return (.failed, "All \(material) were sent to \(target) while Logic recorded, but Logic did not confirm Stop (\(recording.stopSummary)). Logic may still be recording: press Stop in Logic.")
         }
-        return (.partial, "Sent all \(plan.noteCount) notes to \(target) from bar \(request.startBar) while Logic recorded, timed by Logic's MIDI clock, then stopped. What Logic recorded is not read back; check the region in Logic.")
+        return (.partial, "Sent all \(material) to \(target) from bar \(request.startBar) while Logic recorded, timed by Logic's MIDI clock, then stopped. What Logic recorded is not read back; check the region in Logic.")
     }
 }

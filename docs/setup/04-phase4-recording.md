@@ -68,3 +68,30 @@ If you hear crackles or pops while `write_midi` records but the recorded region 
 - Raise **I/O Buffer Size** in **Logic Pro > Settings > Audio > Devices** (for example to 256 or 512 samples). The extra monitoring latency does not change when the server sends the notes: it follows Logic's MIDI clock, not what you hear.
 - Observed on this Mac (2026-11-21): the crackles during `write_midi` stopped after Logic's audio settings were adjusted; the recorded regions had no crackles before or after.
 - Whether the buffer size shifts where Logic records the notes, and so the +3 ms default (section 7), has not been tested yet (checklist B6). After changing it, look at a few notes in the Event List; if they are off the grid by a fixed amount, see section 8.
+
+## 10. Control Changes and pitch bend (not yet verified on real Logic)
+
+`write_midi` can record Control Changes and pitch bend together with the notes: its `controllers` field (console: `cc=` and `bend=`) takes changes at a beat, or straight ramps from one value to another over some beats. They go out on `LogicMCP Notes`, MIDI channel 1, like the notes, so Logic records them into the same region. This is tested against FakeLogic only; the real-Logic checks are section N of the [Phase 4 checklist](../checklists/phase-4.md).
+
+| Field | Meaning |
+|---|---|
+| `type` | `"cc"` (Control Change) or `"pitch_bend"` |
+| `controller` | Control Change number, `cc` only: e.g. 1 = modulation, 11 = expression, 64 = sustain pedal |
+| `start_beat` | Quarter notes after the first beat of the start bar, as for notes |
+| `value` | `cc`: 0–127. `pitch_bend`: −8192 to 8191, 0 = centre (how many semitones that is depends on the instrument's bend range) |
+| `to_value`, `duration_beats` | Together they make a ramp from `value` to `to_value` over `duration_beats`; it is sent every 1/48 quarter note where the value changes |
+
+Console examples (`-` instead of the notes records controllers only):
+
+```text
+write 2 9 C4:0:4 cc=1:0:0>127:4 Synth
+write 2 9 C4:0:1,E4:1:1 cc=64:1:127,64:3:0 bend=1:2000,2:0 Synth
+write 2 17 - cc=11:0:100>40:4 Synth
+```
+
+- At one position the server sends note-offs first, then controller changes, then note-ons, so a note starts with the bend and controller values meant for it.
+- Changes of one controller must not overlap; a ramp may start where the previous one ends. At most 2000 changes, which may come to at most 4000 MIDI messages once ramps are expanded.
+- **Refused**: CC 120–127 (channel mode messages such as All Notes Off), and for now CC 20–39. These are the numbers that trigger the learned key commands on `LogicMCP Keys` (channel 16). Logic is expected to tell the ports and channels apart, but that has not been checked yet, and CC 29 deletes a track (checklist N1).
+- **CC 7 (volume) and CC 10 (pan)** may also move the track's channel-strip fader and pan, depending on a project MIDI setting (name not yet seen on this Mac). The result then carries a warning: `get_session_state` and `mixer_set` would see the changed values.
+- **After Stop** the server releases the sustain pedal (CC 64 = 0) and centres the pitch bend, if the material used them. After Stop Logic does not record this, so it only returns the instrument to normal. To have the region itself end with the pedal up and the bend centred, end the material with those values; the result warns when it does not.
+- If no controller events appear in the region, check that Logic's MIDI input filter in File > Project Settings > MIDI (name not yet seen on this Mac) lets Control Change and Pitch Bend through.
