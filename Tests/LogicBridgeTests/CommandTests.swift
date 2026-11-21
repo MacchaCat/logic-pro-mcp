@@ -57,6 +57,12 @@ struct CommandHarness {
         keyBehavior(&keyHostBehavior)
         let keys = await FakeKeyCommandHost.attach(host: host, surface: hostToSurface, keys: keysPipe.stream, behavior: keyHostBehavior)
         _ = await session.waitUntil(timeout: .seconds(2)) { $0.lcdRevision > 0 && $0.timecodeRevision > 0 }
+        if behavior.sendsDeviceQuery, !behavior.probeOnly {
+            // The handshake's last reply (Connection Confirmation) leaves a round trip after the
+            // connect dump, so it can still be in flight once the LCD and timecode are in. Wait for
+            // it: a test that counts the surface's messages must start from a settled link.
+            _ = await pollUntil { await host.handshakeConfirmed }
+        }
         if keyHostBehavior.reportsLEDs {
             _ = await session.waitUntil(timeout: .seconds(2)) { $0.led(.cycle) != nil && $0.led(.click) != nil }
         }
