@@ -107,7 +107,7 @@ struct MCPFrontEnd {
 
 func runServer(_ options: Options) async throws {
     // Fake mode creates no ports, so it needs no lock and can run next to a real server.
-    let lock = options.fake ? nil : try InstanceLock(directory: options.varDirectory)
+    let lock = options.fake ? nil : try InstanceLock(directory: options.lockDirectory)
     let runtime = try await LogicRuntime(options: options)
     let server = Server(
         name: "logic-mcp",

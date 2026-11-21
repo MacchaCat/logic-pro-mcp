@@ -25,6 +25,10 @@ struct RuntimeError: Error, CustomStringConvertible {
 struct Options {
     var command = "serve"
     var varDirectory: URL
+    /// Where the instance lock lives: one place per user whatever `varDirectory` is, so that a
+    /// plugin install and a checkout, or servers started in different folders, never both own
+    /// the LogicMCP ports.
+    var lockDirectory: URL = Options.defaultLockDirectory()
     var sysExPath: SysExPath = .ump
     var script: String?
     var verbose = false
@@ -51,6 +55,9 @@ struct Options {
             case "--var-dir":
                 guard let value = rest.popFirst() else { throw RuntimeError("--var-dir needs a path") }
                 options.varDirectory = URL(fileURLWithPath: (value as NSString).expandingTildeInPath)
+            case "--lock-dir":
+                guard let value = rest.popFirst() else { throw RuntimeError("--lock-dir needs a path") }
+                options.lockDirectory = URL(fileURLWithPath: (value as NSString).expandingTildeInPath)
             case "--sysex":
                 guard let value = rest.popFirst(), let path = SysExPath(rawValue: value) else {
                     throw RuntimeError("--sysex must be ump or legacy")
@@ -80,7 +87,8 @@ struct Options {
         return options
     }
 
-    /// `<repo>/var` when running from `<repo>/.build/...`, otherwise `./var`.
+    /// `LOGIC_MCP_VAR_DIR`; `<repo>/var` when running from `<repo>/.build/...`; otherwise
+    /// `~/Library/Application Support/logic-mcp`.
     static func defaultVarDirectory() -> URL {
         if let override = ProcessInfo.processInfo.environment["LOGIC_MCP_VAR_DIR"] {
             return URL(fileURLWithPath: override)
@@ -89,7 +97,21 @@ struct Options {
         if let range = executable.range(of: "/.build/") {
             return URL(fileURLWithPath: String(executable[..<range.lowerBound])).appendingPathComponent("var")
         }
-        return URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("var")
+        // Not ./var: a plugin's server starts in whatever folder Claude Code was opened in.
+        return applicationSupport
+    }
+
+    /// `LOGIC_MCP_LOCK_DIR`, otherwise `~/Library/Application Support/logic-mcp`.
+    static func defaultLockDirectory() -> URL {
+        if let override = ProcessInfo.processInfo.environment["LOGIC_MCP_LOCK_DIR"] {
+            return URL(fileURLWithPath: override)
+        }
+        return applicationSupport
+    }
+
+    static var applicationSupport: URL {
+        FileManager.default.homeDirectoryForCurrentUser
+            .appendingPathComponent("Library/Application Support/logic-mcp", isDirectory: true)
     }
 }
 

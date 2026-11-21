@@ -10,7 +10,11 @@ private let usage = """
       version    Print the version.
 
     Options:
-      --var-dir <path>     Runtime directory for the lock file and logs (default: <repo>/var)
+      --var-dir <path>     Runtime directory for logs and the console FIFO (default: <repo>/var when run
+                           from a checkout's .build, else ~/Library/Application Support/logic-mcp;
+                           LOGIC_MCP_VAR_DIR also sets it)
+      --lock-dir <path>    Directory of the instance lock that keeps one owner of the LogicMCP ports
+                           (default: ~/Library/Application Support/logic-mcp; LOGIC_MCP_LOCK_DIR)
       --sysex ump|legacy   How SysEx is sent to Logic (default: ump)
       --confirm chat|dialog  serve: confirm destructive steps with a chat token (default) or an
                            MCP elicitation dialog

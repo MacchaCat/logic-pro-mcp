@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "logic-pro": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/server/logic-mcp",
+      "args": ["serve"]
+    }
+  }
+}

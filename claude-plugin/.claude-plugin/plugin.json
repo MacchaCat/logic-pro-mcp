@@ -1,0 +1,25 @@
+{
+  "name": "logicmcp",
+  "displayName": "LogicMCP",
+  "version": "0.1.0",
+  "description": "Control Logic Pro on macOS from Claude: transport, track list and mixer, key commands, real-time MIDI recording (notes, Control Change, pitch bend) and loudness analysis, through an emulated Mackie Control surface. Apple silicon only. Not affiliated with Apple.",
+  "author": {
+    "name": "MacchaCat",
+    "url": "https://github.com/MacchaCat"
+  },
+  "homepage": "https://github.com/MacchaCat/logic-pro-mcp",
+  "repository": "https://github.com/MacchaCat/logic-pro-mcp",
+  "license": "MIT",
+  "keywords": [
+    "logic-pro",
+    "daw",
+    "midi",
+    "music-production",
+    "mackie-control",
+    "macos"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/MacchaCat/logic-pro-mcp/blob/main/claude-plugin/README.md",
+  "supportUrl": "https://github.com/MacchaCat/logic-pro-mcp/issues",
+  "privacyPolicyUrl": "https://github.com/MacchaCat/logic-pro-mcp/blob/main/claude-plugin/PRIVACY.md"
+}

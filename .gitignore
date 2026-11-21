@@ -14,4 +14,7 @@ Plugin/Extension/Info.plist
 Plugin/Extension/*.entitlements
 
 # Local MCP registration (absolute path of this checkout); see .mcp.json.example
-.mcp.json
+/.mcp.json
+
+# Finder metadata (a .DS_Store in claude-plugin/ blocks a directory submission)
+.DS_Store

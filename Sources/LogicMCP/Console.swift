@@ -304,7 +304,7 @@ struct Console {
 
 func runConsole(_ options: Options) async throws {
     // Fake mode creates no ports, so it needs no lock and can run next to a real server.
-    let lock = options.fake ? nil : try InstanceLock(directory: options.varDirectory)
+    let lock = options.fake ? nil : try InstanceLock(directory: options.lockDirectory)
     let log = try TrafficLog(directory: options.varDirectory, verbose: options.verbose)
     let runtime = try await LogicRuntime(options: options)
     await runtime.mcu.addObserver { log.record($0) }

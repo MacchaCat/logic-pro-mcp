@@ -29,6 +29,21 @@ See `docs/design.md` for the plan, `docs/research.md` for sources and
 Copy `.mcp.json.example` to `.mcp.json` and put the absolute path of this checkout in it, then
 follow `docs/setup/01-phase1-logic-setup.md` to let Logic install the emulated Mackie Control.
 
+## Claude plugin
+
+`claude-plugin/` is the package for Claude's plugin directory: the manifest, the MCP config, a
+README and privacy policy, and a prebuilt server (`server/logic-mcp`, Apple silicon). After
+changing the server, rebuild that binary and its license file with:
+
+```bash
+scripts/build-plugin.sh
+```
+
+It builds in `.build/plugin`, so a server running from `.build/release` is left alone. Check the
+folder with `claude plugin validate ./claude-plugin`. The server keeps its instance lock in
+`~/Library/Application Support/logic-mcp`, so a plugin install and a checkout never both own the
+LogicMCP ports.
+
 ## Build and test
 
 ```bash
