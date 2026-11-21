@@ -1,0 +1,2125 @@
+# logic-mcp console 0.1.0 — ports are open:
+#   source "LogicMCP MCU" id=1806664337
+#   source "LogicMCP Keys" id=1702008354
+#   source "LogicMCP Notes" id=876914795
+#   destination "LogicMCP MCU" id=572403500
+#   destination "LogicMCP Sync" id=1460862762
+# Traffic log: ~/logic-pro-mcp/var/logs/console-20261121-060026.log
+# Type help for commands; quit (or Ctrl-D) closes the ports.
+# Reading commands from ~/logic-pro-mcp/var/console.fifo
+    0.272 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.272 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.272 IN  D0 00 meter(strip: 0, level: 0)
+    0.273 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.273 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.273 IN  D0 10 meter(strip: 1, level: 0)
+    0.274 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.274 IN  D0 20 meter(strip: 2, level: 0)
+    0.274 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.274 IN  D0 30 meter(strip: 3, level: 0)
+    0.275 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.275 IN  D0 40 meter(strip: 4, level: 0)
+    0.275 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.276 IN  D0 50 meter(strip: 5, level: 0)
+    0.276 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.276 IN  D0 60 meter(strip: 6, level: 0)
+    0.276 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.277 IN  D0 70 meter(strip: 7, level: 0)
+    0.277 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.277 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.278 IN  F0 00 00 66 14 0E 00 03 F7 command(id: 14, data: [0, 3])
+    0.278 IN  F0 00 00 66 14 0E 01 03 F7 command(id: 14, data: [1, 3])
+    0.278 IN  F0 00 00 66 14 0E 02 03 F7 command(id: 14, data: [2, 3])
+    0.278 IN  F0 00 00 66 14 0E 03 03 F7 command(id: 14, data: [3, 3])
+    0.279 IN  F0 00 00 66 14 0E 04 03 F7 command(id: 14, data: [4, 3])
+    0.279 IN  F0 00 00 66 14 0E 05 03 F7 command(id: 14, data: [5, 3])
+    0.279 IN  F0 00 00 66 14 0E 06 03 F7 command(id: 14, data: [6, 3])
+    0.280 IN  F0 00 00 66 14 0E 07 03 F7 command(id: 14, data: [7, 3])
+    0.280 IN  F0 00 00 66 14 0E 08 03 F7 command(id: 14, data: [8, 3])
+    0.280 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.281 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.281 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+    0.281 IN  B0 49 20 time digit[9]=' '
+    0.281 IN  B0 48 31 time digit[8]='1'
+    0.282 IN  B0 47 31 time digit[7]='1'
+    0.282 IN  B0 46 20 time digit[6]=' '
+    0.282 IN  B0 45 33 time digit[5]='3'
+    0.283 IN  B0 44 20 time digit[4]=' '
+    0.283 IN  B0 43 32 time digit[3]='2'
+    0.283 IN  B0 42 20 time digit[2]=' '
+    0.283 IN  B0 41 20 time digit[1]=' '
+    0.284 IN  B0 40 32 time digit[0]='2'
+    0.284 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.284 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.285 IN  90 00 00 led recArm[1]=off
+    0.285 IN  90 01 7F led recArm[2]=on
+    0.285 IN  90 02 00 led recArm[3]=off
+    0.285 IN  90 03 00 led recArm[4]=off
+    0.286 IN  90 04 00 led recArm[5]=off
+    0.286 IN  90 05 00 led recArm[6]=off
+    0.286 IN  90 06 00 led recArm[7]=off
+    0.287 IN  90 07 00 led recArm[8]=off
+    0.287 IN  90 08 00 led solo[1]=off
+    0.287 IN  90 09 00 led solo[2]=off
+    0.287 IN  90 0A 00 led solo[3]=off
+    0.288 IN  90 0B 00 led solo[4]=off
+    0.288 IN  90 0C 00 led solo[5]=off
+    0.288 IN  90 0D 00 led solo[6]=off
+    0.289 IN  90 0E 00 led solo[7]=off
+    0.289 IN  90 0F 00 led solo[8]=off
+    0.289 IN  90 10 00 led mute[1]=off
+    0.289 IN  90 11 00 led mute[2]=off
+    0.290 IN  90 12 00 led mute[3]=off
+    0.290 IN  90 13 00 led mute[4]=off
+    0.290 IN  90 14 00 led mute[5]=off
+    0.291 IN  90 15 00 led mute[6]=off
+    0.291 IN  90 16 00 led mute[7]=off
+    0.291 IN  90 17 00 led mute[8]=off
+    0.292 IN  90 18 00 led select[1]=off
+    0.292 IN  90 19 7F led select[2]=on
+    0.292 IN  90 1A 00 led select[3]=off
+    0.292 IN  90 1B 00 led select[4]=off
+    0.293 IN  90 1C 00 led select[5]=off
+    0.294 IN  90 1D 00 led select[6]=off
+    0.294 IN  90 1E 00 led select[7]=off
+    0.294 IN  90 1F 00 led select[8]=off
+    0.294 IN  90 20 00 led vPotPush[1]=off
+    0.295 IN  90 21 00 led vPotPush[2]=off
+    0.295 IN  90 22 00 led vPotPush[3]=off
+    0.295 IN  90 23 00 led vPotPush[4]=off
+    0.296 IN  90 24 00 led vPotPush[5]=off
+    0.296 IN  90 25 00 led vPotPush[6]=off
+    0.296 IN  90 26 00 led vPotPush[7]=off
+    0.296 IN  90 27 00 led vPotPush[8]=off
+    0.297 IN  90 28 00 led assignTrack=off
+    0.297 IN  90 29 00 led assignSend=off
+    0.297 IN  90 2A 7F led assignPan=on
+    0.298 IN  90 2B 00 led assignPlugin=off
+    0.298 IN  90 2C 00 led assignEQ=off
+    0.298 IN  90 2D 00 led assignInstrument=off
+    0.298 IN  90 32 00 led flip=off
+    0.299 IN  90 33 00 led globalView=off
+    0.299 IN  90 4A 7F led automationRead=on
+    0.299 IN  90 4B 00 led automationWrite=off
+    0.300 IN  90 4C 00 led automationTrim=off
+    0.300 IN  90 4D 00 led automationTouch=off
+    0.300 IN  90 4E 00 led automationLatch=off
+    0.300 IN  90 4F 00 led group=off
+    0.301 IN  90 50 7F led save=on
+    0.301 IN  90 51 7F led undo=on
+    0.301 IN  90 54 00 led marker=off
+    0.302 IN  90 55 00 led nudge=off
+    0.302 IN  90 56 00 led cycle=off
+    0.302 IN  90 57 00 led drop=off
+    0.303 IN  90 58 00 led replace=off
+    0.303 IN  90 59 7F led click=on
+    0.303 IN  90 5A 00 led soloGlobal=off
+    0.303 IN  90 5B 00 led rewind=off
+    0.303 IN  90 5C 00 led fastForward=off
+    0.304 IN  90 5D 7F led stop=on
+    0.305 IN  90 5E 00 led play=off
+    0.305 IN  90 5F 00 led record=off
+    0.306 IN  90 64 00 led zoom=off
+    0.306 IN  90 65 00 led scrub=off
+    0.307 IN  90 71 00 led smpteLED=off
+    0.307 IN  90 72 7F led beatsLED=on
+    0.308 IN  90 73 00 led rudeSoloLED=off
+    0.309 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.309 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.310 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.310 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.311 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.311 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.312 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.313 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.313 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.314 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.314 IN  E9 00 00 unknown(E9 00 00)
+    0.315 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.315 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.315 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.315 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.316 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.316 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.316 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.316 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.317 SYNC F0 00 00 66 10 00 F7
+    0.317 IN  F0 00 00 66 10 00 F7 probe for model 10: 00
+    0.317 IN  F0 00 00 66 11 00 F7 probe for model 11: 00
+    0.317 SYNC F0 00 00 66 11 00 F7
+    0.317 SYNC F0 00 00 66 17 00 F7
+    0.317 IN  F0 00 00 66 17 00 F7 probe for model 17: 00
+    0.317 SYNC F0 00 00 66 17 13 00 F7
+    0.317 IN  F0 00 00 66 17 13 00 F7 probe for model 17: 13 00
+    0.318 SYNC F0 00 00 66 14 00 F7
+    0.318 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.318 SYNC F0 00 00 66 14 13 00 F7
+    0.318 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.318 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.318 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.318 SYNC F0 00 00 66 15 00 F7
+    0.318 SYNC F0 00 00 66 15 13 00 F7
+    0.318 SYNC F0 00 00 66 14 00 F7
+    0.318 SYNC F0 00 00 66 14 13 00 F7
+    0.319 SYNC F0 00 00 66 15 00 F7
+    0.319 SYNC F0 00 00 66 15 13 00 F7
+    0.319 SYNC F0 00 00 66 14 00 F7
+    0.319 SYNC F0 00 00 66 14 13 00 F7
+    0.319 SYNC F0 00 00 66 15 00 F7
+    0.319 SYNC F0 00 00 66 15 13 00 F7
+    0.330 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.330 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.330 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.330 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.343 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.343 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.355 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.355 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.355 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.355 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.366 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.366 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.379 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.379 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.379 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.379 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.390 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.390 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.402 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.403 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.403 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.403 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+    0.403 IN  B0 49 20 time digit[9]=' '
+    0.403 IN  B0 48 31 time digit[8]='1'
+    0.403 IN  B0 47 31 time digit[7]='1'
+    0.403 IN  B0 46 20 time digit[6]=' '
+    0.403 IN  B0 45 33 time digit[5]='3'
+    0.403 IN  B0 44 20 time digit[4]=' '
+    0.403 IN  B0 43 32 time digit[3]='2'
+    0.403 IN  B0 42 20 time digit[2]=' '
+    0.403 IN  B0 41 20 time digit[1]=' '
+    0.403 IN  B0 40 32 time digit[0]='2'
+    0.403 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.403 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.403 IN  90 00 00 led recArm[1]=off
+    0.403 IN  90 01 7F led recArm[2]=on
+    0.403 IN  90 02 00 led recArm[3]=off
+    0.403 IN  90 03 00 led recArm[4]=off
+    0.403 IN  90 04 00 led recArm[5]=off
+    0.403 IN  90 05 00 led recArm[6]=off
+    0.403 IN  90 06 00 led recArm[7]=off
+    0.403 IN  90 07 00 led recArm[8]=off
+    0.403 IN  90 08 00 led solo[1]=off
+    0.403 IN  90 09 00 led solo[2]=off
+    0.403 IN  90 0A 00 led solo[3]=off
+    0.404 IN  90 0B 00 led solo[4]=off
+    0.404 IN  90 0C 00 led solo[5]=off
+    0.404 IN  90 0D 00 led solo[6]=off
+    0.404 IN  90 0E 00 led solo[7]=off
+    0.404 IN  90 0F 00 led solo[8]=off
+    0.404 IN  90 10 00 led mute[1]=off
+    0.404 IN  90 11 00 led mute[2]=off
+    0.404 IN  90 12 00 led mute[3]=off
+    0.404 IN  90 13 00 led mute[4]=off
+    0.404 IN  90 14 00 led mute[5]=off
+    0.404 IN  90 15 00 led mute[6]=off
+    0.404 IN  90 16 00 led mute[7]=off
+    0.404 IN  90 17 00 led mute[8]=off
+    0.404 IN  90 18 00 led select[1]=off
+    0.404 IN  90 19 7F led select[2]=on
+    0.404 IN  90 1A 00 led select[3]=off
+    0.404 IN  90 1B 00 led select[4]=off
+    0.404 IN  90 1C 00 led select[5]=off
+    0.405 IN  90 1D 00 led select[6]=off
+    0.405 IN  90 1E 00 led select[7]=off
+    0.405 IN  90 1F 00 led select[8]=off
+    0.405 IN  90 20 00 led vPotPush[1]=off
+    0.405 IN  90 21 00 led vPotPush[2]=off
+    0.405 IN  90 22 00 led vPotPush[3]=off
+    0.405 IN  90 23 00 led vPotPush[4]=off
+    0.405 IN  90 24 00 led vPotPush[5]=off
+    0.405 IN  90 25 00 led vPotPush[6]=off
+    0.405 IN  90 26 00 led vPotPush[7]=off
+    0.405 IN  90 27 00 led vPotPush[8]=off
+    0.405 IN  90 28 00 led assignTrack=off
+    0.405 IN  90 29 00 led assignSend=off
+    0.405 IN  90 2A 7F led assignPan=on
+    0.405 IN  90 2B 00 led assignPlugin=off
+    0.405 IN  90 2C 00 led assignEQ=off
+    0.405 IN  90 2D 00 led assignInstrument=off
+    0.405 IN  90 32 00 led flip=off
+    0.405 IN  90 33 00 led globalView=off
+    0.405 IN  90 4A 7F led automationRead=on
+    0.405 IN  90 4B 00 led automationWrite=off
+    0.405 IN  90 4C 00 led automationTrim=off
+    0.405 IN  90 4D 00 led automationTouch=off
+    0.405 IN  90 4E 00 led automationLatch=off
+    0.405 IN  90 4F 00 led group=off
+    0.405 IN  90 50 7F led save=on
+    0.405 IN  90 51 7F led undo=on
+    0.405 IN  90 54 00 led marker=off
+    0.405 IN  90 55 00 led nudge=off
+    0.405 IN  90 56 00 led cycle=off
+    0.405 IN  90 57 00 led drop=off
+    0.405 IN  90 58 00 led replace=off
+    0.405 IN  90 59 7F led click=on
+    0.405 IN  90 5A 00 led soloGlobal=off
+    0.405 IN  90 5B 00 led rewind=off
+    0.406 IN  90 5C 00 led fastForward=off
+    0.406 IN  90 5D 7F led stop=on
+    0.406 IN  90 5E 00 led play=off
+    0.406 IN  90 5F 00 led record=off
+    0.406 IN  90 64 00 led zoom=off
+    0.406 IN  90 65 00 led scrub=off
+    0.406 IN  90 71 00 led smpteLED=off
+    0.406 IN  90 72 7F led beatsLED=on
+    0.406 IN  90 73 00 led rudeSoloLED=off
+    0.406 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.406 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.406 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.406 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.406 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.406 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.406 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.406 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.406 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.406 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.406 IN  E9 00 00 unknown(E9 00 00)
+    0.406 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.406 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.406 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.406 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.406 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.406 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.406 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.407 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.407 IN  D0 00 meter(strip: 0, level: 0)
+    0.407 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.407 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.407 IN  D0 10 meter(strip: 1, level: 0)
+    0.407 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.407 IN  D0 20 meter(strip: 2, level: 0)
+    0.407 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.407 IN  D0 30 meter(strip: 3, level: 0)
+    0.407 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.407 IN  D0 40 meter(strip: 4, level: 0)
+    0.407 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.407 IN  D0 50 meter(strip: 5, level: 0)
+    0.407 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.407 IN  D0 60 meter(strip: 6, level: 0)
+    0.407 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.407 IN  D0 70 meter(strip: 7, level: 0)
+    0.407 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.407 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.407 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.407 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.447 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.447 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.447 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.448 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.448 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.448 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.448 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.458 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.458 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.458 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.458 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.458 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.458 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.458 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.458 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.458 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.458 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.458 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.458 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.458 IN  B0 49 20 time digit[9]=' '
+    0.458 IN  B0 48 31 time digit[8]='1'
+    0.458 IN  B0 47 31 time digit[7]='1'
+    0.458 IN  B0 46 20 time digit[6]=' '
+    0.458 IN  B0 45 33 time digit[5]='3'
+    0.458 IN  B0 44 20 time digit[4]=' '
+    0.458 IN  B0 43 32 time digit[3]='2'
+    0.458 IN  B0 42 20 time digit[2]=' '
+    0.458 IN  B0 41 20 time digit[1]=' '
+    0.458 IN  B0 40 32 time digit[0]='2'
+    0.458 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.458 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.458 IN  90 00 00 led recArm[1]=off
+    0.458 IN  90 01 7F led recArm[2]=on
+    0.458 IN  90 02 00 led recArm[3]=off
+    0.458 IN  90 03 00 led recArm[4]=off
+    0.458 IN  90 04 00 led recArm[5]=off
+    0.458 IN  90 05 00 led recArm[6]=off
+    0.458 IN  90 06 00 led recArm[7]=off
+    0.458 IN  90 07 00 led recArm[8]=off
+    0.458 IN  90 08 00 led solo[1]=off
+    0.458 IN  90 09 00 led solo[2]=off
+    0.458 IN  90 0A 00 led solo[3]=off
+    0.459 IN  90 0B 00 led solo[4]=off
+    0.459 IN  90 0C 00 led solo[5]=off
+    0.459 IN  90 0D 00 led solo[6]=off
+    0.459 IN  90 0E 00 led solo[7]=off
+    0.459 IN  90 0F 00 led solo[8]=off
+    0.460 IN  90 10 00 led mute[1]=off
+    0.461 IN  90 11 00 led mute[2]=off
+    0.461 IN  90 12 00 led mute[3]=off
+    0.462 IN  90 13 00 led mute[4]=off
+    0.462 IN  90 14 00 led mute[5]=off
+    0.463 IN  90 15 00 led mute[6]=off
+    0.463 IN  90 16 00 led mute[7]=off
+    0.464 IN  90 17 00 led mute[8]=off
+    0.465 IN  90 18 00 led select[1]=off
+    0.465 IN  90 19 7F led select[2]=on
+    0.466 IN  90 1A 00 led select[3]=off
+    0.466 IN  90 1B 00 led select[4]=off
+    0.467 IN  90 1C 00 led select[5]=off
+    0.467 IN  90 1D 00 led select[6]=off
+    0.468 IN  90 1E 00 led select[7]=off
+    0.469 IN  90 1F 00 led select[8]=off
+    0.469 IN  90 20 00 led vPotPush[1]=off
+    0.470 IN  90 21 00 led vPotPush[2]=off
+    0.470 IN  90 22 00 led vPotPush[3]=off
+    0.471 IN  90 23 00 led vPotPush[4]=off
+    0.471 IN  90 24 00 led vPotPush[5]=off
+    0.472 IN  90 25 00 led vPotPush[6]=off
+    0.473 IN  90 26 00 led vPotPush[7]=off
+    0.473 IN  90 27 00 led vPotPush[8]=off
+    0.474 IN  90 28 00 led assignTrack=off
+    0.474 IN  90 29 00 led assignSend=off
+    0.474 IN  90 2A 7F led assignPan=on
+    0.475 IN  90 2B 00 led assignPlugin=off
+    0.475 IN  90 2C 00 led assignEQ=off
+    0.475 IN  90 2D 00 led assignInstrument=off
+    0.476 IN  90 32 00 led flip=off
+    0.476 IN  90 33 00 led globalView=off
+    0.476 IN  90 4A 7F led automationRead=on
+    0.476 IN  90 4B 00 led automationWrite=off
+    0.477 IN  90 4C 00 led automationTrim=off
+    0.477 IN  90 4D 00 led automationTouch=off
+    0.477 IN  90 4E 00 led automationLatch=off
+    0.478 IN  90 4F 00 led group=off
+    0.478 IN  90 50 7F led save=on
+    0.478 IN  90 51 7F led undo=on
+    0.478 IN  90 54 00 led marker=off
+    0.479 IN  90 55 00 led nudge=off
+    0.479 IN  90 56 00 led cycle=off
+    0.479 IN  90 57 00 led drop=off
+    0.480 IN  90 58 00 led replace=off
+    0.480 IN  90 59 7F led click=on
+    0.480 IN  90 5A 00 led soloGlobal=off
+    0.480 IN  90 5B 00 led rewind=off
+    0.481 IN  90 5C 00 led fastForward=off
+    0.481 IN  90 5D 7F led stop=on
+    0.481 IN  90 5E 00 led play=off
+    0.482 IN  90 5F 00 led record=off
+    0.482 IN  90 64 00 led zoom=off
+    0.482 IN  90 65 00 led scrub=off
+    0.482 IN  90 71 00 led smpteLED=off
+    0.483 IN  90 72 7F led beatsLED=on
+    0.483 IN  90 73 00 led rudeSoloLED=off
+    0.483 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.484 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.484 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.484 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.484 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.485 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.485 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.485 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.486 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.486 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.486 IN  E9 00 00 unknown(E9 00 00)
+    0.486 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.487 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.487 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.487 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.488 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.488 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.488 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.489 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.489 IN  D0 00 meter(strip: 0, level: 0)
+    0.489 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.489 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.490 IN  D0 10 meter(strip: 1, level: 0)
+    0.490 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.490 IN  D0 20 meter(strip: 2, level: 0)
+    0.491 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.491 IN  D0 30 meter(strip: 3, level: 0)
+    0.491 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.491 IN  D0 40 meter(strip: 4, level: 0)
+    0.492 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.492 IN  D0 50 meter(strip: 5, level: 0)
+    0.492 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.493 IN  D0 60 meter(strip: 6, level: 0)
+    0.493 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.493 IN  D0 70 meter(strip: 7, level: 0)
+    0.493 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.494 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.494 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.494 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.508 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.509 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.509 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.509 IN  B0 49 20 time digit[9]=' '
+    0.510 IN  B0 48 31 time digit[8]='1'
+    0.510 IN  B0 47 31 time digit[7]='1'
+    0.510 IN  B0 46 20 time digit[6]=' '
+    0.510 IN  B0 45 33 time digit[5]='3'
+    0.511 IN  B0 44 20 time digit[4]=' '
+    0.511 IN  B0 43 32 time digit[3]='2'
+    0.511 IN  B0 42 20 time digit[2]=' '
+    0.512 IN  B0 41 20 time digit[1]=' '
+    0.512 IN  B0 40 32 time digit[0]='2'
+    0.512 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.512 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.513 IN  90 00 00 led recArm[1]=off
+    0.513 IN  90 01 7F led recArm[2]=on
+    0.513 IN  90 02 00 led recArm[3]=off
+    0.514 IN  90 03 00 led recArm[4]=off
+    0.514 IN  90 04 00 led recArm[5]=off
+    0.514 IN  90 05 00 led recArm[6]=off
+    0.514 IN  90 06 00 led recArm[7]=off
+    0.515 IN  90 07 00 led recArm[8]=off
+    0.515 IN  90 08 00 led solo[1]=off
+    0.515 IN  90 09 00 led solo[2]=off
+    0.516 IN  90 0A 00 led solo[3]=off
+    0.516 IN  90 0B 00 led solo[4]=off
+    0.516 IN  90 0C 00 led solo[5]=off
+    0.517 IN  90 0D 00 led solo[6]=off
+    0.517 IN  90 0E 00 led solo[7]=off
+    0.517 IN  90 0F 00 led solo[8]=off
+    0.517 IN  90 10 00 led mute[1]=off
+    0.518 IN  90 11 00 led mute[2]=off
+    0.518 IN  90 12 00 led mute[3]=off
+    0.518 IN  90 13 00 led mute[4]=off
+    0.519 IN  90 14 00 led mute[5]=off
+    0.519 IN  90 15 00 led mute[6]=off
+    0.519 IN  90 16 00 led mute[7]=off
+    0.519 IN  90 17 00 led mute[8]=off
+    0.520 IN  90 18 00 led select[1]=off
+    0.520 IN  90 19 7F led select[2]=on
+    0.520 IN  90 1A 00 led select[3]=off
+    0.521 IN  90 1B 00 led select[4]=off
+    0.521 IN  90 1C 00 led select[5]=off
+    0.521 IN  90 1D 00 led select[6]=off
+    0.521 IN  90 1E 00 led select[7]=off
+    0.522 IN  90 1F 00 led select[8]=off
+    0.522 IN  90 20 00 led vPotPush[1]=off
+    0.522 IN  90 21 00 led vPotPush[2]=off
+    0.523 IN  90 22 00 led vPotPush[3]=off
+    0.523 IN  90 23 00 led vPotPush[4]=off
+    0.523 IN  90 24 00 led vPotPush[5]=off
+    0.523 IN  90 25 00 led vPotPush[6]=off
+    0.524 IN  90 26 00 led vPotPush[7]=off
+    0.524 IN  90 27 00 led vPotPush[8]=off
+    0.524 IN  90 28 00 led assignTrack=off
+    0.525 IN  90 29 00 led assignSend=off
+    0.525 IN  90 2A 7F led assignPan=on
+    0.525 IN  90 2B 00 led assignPlugin=off
+    0.526 IN  90 2C 00 led assignEQ=off
+    0.526 IN  90 2D 00 led assignInstrument=off
+    0.526 IN  90 32 00 led flip=off
+    0.526 IN  90 33 00 led globalView=off
+    0.527 IN  90 4A 7F led automationRead=on
+    0.527 IN  90 4B 00 led automationWrite=off
+    0.527 IN  90 4C 00 led automationTrim=off
+    0.528 IN  90 4D 00 led automationTouch=off
+    0.528 IN  90 4E 00 led automationLatch=off
+    0.528 IN  90 4F 00 led group=off
+    0.528 IN  90 50 7F led save=on
+    0.529 IN  90 51 7F led undo=on
+    0.529 IN  90 54 00 led marker=off
+    0.529 IN  90 55 00 led nudge=off
+    0.530 IN  90 56 00 led cycle=off
+    0.530 IN  90 57 00 led drop=off
+    0.530 IN  90 58 00 led replace=off
+    0.530 IN  90 59 7F led click=on
+    0.531 IN  90 5A 00 led soloGlobal=off
+    0.531 IN  90 5B 00 led rewind=off
+    0.531 IN  90 5C 00 led fastForward=off
+    0.532 IN  90 5D 7F led stop=on
+    0.532 IN  90 5E 00 led play=off
+    0.532 IN  90 5F 00 led record=off
+    0.532 IN  90 64 00 led zoom=off
+    0.533 IN  90 65 00 led scrub=off
+    0.533 IN  90 71 00 led smpteLED=off
+    0.533 IN  90 72 7F led beatsLED=on
+    0.534 IN  90 73 00 led rudeSoloLED=off
+    0.534 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.534 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.534 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.535 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.535 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.535 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.536 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.536 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.536 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.537 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.537 IN  E9 00 00 unknown(E9 00 00)
+    0.537 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.537 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.538 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.538 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.538 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.539 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.539 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.539 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.539 IN  D0 00 meter(strip: 0, level: 0)
+    0.540 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.540 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.540 IN  D0 10 meter(strip: 1, level: 0)
+    0.541 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.541 IN  D0 20 meter(strip: 2, level: 0)
+    0.541 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.541 IN  D0 30 meter(strip: 3, level: 0)
+    0.542 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.542 IN  D0 40 meter(strip: 4, level: 0)
+    0.542 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.543 IN  D0 50 meter(strip: 5, level: 0)
+    0.543 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.543 IN  D0 60 meter(strip: 6, level: 0)
+    0.543 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.544 IN  D0 70 meter(strip: 7, level: 0)
+    0.544 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.544 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.545 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.545 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    1.142 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+# > tracks
+> tracks
+    2.155 OUT 90 2A 7F
+    2.176 IN  F0 00 00 66 14 12 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 41 6E 67 6C 65 20 20 44 69 76 65 72 73 20 4C 46 45 20 20 20 20 53 70 72 65 61 64 F7 lcd @0 "                                                        Angle  Divers LFE    Spread"
+    2.176 IN  F0 00 00 66 14 12 5B 43 53 74 72 69 70 20 41 6E 67 2F 44 76 20 58 2F 59 F7 lcd @91 "CStrip Ang/Dv X/Y"
+    2.176 IN  B0 4A 1F assignmentDigit(position: 0, code: 31)
+    2.177 IN  F0 00 00 66 14 72 07 07 07 07 07 07 07 07 F7 command(id: 114, data: [7, 7, 7, 7, 7, 7, 7, 7])
+    2.177 IN  B0 30 00 vPotRing(strip: 0, value: 0)
+    2.189 OUT 90 2A 00
+    2.209 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 F7 lcd @0 "Inst 1 Inst 2 1      2      3      4      5      6      0      0      0      0      0      0      0      0  "
+    2.210 IN  B0 4A 0E assignmentDigit(position: 0, code: 14)
+    2.210 IN  F0 00 00 66 14 72 04 02 04 04 04 04 04 04 F7 command(id: 114, data: [4, 2, 4, 4, 4, 4, 4, 4])
+    2.210 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    2.211 IN  B0 31 56 vPotRing(strip: 1, value: 86)
+    2.211 IN  B0 32 56 vPotRing(strip: 2, value: 86)
+    2.211 IN  B0 33 56 vPotRing(strip: 3, value: 86)
+    2.212 IN  B0 34 56 vPotRing(strip: 4, value: 86)
+    2.212 IN  B0 35 56 vPotRing(strip: 5, value: 86)
+    2.212 IN  B0 36 56 vPotRing(strip: 6, value: 86)
+    2.212 IN  B0 37 56 vPotRing(strip: 7, value: 86)
+    2.213 IN  F0 00 00 66 14 12 1C 50 61 6E 2F 53 75 72 72 6F 75 6E 64 20 70 61 72 61 6D 65 74 65 72 3A 20 50 61 6E F7 lcd @28 "Pan/Surround parameter: Pan"
+    4.242 IN  F0 00 00 66 14 12 1C 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 F7 lcd @28 "3      4      5      6     "
+    4.933 OUT 90 47 7F
+    4.933 OUT 90 2E 7F
+    4.943 IN  90 18 7F led select[1]=on
+    4.944 IN  90 1A 7F led select[3]=on
+    4.944 IN  90 1B 7F led select[4]=on
+    4.944 IN  90 1C 7F led select[5]=on
+    4.944 IN  90 1D 7F led select[6]=on
+    4.945 IN  90 1E 7F led select[7]=on
+    4.945 IN  90 1F 7F led select[8]=on
+    4.945 IN  90 33 01 led globalView=flashing
+    4.946 IN  90 4A 00 led automationRead=off
+    4.971 OUT 90 2E 00
+    5.031 OUT 90 47 00
+    5.043 IN  90 18 00 led select[1]=off
+    5.043 IN  90 1A 00 led select[3]=off
+    5.043 IN  90 1B 00 led select[4]=off
+    5.044 IN  90 1C 00 led select[5]=off
+    5.044 IN  90 1D 00 led select[6]=off
+    5.044 IN  90 1E 00 led select[7]=off
+    5.044 IN  90 1F 00 led select[8]=off
+    5.045 IN  90 33 00 led globalView=off
+    5.045 IN  90 4A 7F led automationRead=on
+    5.108 OUT 90 31 7F
+    5.111 IN  F0 00 00 66 14 12 05 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 F7 lcd @5 "2 1      2      3      4      5      6      7"
+    5.111 IN  90 00 7F led recArm[1]=on
+    5.111 IN  90 01 00 led recArm[2]=off
+    5.112 IN  90 18 7F led select[1]=on
+    5.112 IN  90 19 00 led select[2]=off
+    5.112 IN  F0 00 00 66 14 72 02 04 04 04 04 04 04 04 F7 command(id: 114, data: [2, 4, 4, 4, 4, 4, 4, 4])
+    5.139 OUT 90 31 00
+    5.200 OUT 90 31 7F
+    5.209 IN  F0 00 00 66 14 12 00 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 F7 lcd @0 "1      2      3      4      5      6      7      8"
+    5.210 IN  90 00 00 led recArm[1]=off
+    5.210 IN  90 18 00 led select[1]=off
+    5.210 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 04 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 4])
+    5.232 OUT 90 31 00
+    5.292 OUT 90 31 7F
+    5.309 IN  F0 00 00 66 14 12 00 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 20 20 20 20 20 20 39 F7 lcd @0 "2      3      4      5      6      7      8      9"
+    5.323 OUT 90 31 00
+    5.386 OUT 90 31 7F
+    5.409 IN  F0 00 00 66 14 12 00 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 20 20 20 20 20 20 39 20 20 20 20 20 20 20 F7 lcd @0 "3      4      5      6      7      8      9       "
+    5.410 IN  F0 00 00 66 14 12 69 20 F7 lcd @105 " "
+    5.410 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 07 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 7])
+    5.410 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+    5.411 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    5.421 OUT 90 31 00
+    5.485 OUT 90 31 7F
+    5.520 OUT 90 31 00
+    6.025 OUT 90 30 7F
+    6.043 IN  F0 00 00 66 14 12 00 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 20 20 20 20 20 20 39 F7 lcd @0 "2      3      4      5      6      7      8      9"
+    6.043 IN  F0 00 00 66 14 12 69 30 F7 lcd @105 "0"
+    6.043 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 04 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 4])
+    6.044 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    6.044 IN  B0 37 56 vPotRing(strip: 7, value: 86)
+    6.060 OUT 90 30 00
+    6.121 OUT 90 31 7F
+    6.142 IN  F0 00 00 66 14 12 00 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 20 20 20 20 20 20 39 20 20 20 20 20 20 20 F7 lcd @0 "3      4      5      6      7      8      9       "
+    6.142 IN  F0 00 00 66 14 12 69 20 F7 lcd @105 " "
+    6.143 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 07 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 7])
+    6.143 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+    6.143 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    6.155 OUT 90 31 00
+    6.343 OUT 90 47 7F
+    6.343 OUT 90 2E 7F
+    6.375 IN  90 18 7F led select[1]=on
+    6.375 IN  90 19 7F led select[2]=on
+    6.376 IN  90 1A 7F led select[3]=on
+    6.376 IN  90 1B 7F led select[4]=on
+    6.376 IN  90 1C 7F led select[5]=on
+    6.377 IN  90 1D 7F led select[6]=on
+    6.377 IN  90 1E 7F led select[7]=on
+    6.377 IN  90 33 01 led globalView=flashing
+    6.377 IN  90 4A 00 led automationRead=off
+    6.378 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 F7 lcd @0 "Inst 1 Inst 2 1      2      3      4      5      6"
+    6.378 IN  F0 00 00 66 14 12 69 30 F7 lcd @105 "0"
+    6.379 IN  90 01 7F led recArm[2]=on
+    6.379 IN  90 1F 7F led select[8]=on
+    6.379 IN  F0 00 00 66 14 72 04 02 04 04 04 04 04 04 F7 command(id: 114, data: [4, 2, 4, 4, 4, 4, 4, 4])
+    6.379 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    6.380 IN  B0 37 56 vPotRing(strip: 7, value: 86)
+    6.382 OUT 90 2E 00
+    6.443 OUT 90 47 00
+    6.475 IN  90 18 00 led select[1]=off
+    6.475 IN  90 1A 00 led select[3]=off
+    6.476 IN  90 1B 00 led select[4]=off
+    6.476 IN  90 1C 00 led select[5]=off
+    6.476 IN  90 1D 00 led select[6]=off
+    6.477 IN  90 1E 00 led select[7]=off
+    6.477 IN  90 1F 00 led select[8]=off
+    6.477 IN  90 33 00 led globalView=off
+    6.477 IN  90 4A 7F led automationRead=on
+# {
+#   "after" : {
+#     "as_of" : "2026-11-21T06:00:32.801+09:00",
+#     "cached" : false,
+#     "track_count" : 11,
+#     "tracks" : [
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "Inst 1",
+#         "mute" : false,
+#         "name" : "Inst 1",
+#         "name_source" : "accessibility",
+#         "number" : 1,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "Inst 2",
+#         "mute" : false,
+#         "name" : "Inst 2",
+#         "name_source" : "accessibility",
+#         "number" : 2,
+#         "pan" : 0,
+#         "rec_arm" : true,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "1",
+#         "mute" : false,
+#         "name" : "オーディオ 1",
+#         "name_source" : "accessibility",
+#         "number" : 3,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "2",
+#         "mute" : false,
+#         "name" : "オーディオ 2",
+#         "name_source" : "accessibility",
+#         "number" : 4,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "3",
+#         "mute" : false,
+#         "name" : "オーディオ 3",
+#         "name_source" : "accessibility",
+#         "number" : 5,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "4",
+#         "mute" : false,
+#         "name" : "オーディオ 4",
+#         "name_source" : "accessibility",
+#         "number" : 6,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "5",
+#         "mute" : false,
+#         "name" : "オーディオ 5",
+#         "name_source" : "accessibility",
+#         "number" : 7,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "6",
+#         "mute" : false,
+#         "name" : "オーディオ 6",
+#         "name_source" : "accessibility",
+#         "number" : 8,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "7",
+#         "mute" : false,
+#         "name" : "オーディオ 7",
+#         "name_source" : "accessibility",
+#         "number" : 9,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "8",
+#         "mute" : false,
+#         "name" : "オーディオ 8",
+#         "name_source" : "accessibility",
+#         "number" : 10,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       },
+#       {
+#         "fader_position" : 12443,
+#         "lcd_name" : "9",
+#         "mute" : false,
+#         "name" : "オーディオ 9",
+#         "name_source" : "accessibility",
+#         "number" : 11,
+#         "pan" : 0,
+#         "rec_arm" : false,
+#         "solo" : false,
+#         "volume_db" : 0
+#       }
+#     ]
+#   },
+#   "as_of" : "2026-11-21T06:00:32.997+09:00",
+#   "evidence" : [
+#     "paged through 12 strip positions",
+#     "end of the list: Channel Right showed no change, then Channel Left moved back one strip and Channel Right forward again"
+#   ],
+#   "status" : "verified",
+#   "summary" : "11 tracks (read from the control surface).",
+#   "warnings" : [
+#     "Switched the control surface from the \"PN.\" view to the multi-track Pan view (\"PN\").",
+#     "volume_db is converted from the fader position Logic reports using the Logic 13 calibration table; between calibration points it is interpolated (approximate)."
+#   ]
+# }
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time= 11 3 2  2
+# > locate 9
+> locate 9
+   17.943 OUT B0 3C 41
+   17.976 SYNC F2 20 01
+   18.042 IN  B0 45 31 time digit[5]='1'
+   18.042 IN  B0 43 31 time digit[3]='1'
+   18.042 IN  B0 40 31 time digit[0]='1'
+   18.079 OUT B0 3C 41
+   18.109 SYNC F2 10 01
+   18.175 IN  B0 47 30 time digit[7]='0'
+   18.209 OUT B0 3C 41
+   18.242 SYNC F2 00 01
+   18.309 IN  B0 48 20 time digit[8]=' '
+   18.309 IN  B0 47 39 time digit[7]='9'
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  9 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 9,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 19,
+#       "position_sixteenths" : 128,
+#       "seconds_since_last_message" : 0.102921209
+#     }
+#   },
+#   "as_of" : "2026-11-21T06:00:44.803+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : " 11 3 2  2",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 11,
+#       "beat" : 3,
+#       "division" : 2,
+#       "tick" : 2
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 16,
+#       "seconds_since_last_message" : 17.624110917
+#     }
+#   },
+#   "evidence" : [
+#     "time display 9.1.1.1 after 3 jog ticks in 401 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Playhead is at bar 9.",
+#   "warnings" : [
+# 
+#   ]
+# }
+# > record
+> record
+   18.644 OUT 90 5F 7F
+   18.645 SYNC F2 70 00
+   18.645 IN  90 5F 7F led record=on
+   18.679 OUT 90 5F 00
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  9 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 9,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : true,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 20,
+#       "position_sixteenths" : 112,
+#       "seconds_since_last_message" : 0.034784875
+#     }
+#   },
+#   "as_of" : "2026-11-21T06:00:45.138+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  9 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 9,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 19,
+#       "position_sixteenths" : 128,
+#       "seconds_since_last_message" : 0.402379792
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.record=on after 0 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Record confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+   18.691 SYNC F2 70 00
+   18.697 SYNC FB
+   18.697 SYNC F8
+   18.710 SYNC F8
+   18.715 IN  B0 47 38 time digit[7]='8'
+   18.715 IN  B0 41 32 time digit[1]='2'
+   18.715 IN  B0 40 39 time digit[0]='9'
+   18.731 SYNC F8
+   18.741 IN  B0 41 38 time digit[1]='8'
+   18.742 IN  B0 40 30 time digit[0]='0'
+   18.742 IN  90 5D 00 led stop=off
+   18.742 IN  90 5E 7F led play=on
+   18.752 SYNC F8
+   18.773 SYNC F8
+   18.775 IN  B0 42 31 time digit[2]='1'
+   18.775 IN  B0 41 34 time digit[1]='4'
+   18.775 IN  B0 40 39 time digit[0]='9'
+   18.793 SYNC F8
+   18.808 IN  B0 42 32 time digit[2]='2'
+   18.808 IN  B0 41 31 time digit[1]='1'
+   18.809 IN  B0 40 37 time digit[0]='7'
+   18.814 SYNC F8
+   18.835 SYNC F8
+   18.842 IN  B0 43 32 time digit[3]='2'
+   18.842 IN  B0 42 20 time digit[2]=' '
+   18.842 IN  B0 41 34 time digit[1]='4'
+   18.842 IN  B0 40 30 time digit[0]='0'
+   18.856 SYNC F8
+   18.875 IN  B0 41 39 time digit[1]='9'
+   18.875 IN  B0 40 37 time digit[0]='7'
+   18.877 SYNC F8
+   18.898 SYNC F8
+   18.909 IN  B0 42 31 time digit[2]='1'
+   18.909 IN  B0 41 37 time digit[1]='7'
+   18.909 IN  B0 40 32 time digit[0]='2'
+   18.918 SYNC F8
+   18.939 SYNC F8
+   18.942 IN  B0 42 32 time digit[2]='2'
+   18.942 IN  B0 41 32 time digit[1]='2'
+   18.942 IN  B0 40 39 time digit[0]='9'
+   18.960 SYNC F8
+   18.975 IN  B0 43 33 time digit[3]='3'
+   18.975 IN  B0 42 20 time digit[2]=' '
+   18.976 IN  B0 41 35 time digit[1]='5'
+   18.976 IN  B0 40 37 time digit[0]='7'
+   18.981 SYNC F8
+   19.002 SYNC F8
+   19.008 IN  B0 42 31 time digit[2]='1'
+   19.009 IN  B0 41 32 time digit[1]='2'
+   19.009 IN  B0 40 30 time digit[0]='0'
+   19.023 SYNC F8
+   19.042 IN  B0 41 37 time digit[1]='7'
+   19.042 IN  B0 40 37 time digit[0]='7'
+   19.043 SYNC F8
+   19.064 SYNC F8
+   19.075 IN  B0 43 34 time digit[3]='4'
+   19.075 IN  B0 42 20 time digit[2]=' '
+   19.076 IN  B0 41 20 time digit[1]=' '
+   19.076 IN  B0 40 32 time digit[0]='2'
+   19.085 SYNC F8
+   19.106 SYNC F8
+   19.109 IN  B0 41 36 time digit[1]='6'
+   19.109 IN  B0 40 39 time digit[0]='9'
+   19.127 SYNC F8
+   19.142 IN  B0 42 31 time digit[2]='1'
+   19.142 IN  B0 41 33 time digit[1]='3'
+   19.142 IN  B0 40 37 time digit[0]='7'
+   19.148 SYNC F8
+   19.168 SYNC F8
+   19.175 IN  B0 42 32 time digit[2]='2'
+   19.175 IN  B0 41 30 time digit[1]='0'
+   19.176 IN  B0 40 30 time digit[0]='0'
+   19.189 SYNC F8
+   19.209 IN  B0 45 32 time digit[5]='2'
+   19.209 IN  B0 43 31 time digit[3]='1'
+   19.209 IN  B0 42 20 time digit[2]=' '
+   19.209 IN  B0 41 31 time digit[1]='1'
+   19.210 IN  B0 40 37 time digit[0]='7'
+   19.210 SYNC F8
+   19.231 SYNC F8
+   19.242 IN  B0 41 39 time digit[1]='9'
+   19.243 IN  B0 40 32 time digit[0]='2'
+   19.252 SYNC F8
+   19.273 SYNC F8
+   19.276 IN  B0 42 31 time digit[2]='1'
+   19.276 IN  B0 41 34 time digit[1]='4'
+   19.276 IN  B0 40 39 time digit[0]='9'
+   19.293 SYNC F8
+   19.309 IN  B0 42 32 time digit[2]='2'
+   19.309 IN  B0 41 31 time digit[1]='1'
+   19.309 IN  B0 40 37 time digit[0]='7'
+   19.314 SYNC F8
+   19.335 SYNC F8
+   19.342 IN  B0 43 32 time digit[3]='2'
+   19.342 IN  B0 42 20 time digit[2]=' '
+   19.342 IN  B0 41 34 time digit[1]='4'
+   19.342 IN  B0 40 30 time digit[0]='0'
+   19.356 SYNC F8
+   19.375 IN  B0 41 39 time digit[1]='9'
+   19.375 IN  B0 40 37 time digit[0]='7'
+   19.377 SYNC F8
+   19.398 SYNC F8
+   19.408 IN  B0 42 31 time digit[2]='1'
+   19.409 IN  B0 41 36 time digit[1]='6'
+   19.409 IN  B0 40 30 time digit[0]='0'
+   19.418 SYNC F8
+   19.439 SYNC F8
+   19.441 IN  B0 42 32 time digit[2]='2'
+   19.442 IN  B0 41 32 time digit[1]='2'
+   19.442 IN  B0 40 39 time digit[0]='9'
+   19.460 SYNC F8
+   19.475 IN  B0 43 33 time digit[3]='3'
+   19.476 IN  B0 42 20 time digit[2]=' '
+   19.476 IN  B0 41 35 time digit[1]='5'
+   19.476 IN  B0 40 37 time digit[0]='7'
+   19.481 SYNC F8
+   19.502 SYNC F8
+   19.509 IN  B0 42 31 time digit[2]='1'
+   19.509 IN  B0 41 32 time digit[1]='2'
+   19.509 IN  B0 40 30 time digit[0]='0'
+   19.523 SYNC F8
+   19.542 IN  B0 41 37 time digit[1]='7'
+   19.543 IN  B0 40 37 time digit[0]='7'
+   19.543 SYNC F8
+   19.564 SYNC F8
+   19.576 IN  B0 43 34 time digit[3]='4'
+   19.576 IN  B0 42 20 time digit[2]=' '
+   19.576 IN  B0 41 31 time digit[1]='1'
+   19.576 IN  B0 40 32 time digit[0]='2'
+   19.585 SYNC F8
+   19.606 SYNC F8
+   19.608 IN  B0 41 36 time digit[1]='6'
+   19.608 IN  B0 40 39 time digit[0]='9'
+   19.627 SYNC F8
+   19.642 IN  B0 42 31 time digit[2]='1'
+   19.642 IN  B0 41 33 time digit[1]='3'
+   19.642 IN  B0 40 37 time digit[0]='7'
+   19.648 SYNC F8
+   19.668 SYNC F8
+   19.675 IN  B0 42 32 time digit[2]='2'
+   19.676 IN  B0 41 30 time digit[1]='0'
+   19.676 IN  B0 40 30 time digit[0]='0'
+   19.689 SYNC F8
+   19.709 IN  B0 45 33 time digit[5]='3'
+   19.709 IN  B0 43 31 time digit[3]='1'
+   19.710 IN  B0 42 20 time digit[2]=' '
+   19.710 IN  B0 41 31 time digit[1]='1'
+   19.710 SYNC F8
+   19.710 IN  B0 40 37 time digit[0]='7'
+   19.731 SYNC F8
+   19.741 IN  B0 41 38 time digit[1]='8'
+   19.742 IN  B0 40 30 time digit[0]='0'
+   19.752 SYNC F8
+   19.773 SYNC F8
+   19.775 IN  B0 42 31 time digit[2]='1'
+   19.775 IN  B0 41 34 time digit[1]='4'
+   19.776 IN  B0 40 39 time digit[0]='9'
+   19.794 SYNC F8
+   19.808 IN  B0 42 32 time digit[2]='2'
+   19.808 IN  B0 41 31 time digit[1]='1'
+   19.808 IN  B0 40 37 time digit[0]='7'
+   19.814 SYNC F8
+   19.835 SYNC F8
+   19.842 IN  B0 43 32 time digit[3]='2'
+   19.842 IN  B0 42 20 time digit[2]=' '
+   19.842 IN  B0 41 34 time digit[1]='4'
+   19.843 IN  B0 40 30 time digit[0]='0'
+   19.856 SYNC F8
+   19.875 IN  B0 41 39 time digit[1]='9'
+   19.875 IN  B0 40 37 time digit[0]='7'
+   19.877 SYNC F8
+   19.898 SYNC F8
+   19.908 IN  B0 42 31 time digit[2]='1'
+   19.908 IN  B0 41 36 time digit[1]='6'
+   19.909 IN  B0 40 30 time digit[0]='0'
+   19.919 SYNC F8
+   19.939 SYNC F8
+   19.942 IN  B0 42 32 time digit[2]='2'
+   19.942 IN  B0 41 32 time digit[1]='2'
+   19.942 IN  B0 40 39 time digit[0]='9'
+   19.960 SYNC F8
+   19.975 IN  B0 43 33 time digit[3]='3'
+   19.975 IN  B0 42 20 time digit[2]=' '
+   19.976 IN  B0 41 35 time digit[1]='5'
+   19.976 IN  B0 40 37 time digit[0]='7'
+   19.981 SYNC F8
+   20.002 SYNC F8
+   20.009 IN  B0 42 31 time digit[2]='1'
+   20.009 IN  B0 41 32 time digit[1]='2'
+   20.009 IN  B0 40 30 time digit[0]='0'
+   20.023 SYNC F8
+   20.042 IN  B0 41 37 time digit[1]='7'
+   20.042 IN  B0 40 37 time digit[0]='7'
+   20.043 SYNC F8
+   20.064 SYNC F8
+   20.075 IN  B0 43 34 time digit[3]='4'
+   20.075 IN  B0 42 20 time digit[2]=' '
+   20.076 IN  B0 41 20 time digit[1]=' '
+   20.076 IN  B0 40 32 time digit[0]='2'
+   20.085 SYNC F8
+   20.106 SYNC F8
+   20.108 IN  B0 41 36 time digit[1]='6'
+   20.108 IN  B0 40 39 time digit[0]='9'
+   20.127 SYNC F8
+   20.142 IN  B0 42 31 time digit[2]='1'
+   20.142 IN  B0 41 33 time digit[1]='3'
+   20.142 IN  B0 40 37 time digit[0]='7'
+   20.148 SYNC F8
+   20.168 SYNC F8
+   20.175 IN  B0 42 32 time digit[2]='2'
+   20.175 IN  B0 41 30 time digit[1]='0'
+   20.176 IN  B0 40 30 time digit[0]='0'
+   20.189 SYNC F8
+   20.208 IN  B0 45 34 time digit[5]='4'
+   20.209 IN  B0 43 31 time digit[3]='1'
+   20.209 IN  B0 42 20 time digit[2]=' '
+   20.209 IN  B0 41 31 time digit[1]='1'
+   20.209 IN  B0 40 37 time digit[0]='7'
+   20.210 SYNC F8
+   20.231 SYNC F8
+   20.241 IN  B0 41 38 time digit[1]='8'
+   20.242 IN  B0 40 30 time digit[0]='0'
+   20.252 SYNC F8
+   20.273 SYNC F8
+   20.275 IN  B0 42 31 time digit[2]='1'
+   20.275 IN  B0 41 34 time digit[1]='4'
+   20.275 IN  B0 40 39 time digit[0]='9'
+   20.293 SYNC F8
+   20.308 IN  B0 42 32 time digit[2]='2'
+   20.309 IN  B0 41 31 time digit[1]='1'
+   20.309 IN  B0 40 37 time digit[0]='7'
+   20.314 SYNC F8
+   20.335 SYNC F8
+   20.342 IN  B0 43 32 time digit[3]='2'
+   20.343 IN  B0 42 20 time digit[2]=' '
+   20.343 IN  B0 41 34 time digit[1]='4'
+   20.343 IN  B0 40 30 time digit[0]='0'
+   20.356 SYNC F8
+   20.375 IN  B0 41 39 time digit[1]='9'
+   20.375 IN  B0 40 37 time digit[0]='7'
+   20.377 SYNC F8
+   20.398 SYNC F8
+   20.408 IN  B0 42 31 time digit[2]='1'
+   20.408 IN  B0 41 36 time digit[1]='6'
+   20.409 IN  B0 40 30 time digit[0]='0'
+   20.418 SYNC F8
+   20.439 SYNC F8
+   20.442 IN  B0 42 32 time digit[2]='2'
+   20.442 IN  B0 41 32 time digit[1]='2'
+   20.442 IN  B0 40 39 time digit[0]='9'
+   20.460 SYNC F8
+   20.475 IN  B0 43 33 time digit[3]='3'
+   20.475 IN  B0 42 20 time digit[2]=' '
+   20.476 IN  B0 41 35 time digit[1]='5'
+   20.476 IN  B0 40 37 time digit[0]='7'
+   20.481 SYNC F8
+   20.502 SYNC F8
+   20.509 IN  B0 42 31 time digit[2]='1'
+   20.509 IN  B0 41 32 time digit[1]='2'
+   20.510 IN  B0 40 30 time digit[0]='0'
+   20.523 SYNC F8
+   20.542 IN  B0 41 38 time digit[1]='8'
+   20.542 IN  B0 40 39 time digit[0]='9'
+   20.543 SYNC F8
+   20.564 SYNC F8
+   20.575 IN  B0 43 34 time digit[3]='4'
+   20.575 IN  B0 42 20 time digit[2]=' '
+   20.576 IN  B0 41 20 time digit[1]=' '
+   20.576 IN  B0 40 32 time digit[0]='2'
+   20.585 SYNC F8
+   20.606 SYNC F8
+   20.609 IN  B0 41 36 time digit[1]='6'
+   20.609 IN  B0 40 39 time digit[0]='9'
+   20.626 SYNC F8
+   20.642 IN  B0 42 31 time digit[2]='1'
+   20.642 IN  B0 41 33 time digit[1]='3'
+   20.642 IN  B0 40 37 time digit[0]='7'
+   20.647 SYNC F8
+   20.667 SYNC F8
+   20.675 IN  B0 42 32 time digit[2]='2'
+   20.675 IN  B0 41 30 time digit[1]='0'
+   20.675 IN  B0 40 30 time digit[0]='0'
+   20.688 SYNC F8
+   20.708 IN  B0 47 39 time digit[7]='9'
+   20.709 IN  B0 45 31 time digit[5]='1'
+   20.709 IN  B0 43 31 time digit[3]='1'
+   20.709 SYNC F8
+   20.709 IN  B0 42 20 time digit[2]=' '
+   20.709 IN  B0 41 32 time digit[1]='2'
+   20.710 IN  B0 40 39 time digit[0]='9'
+   20.730 SYNC F8
+   20.742 IN  B0 41 39 time digit[1]='9'
+   20.742 IN  B0 40 32 time digit[0]='2'
+   20.751 SYNC F8
+   20.772 SYNC F8
+   20.775 IN  B0 42 31 time digit[2]='1'
+   20.775 IN  B0 41 34 time digit[1]='4'
+   20.775 IN  B0 40 39 time digit[0]='9'
+   20.792 SYNC F8
+   20.808 IN  B0 42 32 time digit[2]='2'
+   20.809 IN  B0 41 31 time digit[1]='1'
+   20.809 IN  B0 40 37 time digit[0]='7'
+   20.813 SYNC F8
+   20.834 SYNC F8
+   20.841 IN  B0 43 32 time digit[3]='2'
+   20.842 IN  B0 42 20 time digit[2]=' '
+   20.842 IN  B0 41 34 time digit[1]='4'
+   20.842 IN  B0 40 30 time digit[0]='0'
+   20.855 SYNC F8
+   20.875 IN  B0 42 31 time digit[2]='1'
+   20.875 IN  B0 41 30 time digit[1]='0'
+   20.876 IN  B0 40 39 time digit[0]='9'
+   20.876 SYNC F8
+   20.897 SYNC F8
+   20.909 IN  B0 41 37 time digit[1]='7'
+   20.909 IN  B0 40 32 time digit[0]='2'
+   20.917 SYNC F8
+   20.938 SYNC F8
+   20.942 IN  B0 42 32 time digit[2]='2'
+   20.943 IN  B0 41 32 time digit[1]='2'
+   20.943 IN  B0 40 39 time digit[0]='9'
+   20.959 SYNC F8
+   20.976 IN  B0 43 33 time digit[3]='3'
+   20.976 IN  B0 42 20 time digit[2]=' '
+   20.976 IN  B0 41 35 time digit[1]='5'
+   20.976 IN  B0 40 37 time digit[0]='7'
+   20.980 SYNC F8
+   21.001 SYNC F8
+   21.009 IN  B0 42 31 time digit[2]='1'
+   21.009 IN  B0 41 32 time digit[1]='2'
+   21.009 IN  B0 40 30 time digit[0]='0'
+   21.022 SYNC F8
+   21.042 IN  B0 41 38 time digit[1]='8'
+   21.042 SYNC F8
+   21.043 IN  B0 40 39 time digit[0]='9'
+   21.063 SYNC F8
+   21.075 IN  B0 43 34 time digit[3]='4'
+   21.075 IN  B0 42 20 time digit[2]=' '
+   21.076 IN  B0 41 31 time digit[1]='1'
+   21.076 IN  B0 40 32 time digit[0]='2'
+   21.084 SYNC F8
+   21.105 SYNC F8
+   21.109 IN  B0 41 36 time digit[1]='6'
+   21.109 IN  B0 40 39 time digit[0]='9'
+   21.126 SYNC F8
+   21.142 IN  B0 42 31 time digit[2]='1'
+   21.142 IN  B0 41 33 time digit[1]='3'
+   21.142 IN  B0 40 37 time digit[0]='7'
+   21.147 SYNC F8
+   21.167 SYNC F8
+   21.175 IN  B0 42 32 time digit[2]='2'
+   21.175 IN  B0 41 30 time digit[1]='0'
+   21.175 IN  B0 40 30 time digit[0]='0'
+   21.188 SYNC F8
+# > notes 36,42,38,42,36,42,38,42 250 100
+> notes 36,42,38,42,36,42,38,42 250 100
+    0.000 NOTE on 36
+   21.208 IN  B0 45 32 time digit[5]='2'
+   21.209 IN  B0 43 31 time digit[3]='1'
+   21.209 IN  B0 42 20 time digit[2]=' '
+   21.209 SYNC F8
+   21.209 IN  B0 41 32 time digit[1]='2'
+   21.210 IN  B0 40 39 time digit[0]='9'
+   21.230 SYNC F8
+   21.251 SYNC F8
+   21.263 IN  B0 42 31 time digit[2]='1'
+   21.263 IN  B0 41 33 time digit[1]='3'
+   21.264 IN  B0 40 32 time digit[0]='2'
+   21.272 SYNC F8
+   21.292 SYNC F8
+   21.308 IN  D0 1F meter(strip: 1, level: 15)
+   21.308 IN  B0 42 32 time digit[2]='2'
+   21.309 IN  B0 41 32 time digit[1]='2'
+   21.309 IN  B0 40 30 time digit[0]='0'
+   21.313 SYNC F8
+   21.334 SYNC F8
+   21.342 IN  B0 43 32 time digit[3]='2'
+   21.342 IN  B0 42 20 time digit[2]=' '
+   21.342 IN  B0 41 34 time digit[1]='4'
+   21.355 SYNC F8
+   21.376 IN  B0 42 31 time digit[2]='1'
+   21.376 SYNC F8
+   21.376 IN  B0 41 30 time digit[1]='0'
+   21.376 IN  B0 40 39 time digit[0]='9'
+   21.397 SYNC F8
+   21.409 IN  D0 19 meter(strip: 1, level: 9)
+   21.409 IN  B0 41 37 time digit[1]='7'
+   21.410 IN  B0 40 34 time digit[0]='4'
+   21.417 SYNC F8
+   21.438 SYNC F8
+   21.442 IN  D0 18 meter(strip: 1, level: 8)
+   21.442 IN  D0 18 meter(strip: 1, level: 8)
+    0.250 NOTE on 42
+   21.442 IN  B0 42 32 time digit[2]='2'
+   21.442 IN  B0 41 33 time digit[1]='3'
+   21.443 IN  B0 40 37 time digit[0]='7'
+   21.459 SYNC F8
+   21.473 IN  D0 18 meter(strip: 1, level: 8)
+   21.475 IN  D0 18 meter(strip: 1, level: 8)
+   21.475 IN  B0 43 33 time digit[3]='3'
+   21.476 IN  B0 42 20 time digit[2]=' '
+   21.476 IN  B0 41 36 time digit[1]='6'
+   21.476 IN  B0 40 31 time digit[0]='1'
+   21.480 SYNC F8
+   21.501 SYNC F8
+   21.506 IN  D0 18 meter(strip: 1, level: 8)
+   21.508 IN  D0 18 meter(strip: 1, level: 8)
+   21.508 IN  B0 42 31 time digit[2]='1'
+   21.508 IN  B0 41 32 time digit[1]='2'
+   21.509 IN  B0 40 34 time digit[0]='4'
+   21.522 SYNC F8
+   21.541 IN  D0 18 meter(strip: 1, level: 8)
+   21.541 IN  D0 18 meter(strip: 1, level: 8)
+   21.542 IN  B0 41 38 time digit[1]='8'
+   21.542 IN  B0 40 39 time digit[0]='9'
+   21.542 SYNC F8
+   21.563 SYNC F8
+   21.574 IN  D0 18 meter(strip: 1, level: 8)
+   21.575 IN  D0 18 meter(strip: 1, level: 8)
+   21.575 IN  B0 43 34 time digit[3]='4'
+   21.575 IN  B0 42 20 time digit[2]=' '
+   21.576 IN  B0 41 31 time digit[1]='1'
+   21.576 IN  B0 40 33 time digit[0]='3'
+   21.584 SYNC F8
+   21.605 SYNC F8
+   21.608 IN  D0 17 meter(strip: 1, level: 7)
+   21.608 IN  D0 17 meter(strip: 1, level: 7)
+   21.609 IN  B0 41 37 time digit[1]='7'
+   21.609 IN  B0 40 37 time digit[0]='7'
+   21.626 SYNC F8
+   21.640 IN  D0 17 meter(strip: 1, level: 7)
+   21.642 IN  D0 17 meter(strip: 1, level: 7)
+   21.642 IN  B0 42 31 time digit[2]='1'
+   21.642 IN  B0 41 34 time digit[1]='4'
+   21.643 IN  B0 40 31 time digit[0]='1'
+   21.647 SYNC F8
+   21.667 SYNC F8
+   21.673 IN  D0 17 meter(strip: 1, level: 7)
+   21.675 IN  D0 17 meter(strip: 1, level: 7)
+   21.676 IN  B0 42 32 time digit[2]='2'
+   21.676 IN  B0 41 30 time digit[1]='0'
+   21.676 IN  B0 40 35 time digit[0]='5'
+   21.688 SYNC F8
+    0.505 NOTE on 38
+   21.708 IN  D0 17 meter(strip: 1, level: 7)
+   21.709 IN  D0 17 meter(strip: 1, level: 7)
+   21.709 SYNC F8
+   21.709 IN  B0 45 33 time digit[5]='3'
+   21.709 IN  B0 43 31 time digit[3]='1'
+   21.710 IN  B0 42 20 time digit[2]=' '
+   21.710 IN  B0 41 33 time digit[1]='3'
+   21.710 IN  B0 40 30 time digit[0]='0'
+   21.730 SYNC F8
+   21.741 IN  D0 17 meter(strip: 1, level: 7)
+   21.742 IN  D0 17 meter(strip: 1, level: 7)
+   21.742 IN  B0 41 39 time digit[1]='9'
+   21.742 IN  B0 40 33 time digit[0]='3'
+   21.751 SYNC F8
+   21.772 SYNC F8
+   21.775 IN  D0 1A meter(strip: 1, level: 10)
+   21.775 IN  D0 1A meter(strip: 1, level: 10)
+   21.775 IN  B0 42 31 time digit[2]='1'
+   21.775 IN  B0 41 35 time digit[1]='5'
+   21.776 IN  B0 40 37 time digit[0]='7'
+   21.792 SYNC F8
+   21.806 IN  D0 1A meter(strip: 1, level: 10)
+   21.808 IN  D0 1F meter(strip: 1, level: 15)
+   21.808 IN  B0 42 32 time digit[2]='2'
+   21.808 IN  B0 41 32 time digit[1]='2'
+   21.809 IN  B0 40 30 time digit[0]='0'
+   21.813 SYNC F8
+   21.834 SYNC F8
+   21.839 IN  D0 1F meter(strip: 1, level: 15)
+   21.842 IN  B0 43 32 time digit[3]='2'
+   21.842 IN  B0 42 20 time digit[2]=' '
+   21.843 IN  B0 41 34 time digit[1]='4'
+   21.855 SYNC F8
+   21.875 IN  D0 1A meter(strip: 1, level: 10)
+   21.875 IN  D0 1A meter(strip: 1, level: 10)
+   21.875 IN  B0 42 31 time digit[2]='1'
+   21.875 IN  B0 41 30 time digit[1]='0'
+   21.875 IN  B0 40 39 time digit[0]='9'
+   21.876 SYNC F8
+   21.897 SYNC F8
+   21.908 IN  D0 1A meter(strip: 1, level: 10)
+   21.909 IN  D0 19 meter(strip: 1, level: 9)
+   21.909 IN  B0 41 37 time digit[1]='7'
+   21.909 IN  B0 40 34 time digit[0]='4'
+   21.917 SYNC F8
+   21.938 SYNC F8
+   21.942 IN  D0 19 meter(strip: 1, level: 9)
+   21.942 IN  D0 19 meter(strip: 1, level: 9)
+   21.943 IN  B0 42 32 time digit[2]='2'
+   21.943 IN  B0 41 33 time digit[1]='3'
+   21.943 IN  B0 40 38 time digit[0]='8'
+    0.754 NOTE on 42
+   21.959 SYNC F8
+   21.973 IN  D0 19 meter(strip: 1, level: 9)
+   21.975 IN  D0 19 meter(strip: 1, level: 9)
+   21.975 IN  B0 43 33 time digit[3]='3'
+   21.976 IN  B0 42 20 time digit[2]=' '
+   21.976 IN  B0 41 36 time digit[1]='6'
+   21.976 IN  B0 40 31 time digit[0]='1'
+   21.980 SYNC F8
+   22.001 SYNC F8
+   22.006 IN  D0 19 meter(strip: 1, level: 9)
+   22.008 IN  D0 19 meter(strip: 1, level: 9)
+   22.009 IN  B0 42 31 time digit[2]='1'
+   22.009 IN  B0 41 32 time digit[1]='2'
+   22.009 IN  B0 40 35 time digit[0]='5'
+   22.022 SYNC F8
+   22.042 IN  D0 19 meter(strip: 1, level: 9)
+   22.042 IN  D0 19 meter(strip: 1, level: 9)
+   22.042 IN  B0 41 38 time digit[1]='8'
+   22.042 IN  B0 40 39 time digit[0]='9'
+   22.042 SYNC F8
+   22.063 SYNC F8
+   22.074 IN  D0 19 meter(strip: 1, level: 9)
+   22.075 IN  D0 18 meter(strip: 1, level: 8)
+   22.075 IN  B0 43 34 time digit[3]='4'
+   22.076 IN  B0 42 20 time digit[2]=' '
+   22.076 IN  B0 41 31 time digit[1]='1'
+   22.076 IN  B0 40 33 time digit[0]='3'
+   22.084 SYNC F8
+   22.105 SYNC F8
+   22.108 IN  D0 18 meter(strip: 1, level: 8)
+   22.109 IN  D0 18 meter(strip: 1, level: 8)
+   22.109 IN  B0 41 37 time digit[1]='7'
+   22.109 IN  B0 40 37 time digit[0]='7'
+   22.126 SYNC F8
+   22.140 IN  D0 18 meter(strip: 1, level: 8)
+   22.142 IN  D0 18 meter(strip: 1, level: 8)
+   22.142 IN  B0 42 31 time digit[2]='1'
+   22.142 IN  B0 41 34 time digit[1]='4'
+   22.142 IN  B0 40 31 time digit[0]='1'
+   22.147 SYNC F8
+   22.167 SYNC F8
+   22.173 IN  D0 18 meter(strip: 1, level: 8)
+   22.175 IN  D0 18 meter(strip: 1, level: 8)
+   22.175 IN  B0 42 32 time digit[2]='2'
+   22.175 IN  B0 41 30 time digit[1]='0'
+   22.176 IN  B0 40 35 time digit[0]='5'
+   22.188 SYNC F8
+    1.002 NOTE on 36
+   22.208 IN  D0 18 meter(strip: 1, level: 8)
+   22.208 IN  D0 18 meter(strip: 1, level: 8)
+   22.208 IN  B0 45 34 time digit[5]='4'
+   22.209 IN  B0 43 31 time digit[3]='1'
+   22.209 IN  B0 42 20 time digit[2]=' '
+   22.209 SYNC F8
+   22.209 IN  B0 41 32 time digit[1]='2'
+   22.209 IN  B0 40 39 time digit[0]='9'
+   22.230 SYNC F8
+   22.241 IN  D0 18 meter(strip: 1, level: 8)
+   22.242 IN  D0 17 meter(strip: 1, level: 7)
+   22.242 IN  B0 41 39 time digit[1]='9'
+   22.242 IN  B0 40 33 time digit[0]='3'
+   22.251 SYNC F8
+   22.272 SYNC F8
+   22.275 IN  D0 17 meter(strip: 1, level: 7)
+   22.275 IN  D0 17 meter(strip: 1, level: 7)
+   22.275 IN  B0 42 31 time digit[2]='1'
+   22.276 IN  B0 41 35 time digit[1]='5'
+   22.276 IN  B0 40 37 time digit[0]='7'
+   22.292 SYNC F8
+   22.306 IN  D0 17 meter(strip: 1, level: 7)
+   22.308 IN  D0 19 meter(strip: 1, level: 9)
+   22.309 IN  B0 42 32 time digit[2]='2'
+   22.309 IN  B0 41 32 time digit[1]='2'
+   22.309 IN  B0 40 31 time digit[0]='1'
+   22.313 SYNC F8
+   22.334 SYNC F8
+   22.339 IN  D0 19 meter(strip: 1, level: 9)
+   22.342 IN  B0 43 32 time digit[3]='2'
+   22.342 IN  B0 42 20 time digit[2]=' '
+   22.342 IN  B0 41 34 time digit[1]='4'
+   22.343 IN  B0 40 30 time digit[0]='0'
+   22.355 SYNC F8
+   22.375 IN  D0 19 meter(strip: 1, level: 9)
+   22.375 IN  B0 42 31 time digit[2]='1'
+   22.375 IN  B0 41 30 time digit[1]='0'
+   22.376 IN  B0 40 39 time digit[0]='9'
+   22.376 SYNC F8
+   22.397 SYNC F8
+   22.408 IN  D0 19 meter(strip: 1, level: 9)
+   22.409 IN  D0 19 meter(strip: 1, level: 9)
+   22.409 IN  B0 41 37 time digit[1]='7'
+   22.410 IN  B0 40 34 time digit[0]='4'
+   22.417 SYNC F8
+   22.438 SYNC F8
+   22.442 IN  D0 18 meter(strip: 1, level: 8)
+   22.442 IN  D0 18 meter(strip: 1, level: 8)
+   22.442 IN  B0 42 32 time digit[2]='2'
+   22.442 IN  B0 41 33 time digit[1]='3'
+    1.251 NOTE on 42
+   22.442 IN  B0 40 37 time digit[0]='7'
+   22.459 SYNC F8
+   22.473 IN  D0 18 meter(strip: 1, level: 8)
+   22.476 IN  D0 18 meter(strip: 1, level: 8)
+   22.476 IN  B0 43 33 time digit[3]='3'
+   22.476 IN  B0 42 20 time digit[2]=' '
+   22.476 IN  B0 41 36 time digit[1]='6'
+   22.477 IN  B0 40 32 time digit[0]='2'
+   22.480 SYNC F8
+   22.501 SYNC F8
+   22.506 IN  D0 18 meter(strip: 1, level: 8)
+   22.508 IN  D0 18 meter(strip: 1, level: 8)
+   22.508 IN  B0 42 31 time digit[2]='1'
+   22.509 IN  B0 41 32 time digit[1]='2'
+   22.509 IN  B0 40 34 time digit[0]='4'
+   22.522 SYNC F8
+   22.541 IN  D0 18 meter(strip: 1, level: 8)
+   22.541 IN  D0 18 meter(strip: 1, level: 8)
+   22.542 IN  B0 41 38 time digit[1]='8'
+   22.542 IN  B0 40 39 time digit[0]='9'
+   22.542 SYNC F8
+   22.563 SYNC F8
+   22.574 IN  D0 18 meter(strip: 1, level: 8)
+   22.575 IN  D0 18 meter(strip: 1, level: 8)
+   22.575 IN  B0 43 34 time digit[3]='4'
+   22.576 IN  B0 42 20 time digit[2]=' '
+   22.576 IN  B0 41 31 time digit[1]='1'
+   22.576 IN  B0 40 33 time digit[0]='3'
+   22.584 SYNC F8
+   22.605 SYNC F8
+   22.608 IN  D0 18 meter(strip: 1, level: 8)
+   22.609 IN  D0 18 meter(strip: 1, level: 8)
+   22.609 IN  B0 41 37 time digit[1]='7'
+   22.609 IN  B0 40 37 time digit[0]='7'
+   22.626 SYNC F8
+   22.640 IN  D0 18 meter(strip: 1, level: 8)
+   22.642 IN  D0 17 meter(strip: 1, level: 7)
+   22.643 IN  B0 42 31 time digit[2]='1'
+   22.643 IN  B0 41 34 time digit[1]='4'
+   22.643 IN  B0 40 32 time digit[0]='2'
+   22.647 SYNC F8
+   22.667 SYNC F8
+   22.673 IN  D0 17 meter(strip: 1, level: 7)
+   22.675 IN  D0 17 meter(strip: 1, level: 7)
+   22.675 IN  B0 42 32 time digit[2]='2'
+   22.675 IN  B0 41 30 time digit[1]='0'
+   22.676 IN  B0 40 35 time digit[0]='5'
+   22.688 SYNC F8
+    1.502 NOTE on 38
+   22.708 IN  D0 17 meter(strip: 1, level: 7)
+   22.709 IN  D0 17 meter(strip: 1, level: 7)
+   22.709 IN  B0 48 31 time digit[8]='1'
+   22.709 SYNC F8
+   22.709 IN  B0 47 30 time digit[7]='0'
+   22.709 IN  B0 45 31 time digit[5]='1'
+   22.710 IN  B0 43 31 time digit[3]='1'
+   22.710 IN  B0 42 20 time digit[2]=' '
+   22.710 IN  B0 41 32 time digit[1]='2'
+   22.711 IN  B0 40 39 time digit[0]='9'
+   22.730 SYNC F8
+   22.741 IN  D0 17 meter(strip: 1, level: 7)
+   22.742 IN  D0 17 meter(strip: 1, level: 7)
+   22.742 IN  B0 41 39 time digit[1]='9'
+   22.742 IN  B0 40 33 time digit[0]='3'
+   22.751 SYNC F8
+   22.772 SYNC F8
+   22.775 IN  D0 1A meter(strip: 1, level: 10)
+   22.775 IN  D0 1A meter(strip: 1, level: 10)
+   22.775 IN  B0 42 31 time digit[2]='1'
+   22.775 IN  B0 41 35 time digit[1]='5'
+   22.776 IN  B0 40 36 time digit[0]='6'
+   22.792 SYNC F8
+   22.807 IN  D0 1A meter(strip: 1, level: 10)
+   22.809 IN  D0 1F meter(strip: 1, level: 15)
+   22.809 IN  B0 42 32 time digit[2]='2'
+   22.810 IN  B0 41 32 time digit[1]='2'
+   22.810 IN  B0 40 32 time digit[0]='2'
+   22.813 SYNC F8
+   22.834 SYNC F8
+   22.839 IN  D0 1F meter(strip: 1, level: 15)
+   22.841 IN  B0 43 32 time digit[3]='2'
+   22.842 IN  B0 42 20 time digit[2]=' '
+   22.842 IN  B0 41 34 time digit[1]='4'
+   22.842 IN  B0 40 30 time digit[0]='0'
+   22.855 SYNC F8
+   22.875 IN  D0 1F meter(strip: 1, level: 15)
+   22.875 IN  D0 1A meter(strip: 1, level: 10)
+   22.876 IN  B0 42 31 time digit[2]='1'
+   22.876 SYNC F8
+   22.876 IN  B0 41 30 time digit[1]='0'
+   22.876 IN  B0 40 39 time digit[0]='9'
+   22.897 SYNC F8
+   22.908 IN  D0 1A meter(strip: 1, level: 10)
+   22.909 IN  D0 19 meter(strip: 1, level: 9)
+   22.909 IN  B0 41 37 time digit[1]='7'
+   22.910 IN  B0 40 34 time digit[0]='4'
+   22.917 SYNC F8
+   22.938 SYNC F8
+   22.941 IN  D0 19 meter(strip: 1, level: 9)
+   22.941 IN  D0 19 meter(strip: 1, level: 9)
+   22.942 IN  B0 42 32 time digit[2]='2'
+   22.942 IN  B0 41 33 time digit[1]='3'
+   22.942 IN  B0 40 36 time digit[0]='6'
+    1.755 NOTE on 42
+   22.959 SYNC F8
+   22.973 IN  D0 19 meter(strip: 1, level: 9)
+   22.975 IN  D0 19 meter(strip: 1, level: 9)
+   22.975 IN  B0 43 33 time digit[3]='3'
+   22.976 IN  B0 42 20 time digit[2]=' '
+   22.976 IN  B0 41 36 time digit[1]='6'
+   22.976 IN  B0 40 31 time digit[0]='1'
+   22.980 SYNC F8
+   23.001 SYNC F8
+   23.006 IN  D0 19 meter(strip: 1, level: 9)
+   23.008 IN  D0 19 meter(strip: 1, level: 9)
+   23.009 IN  B0 42 31 time digit[2]='1'
+   23.009 IN  B0 41 32 time digit[1]='2'
+   23.009 IN  B0 40 35 time digit[0]='5'
+   23.022 SYNC F8
+   23.042 IN  D0 19 meter(strip: 1, level: 9)
+   23.042 IN  D0 19 meter(strip: 1, level: 9)
+   23.042 IN  B0 41 38 time digit[1]='8'
+   23.042 IN  B0 40 39 time digit[0]='9'
+   23.042 SYNC F8
+   23.063 SYNC F8
+   23.074 IN  D0 19 meter(strip: 1, level: 9)
+   23.075 IN  D0 18 meter(strip: 1, level: 8)
+   23.075 IN  B0 43 34 time digit[3]='4'
+   23.075 IN  B0 42 20 time digit[2]=' '
+   23.076 IN  B0 41 31 time digit[1]='1'
+   23.076 IN  B0 40 33 time digit[0]='3'
+   23.084 SYNC F8
+   23.105 SYNC F8
+   23.109 IN  D0 18 meter(strip: 1, level: 8)
+   23.109 IN  D0 18 meter(strip: 1, level: 8)
+   23.109 IN  B0 41 37 time digit[1]='7'
+   23.110 IN  B0 40 38 time digit[0]='8'
+   23.126 SYNC F8
+   23.140 IN  D0 18 meter(strip: 1, level: 8)
+   23.142 IN  D0 18 meter(strip: 1, level: 8)
+   23.143 IN  B0 42 31 time digit[2]='1'
+   23.143 IN  B0 41 34 time digit[1]='4'
+   23.143 IN  B0 40 32 time digit[0]='2'
+   23.147 SYNC F8
+   23.167 SYNC F8
+   23.173 IN  D0 18 meter(strip: 1, level: 8)
+   23.175 IN  D0 18 meter(strip: 1, level: 8)
+   23.175 IN  B0 42 32 time digit[2]='2'
+   23.176 IN  B0 41 30 time digit[1]='0'
+   23.176 IN  B0 40 35 time digit[0]='5'
+# played 8 note(s) on LogicMCP Notes, 250 ms apart
+   23.188 SYNC F8
+   23.208 IN  D0 18 meter(strip: 1, level: 8)
+   23.208 IN  D0 18 meter(strip: 1, level: 8)
+   23.209 IN  B0 45 32 time digit[5]='2'
+   23.209 IN  B0 43 31 time digit[3]='1'
+   23.209 SYNC F8
+   23.209 IN  B0 42 20 time digit[2]=' '
+   23.209 IN  B0 41 32 time digit[1]='2'
+   23.210 IN  B0 40 39 time digit[0]='9'
+   23.230 SYNC F8
+   23.241 IN  D0 18 meter(strip: 1, level: 8)
+   23.241 IN  D0 17 meter(strip: 1, level: 7)
+   23.242 IN  B0 41 39 time digit[1]='9'
+   23.242 IN  B0 40 32 time digit[0]='2'
+   23.251 SYNC F8
+   23.272 SYNC F8
+   23.275 IN  D0 17 meter(strip: 1, level: 7)
+   23.275 IN  D0 17 meter(strip: 1, level: 7)
+   23.275 IN  B0 42 31 time digit[2]='1'
+   23.276 IN  B0 41 35 time digit[1]='5'
+   23.276 IN  B0 40 37 time digit[0]='7'
+   23.292 SYNC F8
+   23.306 IN  D0 17 meter(strip: 1, level: 7)
+   23.309 IN  D0 17 meter(strip: 1, level: 7)
+   23.309 IN  B0 42 32 time digit[2]='2'
+   23.309 IN  B0 41 32 time digit[1]='2'
+   23.310 IN  B0 40 32 time digit[0]='2'
+   23.313 SYNC F8
+   23.334 SYNC F8
+   23.339 IN  D0 17 meter(strip: 1, level: 7)
+   23.342 IN  D0 17 meter(strip: 1, level: 7)
+   23.342 IN  B0 43 32 time digit[3]='2'
+   23.342 IN  B0 42 20 time digit[2]=' '
+   23.342 IN  B0 41 34 time digit[1]='4'
+   23.343 IN  B0 40 35 time digit[0]='5'
+   23.355 SYNC F8
+   23.375 IN  D0 17 meter(strip: 1, level: 7)
+   23.375 IN  D0 17 meter(strip: 1, level: 7)
+   23.375 IN  B0 42 31 time digit[2]='1'
+   23.375 IN  B0 41 30 time digit[1]='0'
+   23.376 IN  B0 40 39 time digit[0]='9'
+   23.376 SYNC F8
+   23.397 SYNC F8
+   23.408 IN  D0 17 meter(strip: 1, level: 7)
+   23.409 IN  D0 17 meter(strip: 1, level: 7)
+   23.409 IN  B0 41 37 time digit[1]='7'
+   23.410 IN  B0 40 34 time digit[0]='4'
+   23.417 SYNC F8
+   23.438 SYNC F8
+   23.442 IN  D0 17 meter(strip: 1, level: 7)
+   23.442 IN  D0 17 meter(strip: 1, level: 7)
+   23.442 IN  B0 42 32 time digit[2]='2'
+   23.442 IN  B0 41 33 time digit[1]='3'
+   23.443 IN  B0 40 37 time digit[0]='7'
+   23.459 SYNC F8
+   23.473 IN  D0 17 meter(strip: 1, level: 7)
+   23.475 IN  D0 17 meter(strip: 1, level: 7)
+   23.475 IN  B0 43 33 time digit[3]='3'
+   23.475 IN  B0 42 20 time digit[2]=' '
+   23.476 IN  B0 41 36 time digit[1]='6'
+   23.476 IN  B0 40 31 time digit[0]='1'
+   23.480 SYNC F8
+   23.501 SYNC F8
+   23.506 IN  D0 17 meter(strip: 1, level: 7)
+   23.509 IN  D0 17 meter(strip: 1, level: 7)
+   23.509 IN  B0 42 31 time digit[2]='1'
+   23.509 IN  B0 41 32 time digit[1]='2'
+   23.510 IN  B0 40 36 time digit[0]='6'
+   23.522 SYNC F8
+   23.542 IN  D0 17 meter(strip: 1, level: 7)
+   23.542 IN  D0 17 meter(strip: 1, level: 7)
+   23.542 SYNC F8
+   23.543 IN  B0 41 39 time digit[1]='9'
+   23.543 IN  B0 40 30 time digit[0]='0'
+   23.563 SYNC F8
+   23.574 IN  D0 17 meter(strip: 1, level: 7)
+   23.576 IN  D0 17 meter(strip: 1, level: 7)
+   23.576 IN  B0 43 34 time digit[3]='4'
+   23.576 IN  B0 42 20 time digit[2]=' '
+   23.576 IN  B0 41 31 time digit[1]='1'
+   23.577 IN  B0 40 34 time digit[0]='4'
+   23.584 SYNC F8
+   23.605 SYNC F8
+   23.608 IN  D0 16 meter(strip: 1, level: 6)
+   23.608 IN  D0 16 meter(strip: 1, level: 6)
+   23.608 IN  B0 41 37 time digit[1]='7'
+   23.609 IN  B0 40 36 time digit[0]='6'
+   23.626 SYNC F8
+   23.640 IN  D0 16 meter(strip: 1, level: 6)
+   23.642 IN  D0 16 meter(strip: 1, level: 6)
+   23.642 IN  B0 42 31 time digit[2]='1'
+   23.642 IN  B0 41 34 time digit[1]='4'
+   23.642 IN  B0 40 31 time digit[0]='1'
+   23.647 SYNC F8
+   23.667 SYNC F8
+   23.673 IN  D0 16 meter(strip: 1, level: 6)
+   23.675 IN  D0 16 meter(strip: 1, level: 6)
+   23.675 IN  B0 42 32 time digit[2]='2'
+   23.676 IN  B0 41 30 time digit[1]='0'
+   23.676 IN  B0 40 35 time digit[0]='5'
+   23.688 SYNC F8
+   23.708 IN  D0 16 meter(strip: 1, level: 6)
+   23.708 IN  D0 16 meter(strip: 1, level: 6)
+   23.708 IN  B0 45 33 time digit[5]='3'
+   23.709 IN  B0 43 31 time digit[3]='1'
+   23.709 SYNC F8
+   23.709 IN  B0 42 20 time digit[2]=' '
+   23.709 IN  B0 41 32 time digit[1]='2'
+   23.710 IN  B0 40 39 time digit[0]='9'
+   23.730 SYNC F8
+   23.741 IN  D0 16 meter(strip: 1, level: 6)
+   23.741 IN  D0 16 meter(strip: 1, level: 6)
+   23.742 IN  B0 41 39 time digit[1]='9'
+   23.742 IN  B0 40 32 time digit[0]='2'
+   23.751 SYNC F8
+   23.772 SYNC F8
+   23.775 IN  D0 16 meter(strip: 1, level: 6)
+   23.775 IN  D0 16 meter(strip: 1, level: 6)
+   23.775 IN  B0 42 31 time digit[2]='1'
+   23.776 IN  B0 41 35 time digit[1]='5'
+   23.776 IN  B0 40 37 time digit[0]='7'
+   23.792 SYNC F8
+   23.806 IN  D0 16 meter(strip: 1, level: 6)
+# > stop
+> stop
+   23.807 OUT 90 5D 7F
+   23.813 SYNC F8
+   23.813 SYNC FC
+   23.815 SYNC F2 18 01
+   23.816 IN  D0 16 meter(strip: 1, level: 6)
+   23.816 IN  90 51 00 led undo=off
+   23.817 IN  90 5D 7F led stop=on
+   23.817 IN  90 5E 00 led play=off
+   23.817 IN  90 5F 00 led record=off
+   23.839 OUT 90 5D 00
+   23.839 IN  D0 16 meter(strip: 1, level: 6)
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : " 10 3 1157",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 10,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 157
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 271,
+#       "position_sixteenths" : 152,
+#       "running" : false,
+#       "seconds_since_last_message" : 0.024445416
+#     }
+#   },
+#   "as_of" : "2026-11-21T06:00:50.297+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : " 10 3 1157",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 10,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 157
+#     },
+#     "recording" : true,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 268,
+#       "position_sixteenths" : 153,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.014446958,
+#       "tempo_bpm" : 120
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=off and mcu.led.record=off after 0 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Stop confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+   23.876 IN  D0 16 meter(strip: 1, level: 6)
+   23.911 IN  D0 16 meter(strip: 1, level: 6)
+   23.946 IN  D0 16 meter(strip: 1, level: 6)
+   23.981 IN  D0 16 meter(strip: 1, level: 6)
+   24.008 IN  D0 16 meter(strip: 1, level: 6)
+   24.008 IN  B0 42 32 time digit[2]='2'
+   24.009 IN  B0 41 31 time digit[1]='1'
+   24.009 IN  B0 40 38 time digit[0]='8'
+   24.009 IN  D0 16 meter(strip: 1, level: 6)
+   24.016 IN  D0 16 meter(strip: 1, level: 6)
+   24.051 IN  D0 16 meter(strip: 1, level: 6)
+   24.086 IN  D0 16 meter(strip: 1, level: 6)
+   24.108 IN  D0 16 meter(strip: 1, level: 6)
+   24.109 IN  90 51 7F led undo=on
+   24.121 IN  D0 16 meter(strip: 1, level: 6)
+   24.142 IN  D0 15 meter(strip: 1, level: 5)
+   24.156 IN  D0 15 meter(strip: 1, level: 5)
+   24.175 IN  D0 15 meter(strip: 1, level: 5)
+   24.191 IN  D0 15 meter(strip: 1, level: 5)
+   24.209 IN  D0 15 meter(strip: 1, level: 5)
+   24.226 IN  D0 15 meter(strip: 1, level: 5)
+   24.242 IN  D0 15 meter(strip: 1, level: 5)
+   24.261 IN  D0 15 meter(strip: 1, level: 5)
+   24.275 IN  D0 15 meter(strip: 1, level: 5)
+   24.296 IN  D0 15 meter(strip: 1, level: 5)
+   24.309 IN  D0 15 meter(strip: 1, level: 5)
+   24.331 IN  D0 15 meter(strip: 1, level: 5)
+   24.342 IN  D0 15 meter(strip: 1, level: 5)
+   24.367 IN  D0 15 meter(strip: 1, level: 5)
+   24.375 IN  D0 15 meter(strip: 1, level: 5)
+   24.402 IN  D0 15 meter(strip: 1, level: 5)
+   24.408 IN  D0 15 meter(strip: 1, level: 5)
+   24.437 IN  D0 15 meter(strip: 1, level: 5)
+   24.442 IN  D0 15 meter(strip: 1, level: 5)
+   24.472 IN  D0 15 meter(strip: 1, level: 5)
+   24.475 IN  D0 15 meter(strip: 1, level: 5)
+   24.507 IN  D0 15 meter(strip: 1, level: 5)
+   24.508 IN  D0 15 meter(strip: 1, level: 5)
+   24.541 IN  D0 15 meter(strip: 1, level: 5)
+   24.541 IN  D0 15 meter(strip: 1, level: 5)
+   24.575 IN  D0 15 meter(strip: 1, level: 5)
+   24.575 IN  D0 15 meter(strip: 1, level: 5)
+   24.605 IN  D0 15 meter(strip: 1, level: 5)
+   24.608 IN  D0 15 meter(strip: 1, level: 5)
+   24.640 IN  D0 15 meter(strip: 1, level: 5)
+   24.642 IN  D0 15 meter(strip: 1, level: 5)
+   24.675 IN  D0 15 meter(strip: 1, level: 5)
+   24.675 IN  D0 15 meter(strip: 1, level: 5)
+   24.708 IN  D0 15 meter(strip: 1, level: 5)
+   24.708 IN  D0 15 meter(strip: 1, level: 5)
+   24.739 IN  D0 15 meter(strip: 1, level: 5)
+   24.742 IN  D0 15 meter(strip: 1, level: 5)
+   24.774 IN  D0 15 meter(strip: 1, level: 5)
+   24.775 IN  D0 15 meter(strip: 1, level: 5)
+   24.808 IN  D0 15 meter(strip: 1, level: 5)
+   24.808 IN  D0 15 meter(strip: 1, level: 5)
+   24.842 IN  D0 15 meter(strip: 1, level: 5)
+   24.842 IN  D0 15 meter(strip: 1, level: 5)
+   24.872 IN  D0 15 meter(strip: 1, level: 5)
+   24.875 IN  D0 15 meter(strip: 1, level: 5)
+   24.907 IN  D0 15 meter(strip: 1, level: 5)
+   24.908 IN  D0 15 meter(strip: 1, level: 5)
+   24.942 IN  D0 14 meter(strip: 1, level: 4)
+   24.942 IN  D0 14 meter(strip: 1, level: 4)
+   24.975 IN  D0 14 meter(strip: 1, level: 4)
+   24.975 IN  D0 14 meter(strip: 1, level: 4)
+   25.005 IN  D0 14 meter(strip: 1, level: 4)
+   25.008 IN  D0 14 meter(strip: 1, level: 4)
+   25.041 IN  D0 14 meter(strip: 1, level: 4)
+   25.042 IN  D0 14 meter(strip: 1, level: 4)
+   25.075 IN  D0 14 meter(strip: 1, level: 4)
+   25.075 IN  D0 14 meter(strip: 1, level: 4)
+   25.108 IN  D0 14 meter(strip: 1, level: 4)
+   25.108 IN  D0 14 meter(strip: 1, level: 4)
+   25.139 IN  D0 14 meter(strip: 1, level: 4)
+   25.142 IN  D0 14 meter(strip: 1, level: 4)
+   25.174 IN  D0 14 meter(strip: 1, level: 4)
+   25.175 IN  D0 14 meter(strip: 1, level: 4)
+   25.209 IN  D0 14 meter(strip: 1, level: 4)
+   25.209 IN  D0 14 meter(strip: 1, level: 4)
+   25.242 IN  D0 14 meter(strip: 1, level: 4)
+   25.242 IN  D0 14 meter(strip: 1, level: 4)
+   25.272 IN  D0 14 meter(strip: 1, level: 4)
+   25.276 IN  D0 14 meter(strip: 1, level: 4)
+   25.307 IN  D0 14 meter(strip: 1, level: 4)
+   25.308 IN  D0 14 meter(strip: 1, level: 4)
+   25.342 IN  D0 14 meter(strip: 1, level: 4)
+   25.342 IN  D0 14 meter(strip: 1, level: 4)
+   25.375 IN  D0 14 meter(strip: 1, level: 4)
+   25.375 IN  D0 14 meter(strip: 1, level: 4)
+   25.406 IN  D0 14 meter(strip: 1, level: 4)
+   25.408 IN  D0 14 meter(strip: 1, level: 4)
+   25.441 IN  D0 14 meter(strip: 1, level: 4)
+   25.442 IN  D0 14 meter(strip: 1, level: 4)
+   25.475 IN  D0 14 meter(strip: 1, level: 4)
+   25.475 IN  D0 14 meter(strip: 1, level: 4)
+   25.509 IN  D0 14 meter(strip: 1, level: 4)
+   25.509 IN  D0 14 meter(strip: 1, level: 4)
+   25.539 IN  D0 14 meter(strip: 1, level: 4)
+   25.542 IN  D0 14 meter(strip: 1, level: 4)
+   25.574 IN  D0 14 meter(strip: 1, level: 4)
+   25.575 IN  D0 14 meter(strip: 1, level: 4)
+   25.608 IN  D0 14 meter(strip: 1, level: 4)
+   25.608 IN  D0 14 meter(strip: 1, level: 4)
+   25.642 IN  D0 14 meter(strip: 1, level: 4)
+   25.642 IN  D0 14 meter(strip: 1, level: 4)
+   25.672 IN  D0 14 meter(strip: 1, level: 4)
+   25.675 IN  D0 14 meter(strip: 1, level: 4)
+   25.707 IN  D0 14 meter(strip: 1, level: 4)
+   25.708 IN  D0 14 meter(strip: 1, level: 4)
+   25.742 IN  D0 14 meter(strip: 1, level: 4)
+   25.742 IN  D0 14 meter(strip: 1, level: 4)
+   25.776 IN  D0 14 meter(strip: 1, level: 4)
+   25.776 IN  D0 14 meter(strip: 1, level: 4)
+   25.806 IN  D0 14 meter(strip: 1, level: 4)
+   25.808 IN  D0 13 meter(strip: 1, level: 3)
+   25.841 IN  D0 13 meter(strip: 1, level: 3)
+   25.842 IN  D0 13 meter(strip: 1, level: 3)
+   25.875 IN  D0 13 meter(strip: 1, level: 3)
+   25.875 IN  D0 13 meter(strip: 1, level: 3)
+   25.909 IN  D0 13 meter(strip: 1, level: 3)
+   25.909 IN  D0 13 meter(strip: 1, level: 3)
+   25.939 IN  D0 13 meter(strip: 1, level: 3)
+   25.942 IN  D0 13 meter(strip: 1, level: 3)
+   25.974 IN  D0 13 meter(strip: 1, level: 3)
+   25.975 IN  D0 13 meter(strip: 1, level: 3)
+   26.008 IN  D0 13 meter(strip: 1, level: 3)
+   26.008 IN  D0 13 meter(strip: 1, level: 3)
+   26.041 IN  D0 13 meter(strip: 1, level: 3)
+   26.041 IN  D0 13 meter(strip: 1, level: 3)
+   26.073 IN  D0 13 meter(strip: 1, level: 3)
+   26.075 IN  D0 13 meter(strip: 1, level: 3)
+   26.108 IN  D0 13 meter(strip: 1, level: 3)
+   26.108 IN  D0 13 meter(strip: 1, level: 3)
+   26.142 IN  D0 13 meter(strip: 1, level: 3)
+   26.142 IN  D0 13 meter(strip: 1, level: 3)
+   26.175 IN  D0 13 meter(strip: 1, level: 3)
+   26.175 IN  D0 13 meter(strip: 1, level: 3)
+   26.206 IN  D0 13 meter(strip: 1, level: 3)
+   26.208 IN  D0 13 meter(strip: 1, level: 3)
+   26.241 IN  D0 13 meter(strip: 1, level: 3)
+   26.242 IN  D0 13 meter(strip: 1, level: 3)
+   26.275 IN  D0 13 meter(strip: 1, level: 3)
+   26.275 IN  D0 13 meter(strip: 1, level: 3)
+   26.309 IN  D0 13 meter(strip: 1, level: 3)
+   26.309 IN  D0 13 meter(strip: 1, level: 3)
+   26.339 IN  D0 13 meter(strip: 1, level: 3)
+   26.342 IN  D0 13 meter(strip: 1, level: 3)
+   26.374 IN  D0 13 meter(strip: 1, level: 3)
+   26.375 IN  D0 13 meter(strip: 1, level: 3)
+   26.408 IN  D0 13 meter(strip: 1, level: 3)
+   26.408 IN  D0 13 meter(strip: 1, level: 3)
+   26.442 IN  D0 13 meter(strip: 1, level: 3)
+   26.442 IN  D0 13 meter(strip: 1, level: 3)
+   26.473 IN  D0 13 meter(strip: 1, level: 3)
+   26.475 IN  D0 13 meter(strip: 1, level: 3)
+   26.508 IN  D0 13 meter(strip: 1, level: 3)
+   26.509 IN  D0 13 meter(strip: 1, level: 3)
+   26.542 IN  D0 13 meter(strip: 1, level: 3)
+   26.542 IN  D0 13 meter(strip: 1, level: 3)
+   26.575 IN  D0 13 meter(strip: 1, level: 3)
+   26.575 IN  D0 13 meter(strip: 1, level: 3)
+   26.606 IN  D0 13 meter(strip: 1, level: 3)
+   26.609 IN  D0 13 meter(strip: 1, level: 3)
+   26.641 IN  D0 13 meter(strip: 1, level: 3)
+   26.642 IN  D0 12 meter(strip: 1, level: 2)
+   26.675 IN  D0 12 meter(strip: 1, level: 2)
+   26.675 IN  D0 12 meter(strip: 1, level: 2)
+   26.709 IN  D0 12 meter(strip: 1, level: 2)
+   26.709 IN  D0 12 meter(strip: 1, level: 2)
+   26.739 IN  D0 12 meter(strip: 1, level: 2)
+   26.742 IN  D0 12 meter(strip: 1, level: 2)
+   26.774 IN  D0 12 meter(strip: 1, level: 2)
+   26.776 IN  D0 12 meter(strip: 1, level: 2)
+   26.808 IN  D0 12 meter(strip: 1, level: 2)
+   26.808 IN  D0 12 meter(strip: 1, level: 2)
+   26.841 IN  D0 12 meter(strip: 1, level: 2)
+   26.842 IN  D0 12 meter(strip: 1, level: 2)
+   26.873 IN  D0 12 meter(strip: 1, level: 2)
+   26.875 IN  D0 12 meter(strip: 1, level: 2)
+   26.908 IN  D0 12 meter(strip: 1, level: 2)
+   26.908 IN  D0 12 meter(strip: 1, level: 2)
+   26.941 IN  D0 12 meter(strip: 1, level: 2)
+   26.941 IN  D0 12 meter(strip: 1, level: 2)
+   26.975 IN  D0 12 meter(strip: 1, level: 2)
+   26.975 IN  D0 12 meter(strip: 1, level: 2)
+   27.006 IN  D0 12 meter(strip: 1, level: 2)
+   27.008 IN  D0 12 meter(strip: 1, level: 2)
+   27.041 IN  D0 12 meter(strip: 1, level: 2)
+   27.041 IN  D0 12 meter(strip: 1, level: 2)
+   27.075 IN  D0 12 meter(strip: 1, level: 2)
+   27.075 IN  D0 12 meter(strip: 1, level: 2)
+   27.108 IN  D0 12 meter(strip: 1, level: 2)
+   27.108 IN  D0 12 meter(strip: 1, level: 2)
+   27.140 IN  D0 12 meter(strip: 1, level: 2)
+   27.141 IN  D0 12 meter(strip: 1, level: 2)
+   27.175 IN  D0 12 meter(strip: 1, level: 2)
+   27.175 IN  D0 12 meter(strip: 1, level: 2)
+   27.208 IN  D0 12 meter(strip: 1, level: 2)
+   27.208 IN  D0 12 meter(strip: 1, level: 2)
+   27.242 IN  D0 12 meter(strip: 1, level: 2)
+   27.242 IN  D0 12 meter(strip: 1, level: 2)
+   27.273 IN  D0 12 meter(strip: 1, level: 2)
+   27.275 IN  D0 12 meter(strip: 1, level: 2)
+   27.308 IN  D0 12 meter(strip: 1, level: 2)
+   27.308 IN  D0 12 meter(strip: 1, level: 2)
+   27.341 IN  D0 12 meter(strip: 1, level: 2)
+   27.342 IN  D0 12 meter(strip: 1, level: 2)
+   27.375 IN  D0 12 meter(strip: 1, level: 2)
+   27.375 IN  D0 12 meter(strip: 1, level: 2)
+   27.406 IN  D0 12 meter(strip: 1, level: 2)
+   27.408 IN  D0 12 meter(strip: 1, level: 2)
+   27.441 IN  D0 12 meter(strip: 1, level: 2)
+   27.442 IN  D0 12 meter(strip: 1, level: 2)
+   27.475 IN  D0 11 meter(strip: 1, level: 1)
+   27.475 IN  D0 11 meter(strip: 1, level: 1)
+# > quit
+> quit

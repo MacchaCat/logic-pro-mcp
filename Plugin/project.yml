@@ -1,0 +1,83 @@
+# Xcode project for the LogicMCP Meter analysis plug-in (Phase 5). Generate it with
+#   cd Plugin && xcodegen generate
+# and build with
+#   xcodebuild -project LogicMCPMeter.xcodeproj -scheme LogicMCPMeter -configuration Release build
+# Signing defaults to "Sign to Run Locally" (ad-hoc) so no team or certificate is stored here;
+# see docs/setup/06-plugin.md.
+name: LogicMCPMeter
+options:
+  bundleIdPrefix: local.logicmcp
+  deploymentTarget:
+    macOS: "15.0"
+  createIntermediateGroups: true
+packages:
+  LogicProMCP:
+    path: ..
+settings:
+  base:
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+    ENABLE_HARDENED_RUNTIME: NO
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CLANG_ENABLE_MODULES: YES
+    CLANG_ENABLE_OBJC_ARC: YES
+targets:
+  LogicMCPMeter:
+    type: application
+    platform: macOS
+    sources: [App]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: LogicMCP Meter
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.music
+    entitlements:
+      path: App/LogicMCPMeter.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+    dependencies:
+      - target: LogicMCPMeterExtension
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: local.logicmcp.meter
+  LogicMCPMeterExtension:
+    type: app-extension
+    platform: macOS
+    sources: [Extension]
+    info:
+      path: Extension/Info.plist
+      properties:
+        CFBundleDisplayName: LogicMCP Meter
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.AudioUnit
+          NSExtensionPrincipalClass: LMCPMeterFactory
+          NSExtensionAttributes:
+            AudioComponents:
+              - name: "LogicMCP: Meter"
+                description: LogicMCP loudness meter
+                manufacturer: Lmcp
+                type: aufx
+                subtype: lmtr
+                version: 65536
+                sandboxSafe: true
+                tags: [Effects]
+    entitlements:
+      path: Extension/LogicMCPMeterExtension.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        # The plug-in connects to the logic-mcp server on 127.0.0.1 (research §5.7).
+        com.apple.security.network.client: true
+    dependencies:
+      - package: LogicProMCP
+        product: LogicMCPMeterSupport
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: local.logicmcp.meter.audiounit
+      PRODUCT_MODULE_NAME: LogicMCPMeterExtension
+      SWIFT_OBJC_INTERFACE_HEADER_NAME: LogicMCPMeterExtension-Swift.h
+      DEFINES_MODULE: YES

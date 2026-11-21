@@ -1,0 +1,1315 @@
+# logic-mcp console 0.1.0 — ports are open:
+#   source "LogicMCP MCU" id=1806664337
+#   source "LogicMCP Keys" id=1702008354
+#   source "LogicMCP Notes" id=876914795
+#   destination "LogicMCP MCU" id=572403500
+#   destination "LogicMCP Sync" id=1460862762
+# Traffic log: ~/logic-pro-mcp/var/logs/console-20261121-001554.log
+# Type help for commands; quit (or Ctrl-D) closes the ports.
+# Reading commands from ~/logic-pro-mcp/var/console.fifo
+    0.273 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.274 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.274 IN  D0 00 meter(strip: 0, level: 0)
+    0.274 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.275 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.275 IN  D0 10 meter(strip: 1, level: 0)
+    0.275 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.276 IN  D0 20 meter(strip: 2, level: 0)
+    0.276 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.276 IN  D0 30 meter(strip: 3, level: 0)
+    0.276 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.277 IN  D0 40 meter(strip: 4, level: 0)
+    0.277 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.277 IN  D0 50 meter(strip: 5, level: 0)
+    0.278 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.278 IN  D0 60 meter(strip: 6, level: 0)
+    0.278 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.278 IN  D0 70 meter(strip: 7, level: 0)
+    0.279 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.279 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.279 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.280 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.280 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+    0.280 IN  B0 49 20 time digit[9]=' '
+    0.280 IN  B0 48 20 time digit[8]=' '
+    0.281 IN  B0 47 39 time digit[7]='9'
+    0.281 IN  B0 46 20 time digit[6]=' '
+    0.281 IN  B0 45 31 time digit[5]='1'
+    0.282 IN  B0 44 20 time digit[4]=' '
+    0.282 IN  B0 43 31 time digit[3]='1'
+    0.282 IN  B0 42 20 time digit[2]=' '
+    0.282 IN  B0 41 20 time digit[1]=' '
+    0.282 IN  B0 40 31 time digit[0]='1'
+    0.283 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.284 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.284 IN  90 00 00 led recArm[1]=off
+    0.285 IN  90 01 00 led recArm[2]=off
+    0.285 IN  90 02 00 led recArm[3]=off
+    0.286 IN  90 03 00 led recArm[4]=off
+    0.286 IN  90 04 00 led recArm[5]=off
+    0.287 IN  90 05 00 led recArm[6]=off
+    0.288 IN  90 06 00 led recArm[7]=off
+    0.288 IN  90 07 00 led recArm[8]=off
+    0.289 IN  90 08 00 led solo[1]=off
+    0.289 IN  90 09 00 led solo[2]=off
+    0.290 IN  90 0A 00 led solo[3]=off
+    0.290 IN  90 0B 00 led solo[4]=off
+    0.290 IN  90 0C 00 led solo[5]=off
+    0.291 IN  90 0D 00 led solo[6]=off
+    0.291 IN  90 0E 00 led solo[7]=off
+    0.292 IN  90 0F 00 led solo[8]=off
+    0.293 IN  90 10 00 led mute[1]=off
+    0.293 IN  90 11 00 led mute[2]=off
+    0.294 IN  90 12 00 led mute[3]=off
+    0.294 IN  90 13 00 led mute[4]=off
+    0.294 IN  90 14 00 led mute[5]=off
+    0.295 IN  90 15 00 led mute[6]=off
+    0.295 IN  90 16 00 led mute[7]=off
+    0.295 IN  90 17 00 led mute[8]=off
+    0.296 IN  90 18 00 led select[1]=off
+    0.296 IN  90 19 00 led select[2]=off
+    0.296 IN  90 1A 00 led select[3]=off
+    0.296 IN  90 1B 00 led select[4]=off
+    0.297 IN  90 1C 00 led select[5]=off
+    0.297 IN  90 1D 00 led select[6]=off
+    0.297 IN  90 1E 00 led select[7]=off
+    0.297 IN  90 1F 00 led select[8]=off
+    0.297 IN  90 20 00 led vPotPush[1]=off
+    0.298 IN  90 21 00 led vPotPush[2]=off
+    0.299 IN  90 22 00 led vPotPush[3]=off
+    0.299 IN  90 23 00 led vPotPush[4]=off
+    0.300 IN  90 24 00 led vPotPush[5]=off
+    0.300 IN  90 25 00 led vPotPush[6]=off
+    0.301 IN  90 26 00 led vPotPush[7]=off
+    0.301 IN  90 27 00 led vPotPush[8]=off
+    0.302 IN  90 28 00 led assignTrack=off
+    0.303 IN  90 29 00 led assignSend=off
+    0.303 IN  90 2A 7F led assignPan=on
+    0.304 IN  90 2B 00 led assignPlugin=off
+    0.304 IN  90 2C 00 led assignEQ=off
+    0.305 IN  90 2D 00 led assignInstrument=off
+    0.305 IN  90 32 00 led flip=off
+    0.306 IN  90 33 00 led globalView=off
+    0.307 IN  90 4A 7F led automationRead=on
+    0.307 IN  90 4B 00 led automationWrite=off
+    0.308 IN  90 4C 00 led automationTrim=off
+    0.308 IN  90 4D 00 led automationTouch=off
+    0.309 IN  90 4E 00 led automationLatch=off
+    0.309 IN  90 4F 00 led group=off
+    0.310 IN  90 50 7F led save=on
+    0.310 IN  90 51 7F led undo=on
+    0.311 IN  90 54 00 led marker=off
+    0.311 IN  90 55 00 led nudge=off
+    0.312 IN  90 56 00 led cycle=off
+    0.312 IN  90 57 00 led drop=off
+    0.313 IN  90 58 7F led replace=on
+    0.314 IN  90 59 7F led click=on
+    0.314 IN  90 5A 00 led soloGlobal=off
+    0.315 IN  90 5B 00 led rewind=off
+    0.315 IN  90 5C 00 led fastForward=off
+    0.316 IN  90 5D 7F led stop=on
+    0.316 IN  90 5E 00 led play=off
+    0.317 IN  90 5F 00 led record=off
+    0.317 IN  90 64 00 led zoom=off
+    0.318 IN  90 65 00 led scrub=off
+    0.318 IN  90 71 00 led smpteLED=off
+    0.318 IN  90 72 7F led beatsLED=on
+    0.319 IN  90 73 00 led rudeSoloLED=off
+    0.319 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 04 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 4])
+    0.319 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.319 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.320 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.320 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.320 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.320 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.321 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.321 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.321 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.322 IN  E9 00 00 unknown(E9 00 00)
+    0.322 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.322 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.322 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.323 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.323 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.323 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.324 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.324 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.324 IN  F0 00 00 66 10 00 F7 probe for model 10: 00
+    0.324 SYNC F0 00 00 66 10 00 F7
+    0.325 IN  F0 00 00 66 11 00 F7 probe for model 11: 00
+    0.325 SYNC F0 00 00 66 11 00 F7
+    0.325 IN  F0 00 00 66 17 00 F7 probe for model 17: 00
+    0.325 SYNC F0 00 00 66 17 00 F7
+    0.325 IN  F0 00 00 66 17 13 00 F7 probe for model 17: 13 00
+    0.325 SYNC F0 00 00 66 17 13 00 F7
+    0.325 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.325 SYNC F0 00 00 66 14 00 F7
+    0.325 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.325 SYNC F0 00 00 66 14 13 00 F7
+    0.325 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.325 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.325 SYNC F0 00 00 66 15 00 F7
+    0.325 SYNC F0 00 00 66 15 13 00 F7
+    0.325 SYNC F0 00 00 66 14 00 F7
+    0.325 SYNC F0 00 00 66 14 13 00 F7
+    0.326 SYNC F0 00 00 66 15 00 F7
+    0.326 SYNC F0 00 00 66 15 13 00 F7
+    0.326 SYNC F0 00 00 66 14 00 F7
+    0.326 SYNC F0 00 00 66 14 13 00 F7
+    0.326 SYNC F0 00 00 66 15 00 F7
+    0.326 SYNC F0 00 00 66 15 13 00 F7
+    0.336 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.336 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.336 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.336 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.348 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.348 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.360 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.360 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.361 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.361 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.373 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.373 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.384 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.384 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.384 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.384 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.397 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.397 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.407 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.407 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.407 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.407 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+    0.407 IN  B0 49 20 time digit[9]=' '
+    0.407 IN  B0 48 20 time digit[8]=' '
+    0.407 IN  B0 47 39 time digit[7]='9'
+    0.407 IN  B0 46 20 time digit[6]=' '
+    0.407 IN  B0 45 31 time digit[5]='1'
+    0.407 IN  B0 44 20 time digit[4]=' '
+    0.407 IN  B0 43 31 time digit[3]='1'
+    0.407 IN  B0 42 20 time digit[2]=' '
+    0.407 IN  B0 41 20 time digit[1]=' '
+    0.407 IN  B0 40 31 time digit[0]='1'
+    0.407 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.407 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.407 IN  90 00 00 led recArm[1]=off
+    0.407 IN  90 01 00 led recArm[2]=off
+    0.407 IN  90 02 00 led recArm[3]=off
+    0.407 IN  90 03 00 led recArm[4]=off
+    0.407 IN  90 04 00 led recArm[5]=off
+    0.407 IN  90 05 00 led recArm[6]=off
+    0.407 IN  90 06 00 led recArm[7]=off
+    0.407 IN  90 07 00 led recArm[8]=off
+    0.407 IN  90 08 00 led solo[1]=off
+    0.407 IN  90 09 00 led solo[2]=off
+    0.407 IN  90 0A 00 led solo[3]=off
+    0.407 IN  90 0B 00 led solo[4]=off
+    0.407 IN  90 0C 00 led solo[5]=off
+    0.407 IN  90 0D 00 led solo[6]=off
+    0.407 IN  90 0E 00 led solo[7]=off
+    0.407 IN  90 0F 00 led solo[8]=off
+    0.407 IN  90 10 00 led mute[1]=off
+    0.407 IN  90 11 00 led mute[2]=off
+    0.407 IN  90 12 00 led mute[3]=off
+    0.407 IN  90 13 00 led mute[4]=off
+    0.407 IN  90 14 00 led mute[5]=off
+    0.407 IN  90 15 00 led mute[6]=off
+    0.407 IN  90 16 00 led mute[7]=off
+    0.407 IN  90 17 00 led mute[8]=off
+    0.407 IN  90 18 00 led select[1]=off
+    0.407 IN  90 19 00 led select[2]=off
+    0.407 IN  90 1A 00 led select[3]=off
+    0.407 IN  90 1B 00 led select[4]=off
+    0.407 IN  90 1C 00 led select[5]=off
+    0.407 IN  90 1D 00 led select[6]=off
+    0.407 IN  90 1E 00 led select[7]=off
+    0.407 IN  90 1F 00 led select[8]=off
+    0.407 IN  90 20 00 led vPotPush[1]=off
+    0.407 IN  90 21 00 led vPotPush[2]=off
+    0.407 IN  90 22 00 led vPotPush[3]=off
+    0.407 IN  90 23 00 led vPotPush[4]=off
+    0.407 IN  90 24 00 led vPotPush[5]=off
+    0.407 IN  90 25 00 led vPotPush[6]=off
+    0.407 IN  90 26 00 led vPotPush[7]=off
+    0.407 IN  90 27 00 led vPotPush[8]=off
+    0.407 IN  90 28 00 led assignTrack=off
+    0.407 IN  90 29 00 led assignSend=off
+    0.407 IN  90 2A 7F led assignPan=on
+    0.407 IN  90 2B 00 led assignPlugin=off
+    0.407 IN  90 2C 00 led assignEQ=off
+    0.407 IN  90 2D 00 led assignInstrument=off
+    0.407 IN  90 32 00 led flip=off
+    0.407 IN  90 33 00 led globalView=off
+    0.407 IN  90 4A 7F led automationRead=on
+    0.407 IN  90 4B 00 led automationWrite=off
+    0.407 IN  90 4C 00 led automationTrim=off
+    0.407 IN  90 4D 00 led automationTouch=off
+    0.407 IN  90 4E 00 led automationLatch=off
+    0.407 IN  90 4F 00 led group=off
+    0.407 IN  90 50 7F led save=on
+    0.407 IN  90 51 7F led undo=on
+    0.407 IN  90 54 00 led marker=off
+    0.407 IN  90 55 00 led nudge=off
+    0.407 IN  90 56 00 led cycle=off
+    0.407 IN  90 57 00 led drop=off
+    0.407 IN  90 58 7F led replace=on
+    0.407 IN  90 59 7F led click=on
+    0.407 IN  90 5A 00 led soloGlobal=off
+    0.407 IN  90 5B 00 led rewind=off
+    0.407 IN  90 5C 00 led fastForward=off
+    0.407 IN  90 5D 7F led stop=on
+    0.407 IN  90 5E 00 led play=off
+    0.407 IN  90 5F 00 led record=off
+    0.407 IN  90 64 00 led zoom=off
+    0.407 IN  90 65 00 led scrub=off
+    0.407 IN  90 71 00 led smpteLED=off
+    0.407 IN  90 72 7F led beatsLED=on
+    0.407 IN  90 73 00 led rudeSoloLED=off
+    0.407 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 04 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 4])
+    0.407 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.407 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.408 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.408 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.408 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.408 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.408 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.408 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.408 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.408 IN  E9 00 00 unknown(E9 00 00)
+    0.408 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.408 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.408 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.408 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.408 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.408 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.408 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.408 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.408 IN  D0 00 meter(strip: 0, level: 0)
+    0.408 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.408 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.408 IN  D0 10 meter(strip: 1, level: 0)
+    0.408 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.408 IN  D0 20 meter(strip: 2, level: 0)
+    0.408 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.408 IN  D0 30 meter(strip: 3, level: 0)
+    0.408 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.408 IN  D0 40 meter(strip: 4, level: 0)
+    0.408 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.408 IN  D0 50 meter(strip: 5, level: 0)
+    0.408 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.408 IN  D0 60 meter(strip: 6, level: 0)
+    0.408 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.408 IN  D0 70 meter(strip: 7, level: 0)
+    0.408 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.408 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.408 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.408 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.455 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.455 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.455 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.455 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.455 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.456 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.456 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.466 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.466 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.466 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.466 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.466 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.466 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.466 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.466 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.466 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.466 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.466 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.466 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.466 IN  B0 49 20 time digit[9]=' '
+    0.466 IN  B0 48 20 time digit[8]=' '
+    0.466 IN  B0 47 39 time digit[7]='9'
+    0.466 IN  B0 46 20 time digit[6]=' '
+    0.466 IN  B0 45 31 time digit[5]='1'
+    0.466 IN  B0 44 20 time digit[4]=' '
+    0.466 IN  B0 43 31 time digit[3]='1'
+    0.466 IN  B0 42 20 time digit[2]=' '
+    0.466 IN  B0 41 20 time digit[1]=' '
+    0.466 IN  B0 40 31 time digit[0]='1'
+    0.466 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.466 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.467 IN  90 00 00 led recArm[1]=off
+    0.467 IN  90 01 00 led recArm[2]=off
+    0.468 IN  90 02 00 led recArm[3]=off
+    0.469 IN  90 03 00 led recArm[4]=off
+    0.469 IN  90 04 00 led recArm[5]=off
+    0.470 IN  90 05 00 led recArm[6]=off
+    0.470 IN  90 06 00 led recArm[7]=off
+    0.471 IN  90 07 00 led recArm[8]=off
+    0.471 IN  90 08 00 led solo[1]=off
+    0.472 IN  90 09 00 led solo[2]=off
+    0.473 IN  90 0A 00 led solo[3]=off
+    0.473 IN  90 0B 00 led solo[4]=off
+    0.474 IN  90 0C 00 led solo[5]=off
+    0.474 IN  90 0D 00 led solo[6]=off
+    0.475 IN  90 0E 00 led solo[7]=off
+    0.476 IN  90 0F 00 led solo[8]=off
+    0.476 IN  90 10 00 led mute[1]=off
+    0.477 IN  90 11 00 led mute[2]=off
+    0.477 IN  90 12 00 led mute[3]=off
+    0.478 IN  90 13 00 led mute[4]=off
+    0.478 IN  90 14 00 led mute[5]=off
+    0.479 IN  90 15 00 led mute[6]=off
+    0.479 IN  90 16 00 led mute[7]=off
+    0.479 IN  90 17 00 led mute[8]=off
+    0.479 IN  90 18 00 led select[1]=off
+    0.480 IN  90 19 00 led select[2]=off
+    0.480 IN  90 1A 00 led select[3]=off
+    0.481 IN  90 1B 00 led select[4]=off
+    0.481 IN  90 1C 00 led select[5]=off
+    0.482 IN  90 1D 00 led select[6]=off
+    0.483 IN  90 1E 00 led select[7]=off
+    0.483 IN  90 1F 00 led select[8]=off
+    0.484 IN  90 20 00 led vPotPush[1]=off
+    0.484 IN  90 21 00 led vPotPush[2]=off
+    0.485 IN  90 22 00 led vPotPush[3]=off
+    0.486 IN  90 23 00 led vPotPush[4]=off
+    0.486 IN  90 24 00 led vPotPush[5]=off
+    0.487 IN  90 25 00 led vPotPush[6]=off
+    0.487 IN  90 26 00 led vPotPush[7]=off
+    0.488 IN  90 27 00 led vPotPush[8]=off
+    0.489 IN  90 28 00 led assignTrack=off
+    0.489 IN  90 29 00 led assignSend=off
+    0.490 IN  90 2A 7F led assignPan=on
+    0.490 IN  90 2B 00 led assignPlugin=off
+    0.491 IN  90 2C 00 led assignEQ=off
+    0.491 IN  90 2D 00 led assignInstrument=off
+    0.492 IN  90 32 00 led flip=off
+    0.493 IN  90 33 00 led globalView=off
+    0.493 IN  90 4A 7F led automationRead=on
+    0.494 IN  90 4B 00 led automationWrite=off
+    0.494 IN  90 4C 00 led automationTrim=off
+    0.495 IN  90 4D 00 led automationTouch=off
+    0.496 IN  90 4E 00 led automationLatch=off
+    0.496 IN  90 4F 00 led group=off
+    0.497 IN  90 50 7F led save=on
+    0.497 IN  90 51 7F led undo=on
+    0.498 IN  90 54 00 led marker=off
+    0.498 IN  90 55 00 led nudge=off
+    0.499 IN  90 56 00 led cycle=off
+    0.499 IN  90 57 00 led drop=off
+    0.499 IN  90 58 7F led replace=on
+    0.499 IN  90 59 7F led click=on
+    0.500 IN  90 5A 00 led soloGlobal=off
+    0.501 IN  90 5B 00 led rewind=off
+    0.501 IN  90 5C 00 led fastForward=off
+    0.502 IN  90 5D 7F led stop=on
+    0.502 IN  90 5E 00 led play=off
+    0.503 IN  90 5F 00 led record=off
+    0.503 IN  90 64 00 led zoom=off
+    0.504 IN  90 65 00 led scrub=off
+    0.505 IN  90 71 00 led smpteLED=off
+    0.505 IN  90 72 7F led beatsLED=on
+    0.506 IN  90 73 00 led rudeSoloLED=off
+    0.506 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 04 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 4])
+    0.507 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.508 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.508 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.509 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.509 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.510 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.510 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.511 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.512 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.512 IN  E9 00 00 unknown(E9 00 00)
+    0.513 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.513 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.514 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.515 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.515 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.516 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.516 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.517 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.517 IN  D0 00 meter(strip: 0, level: 0)
+    0.518 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.518 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.519 IN  D0 10 meter(strip: 1, level: 0)
+    0.519 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.519 IN  D0 20 meter(strip: 2, level: 0)
+    0.519 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.520 IN  D0 30 meter(strip: 3, level: 0)
+    0.520 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.520 IN  D0 40 meter(strip: 4, level: 0)
+    0.521 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.521 IN  D0 50 meter(strip: 5, level: 0)
+    0.521 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.522 IN  D0 60 meter(strip: 6, level: 0)
+    0.522 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.522 IN  D0 70 meter(strip: 7, level: 0)
+    0.522 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.522 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.523 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.524 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.547 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.547 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.548 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.548 IN  B0 49 20 time digit[9]=' '
+    0.548 IN  B0 48 20 time digit[8]=' '
+    0.548 IN  B0 47 39 time digit[7]='9'
+    0.549 IN  B0 46 20 time digit[6]=' '
+    0.550 IN  B0 45 31 time digit[5]='1'
+    0.550 IN  B0 44 20 time digit[4]=' '
+    0.551 IN  B0 43 31 time digit[3]='1'
+    0.551 IN  B0 42 20 time digit[2]=' '
+    0.552 IN  B0 41 20 time digit[1]=' '
+    0.552 IN  B0 40 31 time digit[0]='1'
+    0.553 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.554 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.554 IN  90 00 00 led recArm[1]=off
+    0.555 IN  90 01 00 led recArm[2]=off
+    0.555 IN  90 02 00 led recArm[3]=off
+    0.556 IN  90 03 00 led recArm[4]=off
+    0.557 IN  90 04 00 led recArm[5]=off
+    0.557 IN  90 05 00 led recArm[6]=off
+    0.558 IN  90 06 00 led recArm[7]=off
+    0.558 IN  90 07 00 led recArm[8]=off
+    0.559 IN  90 08 00 led solo[1]=off
+    0.560 IN  90 09 00 led solo[2]=off
+    0.560 IN  90 0A 00 led solo[3]=off
+    0.561 IN  90 0B 00 led solo[4]=off
+    0.561 IN  90 0C 00 led solo[5]=off
+    0.562 IN  90 0D 00 led solo[6]=off
+    0.562 IN  90 0E 00 led solo[7]=off
+    0.563 IN  90 0F 00 led solo[8]=off
+    0.564 IN  90 10 00 led mute[1]=off
+    0.564 IN  90 11 00 led mute[2]=off
+    0.565 IN  90 12 00 led mute[3]=off
+    0.565 IN  90 13 00 led mute[4]=off
+    0.566 IN  90 14 00 led mute[5]=off
+    0.566 IN  90 15 00 led mute[6]=off
+    0.567 IN  90 16 00 led mute[7]=off
+    0.568 IN  90 17 00 led mute[8]=off
+    0.568 IN  90 18 00 led select[1]=off
+    0.569 IN  90 19 00 led select[2]=off
+    0.569 IN  90 1A 00 led select[3]=off
+    0.570 IN  90 1B 00 led select[4]=off
+    0.570 IN  90 1C 00 led select[5]=off
+    0.571 IN  90 1D 00 led select[6]=off
+    0.571 IN  90 1E 00 led select[7]=off
+    0.571 IN  90 1F 00 led select[8]=off
+    0.572 IN  90 20 00 led vPotPush[1]=off
+    0.572 IN  90 21 00 led vPotPush[2]=off
+    0.573 IN  90 22 00 led vPotPush[3]=off
+    0.574 IN  90 23 00 led vPotPush[4]=off
+    0.574 IN  90 24 00 led vPotPush[5]=off
+    0.575 IN  90 25 00 led vPotPush[6]=off
+    0.575 IN  90 26 00 led vPotPush[7]=off
+    0.576 IN  90 27 00 led vPotPush[8]=off
+    0.577 IN  90 28 00 led assignTrack=off
+    0.577 IN  90 29 00 led assignSend=off
+    0.578 IN  90 2A 7F led assignPan=on
+    0.578 IN  90 2B 00 led assignPlugin=off
+    0.579 IN  90 2C 00 led assignEQ=off
+    0.579 IN  90 2D 00 led assignInstrument=off
+    0.580 IN  90 32 00 led flip=off
+    0.581 IN  90 33 00 led globalView=off
+    0.581 IN  90 4A 7F led automationRead=on
+    0.582 IN  90 4B 00 led automationWrite=off
+    0.582 IN  90 4C 00 led automationTrim=off
+    0.583 IN  90 4D 00 led automationTouch=off
+    0.584 IN  90 4E 00 led automationLatch=off
+    0.584 IN  90 4F 00 led group=off
+    0.585 IN  90 50 7F led save=on
+    0.585 IN  90 51 7F led undo=on
+    0.586 IN  90 54 00 led marker=off
+    0.587 IN  90 55 00 led nudge=off
+    0.587 IN  90 56 00 led cycle=off
+    0.587 IN  90 57 00 led drop=off
+    0.588 IN  90 58 7F led replace=on
+    0.588 IN  90 59 7F led click=on
+    0.588 IN  90 5A 00 led soloGlobal=off
+    0.589 IN  90 5B 00 led rewind=off
+    0.589 IN  90 5C 00 led fastForward=off
+    0.590 IN  90 5D 7F led stop=on
+    0.590 IN  90 5E 00 led play=off
+    0.591 IN  90 5F 00 led record=off
+    0.592 IN  90 64 00 led zoom=off
+    0.592 IN  90 65 00 led scrub=off
+    0.593 IN  90 71 00 led smpteLED=off
+    0.593 IN  90 72 7F led beatsLED=on
+    0.594 IN  90 73 00 led rudeSoloLED=off
+    0.594 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 04 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 4])
+    0.595 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.595 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.595 IN  E2 1B 61 faderPosition(fader: 2, value: 12443)
+    0.596 IN  E3 1B 61 faderPosition(fader: 3, value: 12443)
+    0.596 IN  E4 1B 61 faderPosition(fader: 4, value: 12443)
+    0.597 IN  E5 1B 61 faderPosition(fader: 5, value: 12443)
+    0.597 IN  E6 1B 61 faderPosition(fader: 6, value: 12443)
+    0.598 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    0.599 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.599 IN  E9 00 00 unknown(E9 00 00)
+    0.600 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.600 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.601 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.601 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.602 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.603 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.603 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.604 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.604 IN  D0 00 meter(strip: 0, level: 0)
+    0.605 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.605 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.606 IN  D0 10 meter(strip: 1, level: 0)
+    0.606 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.606 IN  D0 20 meter(strip: 2, level: 0)
+    0.606 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.607 IN  D0 30 meter(strip: 3, level: 0)
+    0.607 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.607 IN  D0 40 meter(strip: 4, level: 0)
+    0.608 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.608 IN  D0 50 meter(strip: 5, level: 0)
+    0.609 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.609 IN  D0 60 meter(strip: 6, level: 0)
+    0.610 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.610 IN  D0 70 meter(strip: 7, level: 0)
+    0.611 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.612 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.612 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.613 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+# > lcd
+> lcd
+# lcd1="Pan    -      -      -      -      -      -      -      "
+# lcd2="0                                                       "
+# assign=PN. time=  9 1 1  1
+# > press nameValue
+> press nameValue
+    2.748 OUT 90 34 7F
+    2.781 OUT 90 34 00
+# pressed nameValue
+    2.781 IN  F0 00 00 66 14 12 00 54 72 61 63 6B 20 31 31 20 22 20 39 22 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 50 61 6E 2F 53 75 72 72 6F 75 6E 64 20 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D F7 lcd @0 "Track 11 " 9"                              Pan/Surround Pan    -      -      -      -      -      -      -"
+# > lcd
+> lcd
+# lcd1="Track 11 " 9"                              Pan/Surround "
+# lcd2="Pan    -      -      -      -      -      -      -      "
+# assign=PN. time=  9 1 1  1
+# > press nameValue
+> press nameValue
+    4.266 OUT 90 34 7F
+    4.282 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                 "
+    4.300 OUT 90 34 00
+# pressed nameValue
+# > lcd
+> lcd
+# lcd1="Pan    -      -      -      -      -      -      -      "
+# lcd2="0                                                       "
+# assign=PN. time=  9 1 1  1
+# > press bankRight
+> press bankRight
+    5.785 OUT 90 2F 7F
+    5.815 IN  90 06 7F led recArm[7]=on
+    5.815 IN  90 1E 7F led select[7]=on
+    5.816 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+    5.820 OUT 90 2F 00
+# pressed bankRight
+# > lcd
+> lcd
+# lcd1="Pan    -      -      -      -      -      -      -      "
+# lcd2="0                                                       "
+# assign=PN. time=  9 1 1  1
+# > press bankRight
+> press bankRight
+    7.505 OUT 90 2F 7F
+    7.540 OUT 90 2F 00
+# pressed bankRight
+# > lcd
+> lcd
+# lcd1="Pan    -      -      -      -      -      -      -      "
+# lcd2="0                                                       "
+# assign=PN. time=  9 1 1  1
+# > press bankLeft
+> press bankLeft
+    9.227 OUT 90 2E 7F
+    9.249 IN  90 06 00 led recArm[7]=off
+    9.249 IN  90 1E 00 led select[7]=off
+    9.249 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+    9.260 OUT 90 2E 00
+# pressed bankLeft
+# > lcd
+> lcd
+# lcd1="Pan    -      -      -      -      -      -      -      "
+# lcd2="0                                                       "
+# assign=PN. time=  9 1 1  1
+# > press bankLeft
+> press bankLeft
+   10.950 OUT 90 2E 7F
+   10.982 OUT 90 2E 00
+# pressed bankLeft
+# > press channelRight
+> press channelRight
+   12.159 OUT 90 31 7F
+   12.190 OUT 90 31 00
+# pressed channelRight
+# > lcd
+> lcd
+# lcd1="Pan    -      -      -      -      -      -      -      "
+# lcd2="0                                                       "
+# assign=PN. time=  9 1 1  1
+# > press channelLeft
+> press channelLeft
+   13.669 OUT 90 30 7F
+   13.704 OUT 90 30 00
+# pressed channelLeft
+# > lcd
+> lcd
+# lcd1="Pan    -      -      -      -      -      -      -      "
+# lcd2="0                                                       "
+# assign=PN. time=  9 1 1  1
+# > press assignPan
+> press assignPan
+   24.943 OUT 90 2A 7F
+   24.949 IN  F0 00 00 66 14 12 00 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 41 6E 67 6C 65 20 20 44 69 76 65 72 73 20 4C 46 45 20 20 20 20 53 70 72 65 61 64 F7 lcd @0 "                                                        Angle  Divers LFE    Spread"
+   24.949 IN  F0 00 00 66 14 12 5B 43 53 74 72 69 70 20 41 6E 67 2F 44 76 20 58 2F 59 F7 lcd @91 "CStrip Ang/Dv X/Y"
+   24.950 IN  B0 4A 1F assignmentDigit(position: 0, code: 31)
+   24.950 IN  F0 00 00 66 14 72 07 07 07 07 07 07 07 07 F7 command(id: 114, data: [7, 7, 7, 7, 7, 7, 7, 7])
+   24.950 IN  B0 30 00 vPotRing(strip: 0, value: 0)
+   24.974 OUT 90 2A 00
+# pressed assignPan
+   24.982 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 F7 lcd @0 "Inst 1 Inst 2 1      2      3      4      5      6      0      0      0      0      0      0      0      0  "
+   24.983 IN  B0 4A 0E assignmentDigit(position: 0, code: 14)
+   24.983 IN  F0 00 00 66 14 72 04 02 04 04 04 04 04 04 F7 command(id: 114, data: [4, 2, 4, 4, 4, 4, 4, 4])
+   24.983 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+   24.984 IN  B0 31 56 vPotRing(strip: 1, value: 86)
+   24.984 IN  B0 32 56 vPotRing(strip: 2, value: 86)
+   24.984 IN  B0 33 56 vPotRing(strip: 3, value: 86)
+   24.985 IN  B0 34 56 vPotRing(strip: 4, value: 86)
+   24.985 IN  B0 35 56 vPotRing(strip: 5, value: 86)
+   24.985 IN  B0 36 56 vPotRing(strip: 6, value: 86)
+   24.986 IN  B0 37 56 vPotRing(strip: 7, value: 86)
+   24.986 IN  F0 00 00 66 14 12 1C 50 61 6E 2F 53 75 72 72 6F 75 6E 64 20 70 61 72 61 6D 65 74 65 72 3A 20 50 61 6E F7 lcd @28 "Pan/Surround parameter: Pan"
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      Pan/Surround parameter: Pan "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press nameValue
+> press nameValue
+   26.662 OUT 90 34 7F
+   26.684 IN  F0 00 00 66 14 12 38 50 61 6E 20 20 20 20 50 61 6E 20 20 20 20 50 61 6E 20 20 20 20 50 61 6E 20 20 20 20 50 61 6E 20 20 20 20 50 61 6E 20 20 20 20 50 61 6E 20 20 20 20 50 61 6E F7 lcd @56 "Pan    Pan    Pan    Pan    Pan    Pan    Pan    Pan"
+   26.694 OUT 90 34 00
+# pressed nameValue
+   27.015 IN  F0 00 00 66 14 12 1C 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 F7 lcd @28 "3      4      5      6     "
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="Pan    Pan    Pan    Pan    Pan    Pan    Pan    Pan    "
+# assign=PN time=  9 1 1  1
+# > press nameValue
+> press nameValue
+   28.179 OUT 90 34 7F
+   28.182 IN  F0 00 00 66 14 12 38 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 F7 lcd @56 "0      0      0      0      0      0      0      0  "
+   28.214 OUT 90 34 00
+# pressed nameValue
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press bankRight
+> press bankRight
+   40.160 OUT 90 2F 7F
+   40.182 IN  F0 00 00 66 14 12 00 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 20 20 20 20 20 20 39 20 20 20 20 20 20 20 F7 lcd @0 "3      4      5      6      7      8      9       "
+   40.182 IN  F0 00 00 66 14 12 69 20 F7 lcd @105 " "
+   40.182 IN  90 06 7F led recArm[7]=on
+   40.183 IN  90 1E 7F led select[7]=on
+   40.183 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 07 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 7])
+   40.183 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+   40.184 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+   40.195 OUT 90 2F 00
+# pressed bankRight
+# > lcd
+> lcd
+# lcd1="3      4      5      6      7      8      9             "
+# lcd2="0      0      0      0      0      0      0             "
+# assign=PN time=  9 1 1  1
+# > press bankRight
+> press bankRight
+   41.972 OUT 90 2F 7F
+   42.006 OUT 90 2F 00
+# pressed bankRight
+# > lcd
+> lcd
+# lcd1="3      4      5      6      7      8      9             "
+# lcd2="0      0      0      0      0      0      0             "
+# assign=PN time=  9 1 1  1
+# > press bankLeft
+> press bankLeft
+   43.792 OUT 90 2E 7F
+   43.816 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 F7 lcd @0 "Inst 1 Inst 2 1      2      3      4      5      6"
+   43.816 IN  F0 00 00 66 14 12 69 30 F7 lcd @105 "0"
+   43.816 IN  90 06 00 led recArm[7]=off
+   43.816 IN  90 1E 00 led select[7]=off
+   43.817 IN  F0 00 00 66 14 72 04 02 04 04 04 04 04 04 F7 command(id: 114, data: [4, 2, 4, 4, 4, 4, 4, 4])
+   43.817 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+   43.817 IN  B0 37 56 vPotRing(strip: 7, value: 86)
+   43.827 OUT 90 2E 00
+# pressed bankLeft
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press bankLeft
+> press bankLeft
+   45.610 OUT 90 2E 7F
+   45.642 OUT 90 2E 00
+# pressed bankLeft
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press channelRight
+> press channelRight
+   47.434 OUT 90 31 7F
+   47.449 IN  F0 00 00 66 14 12 05 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 F7 lcd @5 "2 1      2      3      4      5      6      7"
+   47.449 IN  F0 00 00 66 14 72 02 04 04 04 04 04 04 04 F7 command(id: 114, data: [2, 4, 4, 4, 4, 4, 4, 4])
+   47.469 OUT 90 31 00
+# pressed channelRight
+# > lcd
+> lcd
+# lcd1="Inst 2 1      2      3      4      5      6      7      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press channelRight
+> press channelRight
+   49.254 OUT 90 31 7F
+   49.282 IN  F0 00 00 66 14 12 00 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 F7 lcd @0 "1      2      3      4      5      6      7      8"
+   49.282 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 04 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 4])
+   49.285 OUT 90 31 00
+# pressed channelRight
+# > lcd
+> lcd
+# lcd1="1      2      3      4      5      6      7      8      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press channelLeft
+> press channelLeft
+   51.069 OUT 90 30 7F
+   51.082 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 F7 lcd @0 "Inst 2 1      2      3      4      5      6      7"
+   51.083 IN  F0 00 00 66 14 72 02 04 04 04 04 04 04 04 F7 command(id: 114, data: [2, 4, 4, 4, 4, 4, 4, 4])
+   51.104 OUT 90 30 00
+# pressed channelLeft
+# > lcd
+> lcd
+# lcd1="Inst 2 1      2      3      4      5      6      7      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press channelLeft
+> press channelLeft
+   52.875 OUT 90 30 7F
+   52.882 IN  F0 00 00 66 14 12 05 31 20 49 6E 73 74 20 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 F7 lcd @5 "1 Inst 2 1      2      3      4      5      6"
+   52.882 IN  F0 00 00 66 14 72 04 02 04 04 04 04 04 04 F7 command(id: 114, data: [4, 2, 4, 4, 4, 4, 4, 4])
+   52.911 OUT 90 30 00
+# pressed channelLeft
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > chord option bankRight
+> chord option bankRight
+   54.690 OUT 90 47 7F
+   54.690 OUT 90 2F 7F
+   54.716 IN  90 18 7F led select[1]=on
+   54.716 IN  90 19 7F led select[2]=on
+   54.717 IN  90 1A 7F led select[3]=on
+   54.717 IN  90 1B 7F led select[4]=on
+   54.717 IN  90 1C 7F led select[5]=on
+   54.718 IN  90 1D 7F led select[6]=on
+   54.718 IN  90 1E 7F led select[7]=on
+   54.718 IN  90 1F 7F led select[8]=on
+   54.719 IN  90 33 01 led globalView=flashing
+   54.719 IN  90 4A 00 led automationRead=off
+   54.720 IN  F0 00 00 66 14 12 00 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 20 20 20 20 20 20 37 20 20 20 20 20 20 38 20 20 20 20 20 20 39 20 20 20 20 20 20 20 F7 lcd @0 "3      4      5      6      7      8      9       "
+   54.720 IN  F0 00 00 66 14 12 69 20 F7 lcd @105 " "
+   54.720 IN  90 06 7F led recArm[7]=on
+   54.721 IN  90 1F 00 led select[8]=off
+   54.721 IN  F0 00 00 66 14 72 04 04 04 04 04 04 04 07 F7 command(id: 114, data: [4, 4, 4, 4, 4, 4, 4, 7])
+   54.721 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+   54.721 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+   54.728 OUT 90 2F 00
+   54.728 OUT 90 47 00
+# chord option+bankRight
+   54.755 IN  90 18 00 led select[1]=off
+   54.755 IN  90 19 00 led select[2]=off
+   54.755 IN  90 1A 00 led select[3]=off
+   54.756 IN  90 1B 00 led select[4]=off
+   54.756 IN  90 1C 00 led select[5]=off
+   54.756 IN  90 1D 00 led select[6]=off
+   54.757 IN  90 33 00 led globalView=off
+   54.757 IN  90 4A 7F led automationRead=on
+# > lcd
+> lcd
+# lcd1="3      4      5      6      7      8      9             "
+# lcd2="0      0      0      0      0      0      0             "
+# assign=PN time=  9 1 1  1
+# > chord option bankLeft
+> chord option bankLeft
+   56.504 OUT 90 47 7F
+   56.505 OUT 90 2E 7F
+   56.516 IN  90 18 7F led select[1]=on
+   56.517 IN  90 19 7F led select[2]=on
+   56.517 IN  90 1A 7F led select[3]=on
+   56.517 IN  90 1B 7F led select[4]=on
+   56.517 IN  90 1C 7F led select[5]=on
+   56.518 IN  90 1D 7F led select[6]=on
+   56.518 IN  90 33 01 led globalView=flashing
+   56.518 IN  90 4A 00 led automationRead=off
+   56.519 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 20 31 20 20 20 20 20 20 32 20 20 20 20 20 20 33 20 20 20 20 20 20 34 20 20 20 20 20 20 35 20 20 20 20 20 20 36 F7 lcd @0 "Inst 1 Inst 2 1      2      3      4      5      6"
+   56.519 IN  F0 00 00 66 14 12 69 30 F7 lcd @105 "0"
+   56.519 IN  90 06 00 led recArm[7]=off
+   56.520 IN  90 1F 7F led select[8]=on
+   56.520 IN  F0 00 00 66 14 72 04 02 04 04 04 04 04 04 F7 command(id: 114, data: [4, 2, 4, 4, 4, 4, 4, 4])
+   56.520 IN  E7 1B 61 faderPosition(fader: 7, value: 12443)
+   56.521 IN  B0 37 56 vPotRing(strip: 7, value: 86)
+   56.542 OUT 90 2E 00
+   56.542 OUT 90 47 00
+# chord option+bankLeft
+   56.555 IN  90 18 00 led select[1]=off
+   56.556 IN  90 19 00 led select[2]=off
+   56.556 IN  90 1A 00 led select[3]=off
+   56.556 IN  90 1B 00 led select[4]=off
+   56.557 IN  90 1C 00 led select[5]=off
+   56.557 IN  90 1D 00 led select[6]=off
+   56.557 IN  90 1E 00 led select[7]=off
+   56.558 IN  90 1F 00 led select[8]=off
+   56.558 IN  90 33 00 led globalView=off
+   56.558 IN  90 4A 7F led automationRead=on
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > fader 1 12000
+> fader 1 12000
+   81.267 OUT 90 68 7F
+   81.267 OUT E0 60 5D
+   81.281 IN  F0 00 00 66 14 12 38 2D 31 2E 32 20 64 42 20 F7 lcd @56 "-1.2 dB "
+   81.315 IN  E0 3D 5D faderPosition(fader: 0, value: 11965)
+   81.581 OUT 90 68 00
+# fader 1 -> 12000: reported=11965
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-1.2 dB       0      0      0      0      0      0      "
+# > fader 1 8192
+> fader 1 8192
+   82.870 OUT 90 68 7F
+   82.870 OUT E0 00 40
+   82.881 IN  F0 00 00 66 14 12 39 39 2E 30 F7 lcd @57 "9.0"
+   82.915 IN  E0 72 3F faderPosition(fader: 0, value: 8178)
+   83.173 OUT 90 68 00
+# fader 1 -> 8192: reported=8178
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-9.0 dB       0      0      0      0      0      0      "
+# > fader 1 12443
+> fader 1 12443
+   84.478 OUT 90 68 7F
+   84.478 OUT E0 1B 61
+   84.495 IN  F0 00 00 66 14 12 38 2B 30 F7 lcd @56 "+0"
+   84.514 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+   84.800 OUT 90 68 00
+# fader 1 -> 12443: reported=12443
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="+0.0 dB       0      0      0      0      0      0      "
+# > fader 1 10000 notouch
+> fader 1 10000 notouch
+   86.087 OUT E0 10 4E
+   86.114 IN  F0 00 00 66 14 12 38 2D 35 2E 38 F7 lcd @56 "-5.8"
+   86.148 IN  E0 06 4E faderPosition(fader: 0, value: 9990)
+# fader 1 -> 10000 (no touch): reported=9990
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-5.8 dB       0      0      0      0      0      0      "
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="-5.8 dB       0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+   88.148 IN  F0 00 00 66 14 12 38 30 20 20 20 20 20 20 30 F7 lcd @56 "0      0"
+# > fader 1 12443
+> fader 1 12443
+   88.307 OUT 90 68 7F
+   88.307 OUT E0 1B 61
+   88.314 IN  F0 00 00 66 14 12 38 2B 30 2E 30 20 64 42 20 F7 lcd @56 "+0.0 dB "
+   88.348 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+   88.610 OUT 90 68 00
+# fader 1 -> 12443: reported=12443
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="+0.0 dB       0      0      0      0      0      0      "
+# > vpot 1 3
+> vpot 1 3
+   89.916 OUT B0 10 01
+   89.948 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan          "
+   89.948 IN  F0 00 00 66 14 12 39 31 20 20 20 20 20 F7 lcd @57 "1     "
+   89.962 OUT B0 10 01
+   89.981 IN  F0 00 00 66 14 12 39 32 F7 lcd @57 "2"
+   89.981 IN  B0 30 16 vPotRing(strip: 0, value: 22)
+   90.007 OUT B0 10 01
+   90.014 IN  F0 00 00 66 14 12 39 33 F7 lcd @57 "3"
+# vpot 1 3: ring=16
+#   lcd1="Pan           1      2      3      4      5      6      "
+#   lcd2="+3            0      0      0      0      0      0      "
+# > vpot 1 -6
+> vpot 1 -6
+   91.127 OUT B0 10 41
+   91.148 IN  F0 00 00 66 14 12 39 32 F7 lcd @57 "2"
+   91.172 OUT B0 10 41
+   91.181 IN  F0 00 00 66 14 12 39 31 F7 lcd @57 "1"
+   91.215 OUT B0 10 41
+   91.248 IN  F0 00 00 66 14 12 38 30 20 F7 lcd @56 "0 "
+   91.260 OUT B0 10 41
+   91.281 IN  F0 00 00 66 14 12 38 2D 31 F7 lcd @56 "-1"
+   91.305 OUT B0 10 41
+   91.314 IN  F0 00 00 66 14 12 39 32 F7 lcd @57 "2"
+   91.348 OUT B0 10 41
+   91.381 IN  F0 00 00 66 14 12 39 33 F7 lcd @57 "3"
+# vpot 1 -6: ring=16
+#   lcd1="Pan           1      2      3      4      5      6      "
+#   lcd2="-3            0      0      0      0      0      0      "
+# > vpot 1 3
+> vpot 1 3
+   92.332 OUT B0 10 01
+   92.348 IN  F0 00 00 66 14 12 39 32 F7 lcd @57 "2"
+   92.376 OUT B0 10 01
+   92.381 IN  F0 00 00 66 14 12 39 31 F7 lcd @57 "1"
+   92.422 OUT B0 10 01
+   92.448 IN  F0 00 00 66 14 12 38 30 20 F7 lcd @56 "0 "
+   92.481 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+# vpot 1 3: ring=56
+#   lcd1="Pan           1      2      3      4      5      6      "
+#   lcd2="0             0      0      0      0      0      0      "
+# > press 0x10
+> press 0x10
+   93.542 OUT 90 10 7F
+   93.548 IN  F0 00 00 66 14 12 38 4D 75 74 65 64 F7 lcd @56 "Muted"
+   93.576 OUT 90 10 00
+# pressed mute[1]
+   93.581 IN  90 10 7F led mute[1]=on
+# > lcd
+> lcd
+# lcd1="Pan           1      2      3      4      5      6      "
+# lcd2="Muted         0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > press 0x10
+> press 0x10
+   95.060 OUT 90 10 7F
+   95.082 IN  F0 00 00 66 14 12 38 2D 2D 20 20 20 F7 lcd @56 "--   "
+   95.093 OUT 90 10 00
+# pressed mute[1]
+   95.114 IN  90 10 00 led mute[1]=off
+# > lcd
+> lcd
+# lcd1="Pan           1      2      3      4      5      6      "
+# lcd2="--            0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+   97.114 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 F7 lcd @0 "Inst 1 Inst 2"
+   97.114 IN  F0 00 00 66 14 12 38 30 20 20 20 20 20 20 30 F7 lcd @56 "0      0"
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="0      0      0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+# > fader 1 16383
+> fader 1 16383
+  113.125 OUT 90 68 7F
+  113.125 OUT E0 7F 7F
+  113.148 IN  F0 00 00 66 14 12 38 2B 36 2E 30 20 64 42 20 F7 lcd @56 "+6.0 dB "
+  113.181 IN  E0 7D 73 faderPosition(fader: 0, value: 14845)
+  113.447 OUT 90 68 00
+# fader 1 -> 16383: reported=14845
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="+6.0 dB       0      0      0      0      0      0      "
+# > fader 1 15000
+> fader 1 15000
+  114.432 OUT 90 68 7F
+  114.432 OUT E0 18 75
+  114.755 OUT 90 68 00
+# fader 1 -> 15000: reported=14845
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="+6.0 dB       0      0      0      0      0      0      "
+# > fader 1 14000
+> fader 1 14000
+  115.740 OUT 90 68 7F
+  115.740 OUT E0 30 6D
+  115.748 IN  F0 00 00 66 14 12 39 33 2E 38 F7 lcd @57 "3.8"
+  115.781 IN  E0 18 6D faderPosition(fader: 0, value: 13976)
+  116.060 OUT 90 68 00
+# fader 1 -> 14000: reported=13976
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="+3.8 dB       0      0      0      0      0      0      "
+# > fader 1 13000
+> fader 1 13000
+  117.048 OUT 90 68 7F
+  117.048 OUT E0 48 65
+  117.081 IN  F0 00 00 66 14 12 39 31 2E 33 F7 lcd @57 "1.3"
+  117.114 IN  E0 27 65 faderPosition(fader: 0, value: 12967)
+  117.358 OUT 90 68 00
+# fader 1 -> 13000: reported=12967
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="+1.3 dB       0      0      0      0      0      0      "
+# > fader 1 11000
+> fader 1 11000
+  118.354 OUT 90 68 7F
+  118.354 OUT E0 78 55
+  118.381 IN  F0 00 00 66 14 12 38 2D 33 2E 37 F7 lcd @56 "-3.7"
+  118.414 IN  E0 59 55 faderPosition(fader: 0, value: 10969)
+  118.677 OUT 90 68 00
+# fader 1 -> 11000: reported=10969
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-3.7 dB       0      0      0      0      0      0      "
+# > fader 1 9000
+> fader 1 9000
+  119.659 OUT 90 68 7F
+  119.659 OUT E0 28 46
+  119.681 IN  F0 00 00 66 14 12 39 37 2E 36 F7 lcd @57 "7.6"
+  119.714 IN  E0 02 46 faderPosition(fader: 0, value: 8962)
+  119.981 OUT 90 68 00
+# fader 1 -> 9000: reported=8962
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-7.6 dB       0      0      0      0      0      0      "
+# > fader 1 7000
+> fader 1 7000
+  120.965 OUT 90 68 7F
+  120.965 OUT E0 58 36
+  120.981 IN  F0 00 00 66 14 12 39 31 32 2E 38 20 64 42 F7 lcd @57 "12.8 dB"
+  121.014 IN  E0 4B 36 faderPosition(fader: 0, value: 6987)
+  121.288 OUT 90 68 00
+# fader 1 -> 7000: reported=6987
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-12.8 dB      0      0      0      0      0      0      "
+# > fader 1 6000
+> fader 1 6000
+  122.273 OUT 90 68 7F
+  122.273 OUT E0 70 2E
+  122.281 IN  F0 00 00 66 14 12 3A 37 2E 31 F7 lcd @58 "7.1"
+  122.314 IN  E0 66 2E faderPosition(fader: 0, value: 5990)
+  122.594 OUT 90 68 00
+# fader 1 -> 6000: reported=5990
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-17.1 dB      0      0      0      0      0      0      "
+# > fader 1 5000
+> fader 1 5000
+  123.580 OUT 90 68 7F
+  123.580 OUT E0 08 27
+  123.596 IN  F0 00 00 66 14 12 39 32 32 2E 36 F7 lcd @57 "22.6"
+  123.614 IN  E0 03 27 faderPosition(fader: 0, value: 4995)
+  123.902 OUT 90 68 00
+# fader 1 -> 5000: reported=4995
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-22.6 dB      0      0      0      0      0      0      "
+# > fader 1 4000
+> fader 1 4000
+  124.887 OUT 90 68 7F
+  124.887 OUT E0 20 1F
+  124.914 IN  F0 00 00 66 14 12 39 33 30 2E 30 F7 lcd @57 "30.0"
+  124.948 IN  E0 16 1F faderPosition(fader: 0, value: 3990)
+  125.202 OUT 90 68 00
+# fader 1 -> 4000: reported=3990
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-30.0 dB      0      0      0      0      0      0      "
+# > fader 1 3000
+> fader 1 3000
+  126.195 OUT 90 68 7F
+  126.195 OUT E0 38 17
+  126.215 IN  F0 00 00 66 14 12 3A 35 2E 36 F7 lcd @58 "5.6"
+  126.248 IN  E0 33 17 faderPosition(fader: 0, value: 2995)
+  126.517 OUT 90 68 00
+# fader 1 -> 3000: reported=2995
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-35.6 dB      0      0      0      0      0      0      "
+# > fader 1 2000
+> fader 1 2000
+  127.498 OUT 90 68 7F
+  127.498 OUT E0 50 0F
+  127.514 IN  F0 00 00 66 14 12 39 34 35 2E 33 F7 lcd @57 "45.3"
+  127.548 IN  E0 4A 0F faderPosition(fader: 0, value: 1994)
+  127.801 OUT 90 68 00
+# fader 1 -> 2000: reported=1994
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-45.3 dB      0      0      0      0      0      0      "
+# > fader 1 1000
+> fader 1 1000
+  128.814 OUT 90 68 7F
+  128.814 OUT E0 68 07
+  128.848 IN  F0 00 00 66 14 12 39 35 35 2E 30 F7 lcd @57 "55.0"
+  128.886 IN  E0 62 07 faderPosition(fader: 0, value: 994)
+  129.144 OUT 90 68 00
+# fader 1 -> 1000: reported=994
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-55.0 dB      0      0      0      0      0      0      "
+# > fader 1 500
+> fader 1 500
+  130.128 OUT 90 68 7F
+  130.128 OUT E0 74 03
+  130.148 IN  F0 00 00 66 14 12 3A 39 2E 36 F7 lcd @58 "9.6"
+  130.181 IN  E0 6F 03 faderPosition(fader: 0, value: 495)
+  130.444 OUT 90 68 00
+# fader 1 -> 500: reported=495
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-59.6 dB      0      0      0      0      0      0      "
+# > fader 1 100
+> fader 1 100
+  131.435 OUT 90 68 7F
+  131.435 OUT E0 64 00
+  131.448 IN  F0 00 00 66 14 12 39 31 30 36 20 64 42 20 F7 lcd @57 "106 dB "
+  131.481 IN  E0 63 00 faderPosition(fader: 0, value: 99)
+  131.752 OUT 90 68 00
+# fader 1 -> 100: reported=99
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-106 dB       0      0      0      0      0      0      "
+# > fader 1 0
+> fader 1 0
+  132.743 OUT 90 68 7F
+  132.743 OUT E0 00 00
+  132.748 IN  F0 00 00 66 14 12 39 6F 6F 20 64 42 20 F7 lcd @57 "oo dB "
+  132.781 IN  E0 00 00 faderPosition(fader: 0, value: 0)
+  133.064 OUT 90 68 00
+# fader 1 -> 0: reported=0
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="-oo dB        0      0      0      0      0      0      "
+# > fader 1 12443
+> fader 1 12443
+  134.046 OUT 90 68 7F
+  134.046 OUT E0 1B 61
+  134.062 IN  F0 00 00 66 14 12 38 2B 30 2E 30 20 64 42 F7 lcd @56 "+0.0 dB"
+  134.081 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+  134.367 OUT 90 68 00
+# fader 1 -> 12443: reported=12443
+#   lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+#   lcd2="+0.0 dB       0      0      0      0      0      0      "
+# > lcd
+> lcd
+# lcd1="Inst 1 Inst 2 1      2      3      4      5      6      "
+# lcd2="+0.0 dB       0      0      0      0      0      0      "
+# assign=PN time=  9 1 1  1
+  136.381 IN  F0 00 00 66 14 12 38 30 20 20 20 20 20 20 30 F7 lcd @56 "0      0"
+# > press replace
+> press replace
+  154.628 OUT 90 58 7F
+  154.629 IN  90 58 00 led replace=off
+  154.661 OUT 90 58 00
+# pressed replace
+# > status
+> status
+# {
+#   "client_supports_elicitation" : false,
+#   "locate" : "jog wheel, one bar per tick, verified on the time display (needs Beats display and Logic stopped)",
+#   "mackie" : {
+#     "handshake" : "queried",
+#     "messages_received" : 706,
+#     "messages_sent" : 139,
+#     "other_model_probes" : [
+#       "10",
+#       "11",
+#       "15",
+#       "17"
+#     ],
+#     "seconds_since_last_message" : 1.028175458,
+#     "surface_active" : true
+#   },
+#   "notes" : [
+# 
+#   ],
+#   "ports" : [
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 1806664337,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Keys",
+#       "unique_id" : 1702008354,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Notes",
+#       "unique_id" : 876914795,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 572403500,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP Sync",
+#       "unique_id" : 1460862762,
+#       "unique_id_applied" : true
+#     }
+#   ],
+#   "server" : "logic-mcp 0.1.0",
+#   "surface" : {
+#     "assignment" : "PN",
+#     "faders" : [
+#       12443,
+#       12443,
+#       12443,
+#       12443,
+#       12443,
+#       12443,
+#       12443,
+#       12443,
+#       12443
+#     ],
+#     "lcd_lower" : "0      0      0      0      0      0      0      0      ",
+#     "lcd_upper" : "Inst 1 Inst 2 1      2      3      4      5      6      ",
+#     "leds_lit" : [
+#       "assignPan",
+#       "automationRead",
+#       "save",
+#       "undo",
+#       "click",
+#       "stop",
+#       "beatsLED"
+#     ],
+#     "time_display" : "  9 1 1  1",
+#     "time_display_codes" : [
+#       "20",
+#       "20",
+#       "39",
+#       "20",
+#       "31",
+#       "20",
+#       "31",
+#       "20",
+#       "20",
+#       "31"
+#     ]
+#   },
+#   "sync" : {
+#     "messages_received" : 16,
+#     "seconds_since_last_message" : 155.330767625
+#   },
+#   "transport" : {
+#     "cycle" : false,
+#     "display" : "  9 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 9,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 16,
+#       "seconds_since_last_message" : 155.330811291
+#     }
+#   },
+#   "uptime_seconds" : 155
+# }
+# > quit
+> quit

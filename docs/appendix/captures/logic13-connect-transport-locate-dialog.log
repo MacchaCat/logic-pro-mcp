@@ -1,0 +1,3234 @@
+# logic-mcp console 0.1.0 — ports are open:
+#   source "LogicMCP MCU" id=1806664337
+#   source "LogicMCP Keys" id=1702008354
+#   source "LogicMCP Notes" id=876914795
+#   destination "LogicMCP MCU" id=572403500
+#   destination "LogicMCP Sync" id=1460862762
+# Traffic log: ~/logic-pro-mcp/var/logs/console-20261120-233938.log
+# Type help for commands; quit (or Ctrl-D) closes the ports.
+# Reading commands from ~/logic-pro-mcp/var/console.fifo
+    0.276 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.277 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.277 IN  D0 00 meter(strip: 0, level: 0)
+    0.277 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.277 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.278 IN  D0 10 meter(strip: 1, level: 0)
+    0.278 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.278 IN  D0 20 meter(strip: 2, level: 0)
+    0.281 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.281 IN  D0 30 meter(strip: 3, level: 0)
+    0.282 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.282 IN  D0 40 meter(strip: 4, level: 0)
+    0.282 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.283 IN  D0 50 meter(strip: 5, level: 0)
+    0.283 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.283 IN  D0 60 meter(strip: 6, level: 0)
+    0.284 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.284 IN  D0 70 meter(strip: 7, level: 0)
+    0.284 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.284 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.285 IN  F0 00 00 66 14 0E 00 03 F7 command(id: 14, data: [0, 3])
+    0.285 IN  F0 00 00 66 14 0E 01 03 F7 command(id: 14, data: [1, 3])
+    0.285 IN  F0 00 00 66 14 0E 02 03 F7 command(id: 14, data: [2, 3])
+    0.286 IN  F0 00 00 66 14 0E 03 03 F7 command(id: 14, data: [3, 3])
+    0.286 IN  F0 00 00 66 14 0E 04 03 F7 command(id: 14, data: [4, 3])
+    0.286 IN  F0 00 00 66 14 0E 05 03 F7 command(id: 14, data: [5, 3])
+    0.286 IN  F0 00 00 66 14 0E 06 03 F7 command(id: 14, data: [6, 3])
+    0.287 IN  F0 00 00 66 14 0E 07 03 F7 command(id: 14, data: [7, 3])
+    0.287 IN  F0 00 00 66 14 0E 08 03 F7 command(id: 14, data: [8, 3])
+    0.287 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.288 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.288 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+    0.288 IN  B0 49 20 time digit[9]=' '
+    0.288 IN  B0 48 20 time digit[8]=' '
+    0.289 IN  B0 47 31 time digit[7]='1'
+    0.289 IN  B0 46 20 time digit[6]=' '
+    0.289 IN  B0 45 31 time digit[5]='1'
+    0.290 IN  B0 44 20 time digit[4]=' '
+    0.290 IN  B0 43 31 time digit[3]='1'
+    0.290 IN  B0 42 20 time digit[2]=' '
+    0.290 IN  B0 41 20 time digit[1]=' '
+    0.291 IN  B0 40 31 time digit[0]='1'
+    0.291 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.291 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.292 IN  90 00 00 led recArm[1]=off
+    0.292 IN  90 01 7F led recArm[2]=on
+    0.292 IN  90 02 00 led recArm[3]=off
+    0.292 IN  90 03 00 led recArm[4]=off
+    0.293 IN  90 04 00 led recArm[5]=off
+    0.293 IN  90 05 00 led recArm[6]=off
+    0.293 IN  90 06 00 led recArm[7]=off
+    0.294 IN  90 07 00 led recArm[8]=off
+    0.294 IN  90 08 00 led solo[1]=off
+    0.295 IN  90 09 00 led solo[2]=off
+    0.295 IN  90 0A 00 led solo[3]=off
+    0.296 IN  90 0B 00 led solo[4]=off
+    0.297 IN  90 0C 00 led solo[5]=off
+    0.297 IN  90 0D 00 led solo[6]=off
+    0.298 IN  90 0E 00 led solo[7]=off
+    0.298 IN  90 0F 00 led solo[8]=off
+    0.299 IN  90 10 00 led mute[1]=off
+    0.299 IN  90 11 00 led mute[2]=off
+    0.300 IN  90 12 00 led mute[3]=off
+    0.301 IN  90 13 00 led mute[4]=off
+    0.301 IN  90 14 00 led mute[5]=off
+    0.301 IN  90 15 00 led mute[6]=off
+    0.302 IN  90 16 00 led mute[7]=off
+    0.302 IN  90 17 00 led mute[8]=off
+    0.302 IN  90 18 00 led select[1]=off
+    0.303 IN  90 19 7F led select[2]=on
+    0.303 IN  90 1A 00 led select[3]=off
+    0.304 IN  90 1B 00 led select[4]=off
+    0.304 IN  90 1C 00 led select[5]=off
+    0.305 IN  90 1D 00 led select[6]=off
+    0.305 IN  90 1E 00 led select[7]=off
+    0.305 IN  90 1F 00 led select[8]=off
+    0.306 IN  90 20 00 led vPotPush[1]=off
+    0.306 IN  90 21 00 led vPotPush[2]=off
+    0.307 IN  90 22 00 led vPotPush[3]=off
+    0.307 IN  90 23 00 led vPotPush[4]=off
+    0.307 IN  90 24 00 led vPotPush[5]=off
+    0.308 IN  90 25 00 led vPotPush[6]=off
+    0.308 IN  90 26 00 led vPotPush[7]=off
+    0.308 IN  90 27 00 led vPotPush[8]=off
+    0.309 IN  90 28 00 led assignTrack=off
+    0.309 IN  90 29 00 led assignSend=off
+    0.309 IN  90 2A 7F led assignPan=on
+    0.309 IN  90 2B 00 led assignPlugin=off
+    0.310 IN  90 2C 00 led assignEQ=off
+    0.310 IN  90 2D 00 led assignInstrument=off
+    0.310 IN  90 32 00 led flip=off
+    0.311 IN  90 33 00 led globalView=off
+    0.311 IN  90 4A 7F led automationRead=on
+    0.311 IN  90 4B 00 led automationWrite=off
+    0.312 IN  90 4C 00 led automationTrim=off
+    0.312 IN  90 4D 00 led automationTouch=off
+    0.312 IN  90 4E 00 led automationLatch=off
+    0.312 IN  90 4F 00 led group=off
+    0.313 IN  90 50 7F led save=on
+    0.313 IN  90 51 00 led undo=off
+    0.313 IN  90 54 00 led marker=off
+    0.314 IN  90 55 00 led nudge=off
+    0.314 IN  90 56 00 led cycle=off
+    0.314 IN  90 57 00 led drop=off
+    0.314 IN  90 58 00 led replace=off
+    0.315 IN  90 59 7F led click=on
+    0.315 IN  90 5A 00 led soloGlobal=off
+    0.315 IN  90 5B 00 led rewind=off
+    0.315 IN  90 5C 00 led fastForward=off
+    0.316 IN  90 5D 7F led stop=on
+    0.316 IN  90 5E 00 led play=off
+    0.316 IN  90 5F 00 led record=off
+    0.317 IN  90 64 00 led zoom=off
+    0.317 IN  90 65 00 led scrub=off
+    0.318 IN  90 71 00 led smpteLED=off
+    0.318 IN  90 72 7F led beatsLED=on
+    0.319 IN  90 73 00 led rudeSoloLED=off
+    0.320 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.320 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.320 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.320 IN  E2 00 00 faderPosition(fader: 2, value: 0)
+    0.321 IN  E3 00 00 faderPosition(fader: 3, value: 0)
+    0.321 IN  E4 00 00 faderPosition(fader: 4, value: 0)
+    0.321 IN  E5 00 00 faderPosition(fader: 5, value: 0)
+    0.322 IN  E6 00 00 faderPosition(fader: 6, value: 0)
+    0.322 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+    0.322 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.322 IN  E9 00 00 unknown(E9 00 00)
+    0.323 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.323 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.323 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.324 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.324 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.324 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.325 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.325 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.325 SYNC F0 00 00 66 10 00 F7
+    0.325 IN  F0 00 00 66 10 00 F7 probe for model 10: 00
+    0.325 IN  F0 00 00 66 11 00 F7 probe for model 11: 00
+    0.325 SYNC F0 00 00 66 11 00 F7
+    0.325 IN  F0 00 00 66 17 00 F7 probe for model 17: 00
+    0.325 SYNC F0 00 00 66 17 00 F7
+    0.326 IN  F0 00 00 66 17 13 00 F7 probe for model 17: 13 00
+    0.326 SYNC F0 00 00 66 17 13 00 F7
+    0.326 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.326 SYNC F0 00 00 66 14 00 F7
+    0.326 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.326 SYNC F0 00 00 66 14 13 00 F7
+    0.326 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.326 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.326 SYNC F0 00 00 66 15 00 F7
+    0.326 SYNC F0 00 00 66 15 13 00 F7
+    0.326 SYNC F0 00 00 66 14 00 F7
+    0.326 SYNC F0 00 00 66 14 13 00 F7
+    0.326 SYNC F0 00 00 66 15 00 F7
+    0.326 SYNC F0 00 00 66 15 13 00 F7
+    0.327 SYNC F0 00 00 66 14 00 F7
+    0.327 SYNC F0 00 00 66 14 13 00 F7
+    0.328 SYNC F0 00 00 66 15 00 F7
+    0.328 SYNC F0 00 00 66 15 13 00 F7
+    0.338 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.338 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.338 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.338 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.349 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.349 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.361 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.361 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.361 IN  F0 00 00 66 14 00 F7 deviceQuery
+    0.361 OUT F0 00 00 66 14 01 4C 4D 43 50 30 30 31 01 02 03 04 F7
+    0.374 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.374 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.385 IN  F0 00 00 66 15 00 F7 probe for model 15: 00
+    0.385 IN  F0 00 00 66 15 13 00 F7 probe for model 15: 13 00
+    0.385 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.385 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.397 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.397 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.410 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.410 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.410 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.410 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+    0.410 IN  B0 49 20 time digit[9]=' '
+    0.410 IN  B0 48 20 time digit[8]=' '
+    0.410 IN  B0 47 31 time digit[7]='1'
+    0.410 IN  B0 46 20 time digit[6]=' '
+    0.410 IN  B0 45 31 time digit[5]='1'
+    0.410 IN  B0 44 20 time digit[4]=' '
+    0.410 IN  B0 43 31 time digit[3]='1'
+    0.410 IN  B0 42 20 time digit[2]=' '
+    0.410 IN  B0 41 20 time digit[1]=' '
+    0.410 IN  B0 40 31 time digit[0]='1'
+    0.410 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.410 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.410 IN  90 00 00 led recArm[1]=off
+    0.410 IN  90 01 7F led recArm[2]=on
+    0.410 IN  90 02 00 led recArm[3]=off
+    0.410 IN  90 03 00 led recArm[4]=off
+    0.410 IN  90 04 00 led recArm[5]=off
+    0.410 IN  90 05 00 led recArm[6]=off
+    0.410 IN  90 06 00 led recArm[7]=off
+    0.410 IN  90 07 00 led recArm[8]=off
+    0.410 IN  90 08 00 led solo[1]=off
+    0.410 IN  90 09 00 led solo[2]=off
+    0.410 IN  90 0A 00 led solo[3]=off
+    0.410 IN  90 0B 00 led solo[4]=off
+    0.410 IN  90 0C 00 led solo[5]=off
+    0.410 IN  90 0D 00 led solo[6]=off
+    0.410 IN  90 0E 00 led solo[7]=off
+    0.410 IN  90 0F 00 led solo[8]=off
+    0.410 IN  90 10 00 led mute[1]=off
+    0.410 IN  90 11 00 led mute[2]=off
+    0.410 IN  90 12 00 led mute[3]=off
+    0.410 IN  90 13 00 led mute[4]=off
+    0.410 IN  90 14 00 led mute[5]=off
+    0.410 IN  90 15 00 led mute[6]=off
+    0.410 IN  90 16 00 led mute[7]=off
+    0.410 IN  90 17 00 led mute[8]=off
+    0.410 IN  90 18 00 led select[1]=off
+    0.410 IN  90 19 7F led select[2]=on
+    0.410 IN  90 1A 00 led select[3]=off
+    0.410 IN  90 1B 00 led select[4]=off
+    0.410 IN  90 1C 00 led select[5]=off
+    0.410 IN  90 1D 00 led select[6]=off
+    0.410 IN  90 1E 00 led select[7]=off
+    0.410 IN  90 1F 00 led select[8]=off
+    0.410 IN  90 20 00 led vPotPush[1]=off
+    0.410 IN  90 21 00 led vPotPush[2]=off
+    0.410 IN  90 22 00 led vPotPush[3]=off
+    0.410 IN  90 23 00 led vPotPush[4]=off
+    0.410 IN  90 24 00 led vPotPush[5]=off
+    0.410 IN  90 25 00 led vPotPush[6]=off
+    0.410 IN  90 26 00 led vPotPush[7]=off
+    0.410 IN  90 27 00 led vPotPush[8]=off
+    0.411 IN  90 28 00 led assignTrack=off
+    0.411 IN  90 29 00 led assignSend=off
+    0.411 IN  90 2A 7F led assignPan=on
+    0.411 IN  90 2B 00 led assignPlugin=off
+    0.411 IN  90 2C 00 led assignEQ=off
+    0.411 IN  90 2D 00 led assignInstrument=off
+    0.411 IN  90 32 00 led flip=off
+    0.411 IN  90 33 00 led globalView=off
+    0.411 IN  90 4A 7F led automationRead=on
+    0.411 IN  90 4B 00 led automationWrite=off
+    0.411 IN  90 4C 00 led automationTrim=off
+    0.411 IN  90 4D 00 led automationTouch=off
+    0.411 IN  90 4E 00 led automationLatch=off
+    0.411 IN  90 4F 00 led group=off
+    0.411 IN  90 50 7F led save=on
+    0.411 IN  90 51 00 led undo=off
+    0.411 IN  90 54 00 led marker=off
+    0.411 IN  90 55 00 led nudge=off
+    0.411 IN  90 56 00 led cycle=off
+    0.411 IN  90 57 00 led drop=off
+    0.411 IN  90 58 00 led replace=off
+    0.411 IN  90 59 7F led click=on
+    0.411 IN  90 5A 00 led soloGlobal=off
+    0.411 IN  90 5B 00 led rewind=off
+    0.411 IN  90 5C 00 led fastForward=off
+    0.411 IN  90 5D 7F led stop=on
+    0.411 IN  90 5E 00 led play=off
+    0.411 IN  90 5F 00 led record=off
+    0.411 IN  90 64 00 led zoom=off
+    0.411 IN  90 65 00 led scrub=off
+    0.411 IN  90 71 00 led smpteLED=off
+    0.411 IN  90 72 7F led beatsLED=on
+    0.411 IN  90 73 00 led rudeSoloLED=off
+    0.411 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.411 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.411 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.411 IN  E2 00 00 faderPosition(fader: 2, value: 0)
+    0.411 IN  E3 00 00 faderPosition(fader: 3, value: 0)
+    0.411 IN  E4 00 00 faderPosition(fader: 4, value: 0)
+    0.411 IN  E5 00 00 faderPosition(fader: 5, value: 0)
+    0.411 IN  E6 00 00 faderPosition(fader: 6, value: 0)
+    0.411 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+    0.411 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.411 IN  E9 00 00 unknown(E9 00 00)
+    0.411 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.411 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.411 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.411 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.411 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.411 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.411 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.411 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.411 IN  D0 00 meter(strip: 0, level: 0)
+    0.411 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.411 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.411 IN  D0 10 meter(strip: 1, level: 0)
+    0.411 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.411 IN  D0 20 meter(strip: 2, level: 0)
+    0.411 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.411 IN  D0 30 meter(strip: 3, level: 0)
+    0.411 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.411 IN  D0 40 meter(strip: 4, level: 0)
+    0.411 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.411 IN  D0 50 meter(strip: 5, level: 0)
+    0.411 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.411 IN  D0 60 meter(strip: 6, level: 0)
+    0.411 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.411 IN  D0 70 meter(strip: 7, level: 0)
+    0.411 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.411 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.411 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.411 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.445 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.445 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.445 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.445 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.446 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.446 IN  F0 00 00 66 14 13 00 F7 firmwareVersionRequest
+    0.446 OUT F0 00 00 66 14 14 56 31 2E 30 30 F7
+    0.457 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.457 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.457 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.457 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.457 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.458 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.458 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.458 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.458 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.458 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.458 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.458 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.458 IN  B0 49 20 time digit[9]=' '
+    0.458 IN  B0 48 20 time digit[8]=' '
+    0.458 IN  B0 47 31 time digit[7]='1'
+    0.458 IN  B0 46 20 time digit[6]=' '
+    0.458 IN  B0 45 31 time digit[5]='1'
+    0.458 IN  B0 44 20 time digit[4]=' '
+    0.458 IN  B0 43 31 time digit[3]='1'
+    0.458 IN  B0 42 20 time digit[2]=' '
+    0.458 IN  B0 41 20 time digit[1]=' '
+    0.458 IN  B0 40 31 time digit[0]='1'
+    0.458 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.458 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.458 IN  90 00 00 led recArm[1]=off
+    0.458 IN  90 01 7F led recArm[2]=on
+    0.458 IN  90 02 00 led recArm[3]=off
+    0.458 IN  90 03 00 led recArm[4]=off
+    0.459 IN  90 04 00 led recArm[5]=off
+    0.460 IN  90 05 00 led recArm[6]=off
+    0.460 IN  90 06 00 led recArm[7]=off
+    0.461 IN  90 07 00 led recArm[8]=off
+    0.461 IN  90 08 00 led solo[1]=off
+    0.462 IN  90 09 00 led solo[2]=off
+    0.463 IN  90 0A 00 led solo[3]=off
+    0.463 IN  90 0B 00 led solo[4]=off
+    0.464 IN  90 0C 00 led solo[5]=off
+    0.464 IN  90 0D 00 led solo[6]=off
+    0.465 IN  90 0E 00 led solo[7]=off
+    0.465 IN  90 0F 00 led solo[8]=off
+    0.466 IN  90 10 00 led mute[1]=off
+    0.466 IN  90 11 00 led mute[2]=off
+    0.466 IN  90 12 00 led mute[3]=off
+    0.467 IN  90 13 00 led mute[4]=off
+    0.467 IN  90 14 00 led mute[5]=off
+    0.467 IN  90 15 00 led mute[6]=off
+    0.468 IN  90 16 00 led mute[7]=off
+    0.468 IN  90 17 00 led mute[8]=off
+    0.468 IN  90 18 00 led select[1]=off
+    0.469 IN  90 19 7F led select[2]=on
+    0.469 IN  90 1A 00 led select[3]=off
+    0.469 IN  90 1B 00 led select[4]=off
+    0.470 IN  90 1C 00 led select[5]=off
+    0.470 IN  90 1D 00 led select[6]=off
+    0.470 IN  90 1E 00 led select[7]=off
+    0.470 IN  90 1F 00 led select[8]=off
+    0.471 IN  90 20 00 led vPotPush[1]=off
+    0.471 IN  90 21 00 led vPotPush[2]=off
+    0.471 IN  90 22 00 led vPotPush[3]=off
+    0.471 IN  90 23 00 led vPotPush[4]=off
+    0.472 IN  90 24 00 led vPotPush[5]=off
+    0.472 IN  90 25 00 led vPotPush[6]=off
+    0.473 IN  90 26 00 led vPotPush[7]=off
+    0.473 IN  90 27 00 led vPotPush[8]=off
+    0.474 IN  90 28 00 led assignTrack=off
+    0.474 IN  90 29 00 led assignSend=off
+    0.474 IN  90 2A 7F led assignPan=on
+    0.475 IN  90 2B 00 led assignPlugin=off
+    0.475 IN  90 2C 00 led assignEQ=off
+    0.475 IN  90 2D 00 led assignInstrument=off
+    0.475 IN  90 32 00 led flip=off
+    0.476 IN  90 33 00 led globalView=off
+    0.476 IN  90 4A 7F led automationRead=on
+    0.476 IN  90 4B 00 led automationWrite=off
+    0.477 IN  90 4C 00 led automationTrim=off
+    0.477 IN  90 4D 00 led automationTouch=off
+    0.477 IN  90 4E 00 led automationLatch=off
+    0.478 IN  90 4F 00 led group=off
+    0.478 IN  90 50 7F led save=on
+    0.478 IN  90 51 00 led undo=off
+    0.478 IN  90 54 00 led marker=off
+    0.479 IN  90 55 00 led nudge=off
+    0.479 IN  90 56 00 led cycle=off
+    0.480 IN  90 57 00 led drop=off
+    0.480 IN  90 58 00 led replace=off
+    0.481 IN  90 59 7F led click=on
+    0.482 IN  90 5A 00 led soloGlobal=off
+    0.482 IN  90 5B 00 led rewind=off
+    0.483 IN  90 5C 00 led fastForward=off
+    0.483 IN  90 5D 7F led stop=on
+    0.483 IN  90 5E 00 led play=off
+    0.483 IN  90 5F 00 led record=off
+    0.484 IN  90 64 00 led zoom=off
+    0.485 IN  90 65 00 led scrub=off
+    0.485 IN  90 71 00 led smpteLED=off
+    0.486 IN  90 72 7F led beatsLED=on
+    0.486 IN  90 73 00 led rudeSoloLED=off
+    0.487 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.487 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.488 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.489 IN  E2 00 00 faderPosition(fader: 2, value: 0)
+    0.489 IN  E3 00 00 faderPosition(fader: 3, value: 0)
+    0.490 IN  E4 00 00 faderPosition(fader: 4, value: 0)
+    0.490 IN  E5 00 00 faderPosition(fader: 5, value: 0)
+    0.491 IN  E6 00 00 faderPosition(fader: 6, value: 0)
+    0.491 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+    0.492 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.493 IN  E9 00 00 unknown(E9 00 00)
+    0.493 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.494 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.494 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.494 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.494 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.495 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.496 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.496 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.497 IN  D0 00 meter(strip: 0, level: 0)
+    0.497 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.497 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.497 IN  D0 10 meter(strip: 1, level: 0)
+    0.498 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.498 IN  D0 20 meter(strip: 2, level: 0)
+    0.499 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.500 IN  D0 30 meter(strip: 3, level: 0)
+    0.500 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.501 IN  D0 40 meter(strip: 4, level: 0)
+    0.501 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.502 IN  D0 50 meter(strip: 5, level: 0)
+    0.502 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.503 IN  D0 60 meter(strip: 6, level: 0)
+    0.503 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.503 IN  D0 70 meter(strip: 7, level: 0)
+    0.504 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.504 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.505 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.505 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.540 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.540 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.540 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    0.540 IN  B0 49 20 time digit[9]=' '
+    0.541 IN  B0 48 20 time digit[8]=' '
+    0.542 IN  B0 47 31 time digit[7]='1'
+    0.542 IN  B0 46 20 time digit[6]=' '
+    0.543 IN  B0 45 31 time digit[5]='1'
+    0.543 IN  B0 44 20 time digit[4]=' '
+    0.544 IN  B0 43 31 time digit[3]='1'
+    0.544 IN  B0 42 20 time digit[2]=' '
+    0.545 IN  B0 41 20 time digit[1]=' '
+    0.546 IN  B0 40 31 time digit[0]='1'
+    0.546 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+    0.547 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+    0.547 IN  90 00 00 led recArm[1]=off
+    0.548 IN  90 01 7F led recArm[2]=on
+    0.548 IN  90 02 00 led recArm[3]=off
+    0.549 IN  90 03 00 led recArm[4]=off
+    0.550 IN  90 04 00 led recArm[5]=off
+    0.550 IN  90 05 00 led recArm[6]=off
+    0.551 IN  90 06 00 led recArm[7]=off
+    0.551 IN  90 07 00 led recArm[8]=off
+    0.552 IN  90 08 00 led solo[1]=off
+    0.552 IN  90 09 00 led solo[2]=off
+    0.553 IN  90 0A 00 led solo[3]=off
+    0.554 IN  90 0B 00 led solo[4]=off
+    0.554 IN  90 0C 00 led solo[5]=off
+    0.555 IN  90 0D 00 led solo[6]=off
+    0.555 IN  90 0E 00 led solo[7]=off
+    0.556 IN  90 0F 00 led solo[8]=off
+    0.557 IN  90 10 00 led mute[1]=off
+    0.557 IN  90 11 00 led mute[2]=off
+    0.558 IN  90 12 00 led mute[3]=off
+    0.558 IN  90 13 00 led mute[4]=off
+    0.559 IN  90 14 00 led mute[5]=off
+    0.559 IN  90 15 00 led mute[6]=off
+    0.560 IN  90 16 00 led mute[7]=off
+    0.560 IN  90 17 00 led mute[8]=off
+    0.560 IN  90 18 00 led select[1]=off
+    0.561 IN  90 19 7F led select[2]=on
+    0.561 IN  90 1A 00 led select[3]=off
+    0.561 IN  90 1B 00 led select[4]=off
+    0.562 IN  90 1C 00 led select[5]=off
+    0.562 IN  90 1D 00 led select[6]=off
+    0.562 IN  90 1E 00 led select[7]=off
+    0.563 IN  90 1F 00 led select[8]=off
+    0.563 IN  90 20 00 led vPotPush[1]=off
+    0.563 IN  90 21 00 led vPotPush[2]=off
+    0.563 IN  90 22 00 led vPotPush[3]=off
+    0.564 IN  90 23 00 led vPotPush[4]=off
+    0.565 IN  90 24 00 led vPotPush[5]=off
+    0.565 IN  90 25 00 led vPotPush[6]=off
+    0.566 IN  90 26 00 led vPotPush[7]=off
+    0.566 IN  90 27 00 led vPotPush[8]=off
+    0.567 IN  90 28 00 led assignTrack=off
+    0.567 IN  90 29 00 led assignSend=off
+    0.568 IN  90 2A 7F led assignPan=on
+    0.568 IN  90 2B 00 led assignPlugin=off
+    0.568 IN  90 2C 00 led assignEQ=off
+    0.569 IN  90 2D 00 led assignInstrument=off
+    0.569 IN  90 32 00 led flip=off
+    0.569 IN  90 33 00 led globalView=off
+    0.570 IN  90 4A 7F led automationRead=on
+    0.570 IN  90 4B 00 led automationWrite=off
+    0.570 IN  90 4C 00 led automationTrim=off
+    0.570 IN  90 4D 00 led automationTouch=off
+    0.570 IN  90 4E 00 led automationLatch=off
+    0.571 IN  90 4F 00 led group=off
+    0.572 IN  90 50 7F led save=on
+    0.572 IN  90 51 00 led undo=off
+    0.573 IN  90 54 00 led marker=off
+    0.573 IN  90 55 00 led nudge=off
+    0.574 IN  90 56 00 led cycle=off
+    0.575 IN  90 57 00 led drop=off
+    0.575 IN  90 58 00 led replace=off
+    0.576 IN  90 59 7F led click=on
+    0.576 IN  90 5A 00 led soloGlobal=off
+    0.577 IN  90 5B 00 led rewind=off
+    0.577 IN  90 5C 00 led fastForward=off
+    0.578 IN  90 5D 7F led stop=on
+    0.579 IN  90 5E 00 led play=off
+    0.579 IN  90 5F 00 led record=off
+    0.580 IN  90 64 00 led zoom=off
+    0.580 IN  90 65 00 led scrub=off
+    0.581 IN  90 71 00 led smpteLED=off
+    0.582 IN  90 72 7F led beatsLED=on
+    0.582 IN  90 73 00 led rudeSoloLED=off
+    0.583 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+    0.583 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+    0.584 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+    0.584 IN  E2 00 00 faderPosition(fader: 2, value: 0)
+    0.585 IN  E3 00 00 faderPosition(fader: 3, value: 0)
+    0.586 IN  E4 00 00 faderPosition(fader: 4, value: 0)
+    0.586 IN  E5 00 00 faderPosition(fader: 5, value: 0)
+    0.587 IN  E6 00 00 faderPosition(fader: 6, value: 0)
+    0.587 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+    0.588 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+    0.588 IN  E9 00 00 unknown(E9 00 00)
+    0.589 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+    0.589 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+    0.589 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+    0.589 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+    0.589 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+    0.589 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+    0.589 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+    0.590 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+    0.590 IN  D0 00 meter(strip: 0, level: 0)
+    0.590 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+    0.590 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+    0.591 IN  D0 10 meter(strip: 1, level: 0)
+    0.592 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+    0.592 IN  D0 20 meter(strip: 2, level: 0)
+    0.593 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+    0.593 IN  D0 30 meter(strip: 3, level: 0)
+    0.594 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+    0.594 IN  D0 40 meter(strip: 4, level: 0)
+    0.595 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+    0.596 IN  D0 50 meter(strip: 5, level: 0)
+    0.596 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+    0.597 IN  D0 60 meter(strip: 6, level: 0)
+    0.597 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+    0.598 IN  D0 70 meter(strip: 7, level: 0)
+    0.598 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+    0.599 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+    0.600 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+    0.600 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+    1.207 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+    1.607 IN  F0 00 00 66 14 0E 00 03 F7 command(id: 14, data: [0, 3])
+    1.607 IN  F0 00 00 66 14 0E 01 03 F7 command(id: 14, data: [1, 3])
+    1.607 IN  F0 00 00 66 14 0E 02 03 F7 command(id: 14, data: [2, 3])
+    1.607 IN  F0 00 00 66 14 0E 03 03 F7 command(id: 14, data: [3, 3])
+    1.608 IN  F0 00 00 66 14 0E 04 03 F7 command(id: 14, data: [4, 3])
+    1.608 IN  F0 00 00 66 14 0E 05 03 F7 command(id: 14, data: [5, 3])
+    1.608 IN  F0 00 00 66 14 0E 06 03 F7 command(id: 14, data: [6, 3])
+    1.609 IN  F0 00 00 66 14 0E 07 03 F7 command(id: 14, data: [7, 3])
+    1.609 IN  F0 00 00 66 14 0E 08 03 F7 command(id: 14, data: [8, 3])
+# > status
+> status
+# {
+#   "client_supports_elicitation" : false,
+#   "locate" : "not available yet: chosen after the Phase 1 test in real Logic 13",
+#   "mackie" : {
+#     "handshake" : "queried",
+#     "messages_received" : 559,
+#     "messages_sent" : 11,
+#     "other_model_probes" : [
+#       "10",
+#       "11",
+#       "15",
+#       "17"
+#     ],
+#     "seconds_since_last_message" : 1.547084042,
+#     "surface_active" : true
+#   },
+#   "notes" : [
+# 
+#   ],
+#   "ports" : [
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 1806664337,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Keys",
+#       "unique_id" : 1702008354,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Notes",
+#       "unique_id" : 876914795,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 572403500,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP Sync",
+#       "unique_id" : 1460862762,
+#       "unique_id_applied" : true
+#     }
+#   ],
+#   "server" : "logic-mcp 0.1.0",
+#   "surface" : {
+#     "assignment" : "PN.",
+#     "faders" : [
+#       12443,
+#       12443,
+#       0,
+#       0,
+#       0,
+#       0,
+#       0,
+#       0,
+#       12443
+#     ],
+#     "lcd_lower" : "0                                                       ",
+#     "lcd_upper" : "Pan    -      -      -      -      -      -      -      ",
+#     "leds_lit" : [
+#       "recArm[2]",
+#       "select[2]",
+#       "assignPan",
+#       "automationRead",
+#       "save",
+#       "click",
+#       "stop",
+#       "beatsLED"
+#     ],
+#     "time_display" : "  1 1 1  1",
+#     "time_display_codes" : [
+#       "20",
+#       "20",
+#       "31",
+#       "20",
+#       "31",
+#       "20",
+#       "31",
+#       "20",
+#       "20",
+#       "31"
+#     ]
+#   },
+#   "sync" : {
+#     "messages_received" : 16,
+#     "seconds_since_last_message" : 2.828530958
+#   },
+#   "transport" : {
+#     "cycle" : false,
+#     "display" : "  1 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 1,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 16,
+#       "seconds_since_last_message" : 2.82857725
+#     }
+#   },
+#   "uptime_seconds" : 3
+# }
+# > play
+> play
+   32.503 OUT 90 5E 7F
+   32.508 SYNC F2 00 00
+   32.539 OUT 90 5E 00
+   32.572 SYNC F2 00 00
+   32.580 IN  90 5E 7F led play=on
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  1 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 1,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 18,
+#       "position_sixteenths" : 0,
+#       "seconds_since_last_message" : 0.008456041
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:40:11.114+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  1 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 1,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 16,
+#       "seconds_since_last_message" : 32.175754125
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=on or sync.running after 42 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Play confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+   32.590 IN  90 5D 00 led stop=off
+   32.615 IN  D0 0F meter(strip: 0, level: 15)
+   32.615 IN  B0 47 30 time digit[7]='0'
+   32.615 IN  B0 45 34 time digit[5]='4'
+   32.615 IN  B0 43 34 time digit[3]='4'
+   32.616 IN  B0 42 31 time digit[2]='1'
+   32.616 IN  B0 41 34 time digit[1]='4'
+   32.616 IN  B0 40 37 time digit[0]='7'
+   32.640 IN  B0 41 38 time digit[1]='8'
+   32.640 IN  B0 40 39 time digit[0]='9'
+   32.659 SYNC FA
+   32.659 SYNC F8
+   32.673 IN  B0 47 31 time digit[7]='1'
+   32.673 IN  B0 45 31 time digit[5]='1'
+   32.674 IN  B0 43 31 time digit[3]='1'
+   32.674 IN  B0 42 20 time digit[2]=' '
+   32.674 IN  B0 41 31 time digit[1]='1'
+   32.675 IN  B0 40 37 time digit[0]='7'
+   32.679 SYNC F8
+   32.699 SYNC F8
+   32.707 IN  B0 41 38 time digit[1]='8'
+   32.707 IN  B0 40 30 time digit[0]='0'
+   32.720 SYNC F8
+   32.740 IN  B0 42 31 time digit[2]='1'
+   32.740 IN  B0 41 33 time digit[1]='3'
+   32.740 IN  B0 40 37 time digit[0]='7'
+   32.741 SYNC F8
+   32.762 SYNC F8
+   32.773 IN  B0 42 32 time digit[2]='2'
+   32.773 IN  B0 41 31 time digit[1]='1'
+   32.774 IN  B0 40 32 time digit[0]='2'
+   32.783 SYNC F8
+   32.804 SYNC F8
+   32.807 IN  B0 43 32 time digit[3]='2'
+   32.807 IN  B0 42 20 time digit[2]=' '
+   32.807 IN  B0 41 32 time digit[1]='2'
+   32.807 IN  B0 40 39 time digit[0]='9'
+   32.825 SYNC F8
+   32.840 IN  B0 41 39 time digit[1]='9'
+   32.840 IN  B0 40 37 time digit[0]='7'
+   32.845 SYNC F8
+   32.866 SYNC F8
+   32.873 IN  B0 42 31 time digit[2]='1'
+   32.874 IN  B0 41 36 time digit[1]='6'
+   32.874 IN  B0 40 30 time digit[0]='0'
+   32.887 SYNC F8
+   32.906 IN  B0 42 32 time digit[2]='2'
+   32.907 IN  B0 41 31 time digit[1]='1'
+   32.907 IN  B0 40 37 time digit[0]='7'
+   32.908 SYNC F8
+# > wait 0.3
+> wait 0.3
+   32.929 SYNC F8
+   32.940 IN  B0 43 33 time digit[3]='3'
+   32.940 IN  B0 42 20 time digit[2]=' '
+   32.941 IN  B0 41 35 time digit[1]='5'
+   32.941 IN  B0 40 32 time digit[0]='2'
+   32.949 SYNC F8
+   32.970 SYNC F8
+   32.973 IN  B0 42 31 time digit[2]='1'
+   32.973 IN  B0 41 30 time digit[1]='0'
+   32.974 IN  B0 40 39 time digit[0]='9'
+   32.991 SYNC F8
+   33.007 IN  B0 41 37 time digit[1]='7'
+   33.007 IN  B0 40 37 time digit[0]='7'
+   33.012 SYNC F8
+   33.033 SYNC F8
+   33.040 IN  B0 43 34 time digit[3]='4'
+   33.040 IN  B0 42 20 time digit[2]=' '
+   33.041 IN  B0 41 20 time digit[1]=' '
+   33.041 IN  B0 40 32 time digit[0]='2'
+   33.054 SYNC F8
+   33.073 IN  B0 41 35 time digit[1]='5'
+   33.073 IN  B0 40 37 time digit[0]='7'
+   33.074 SYNC F8
+   33.095 SYNC F8
+   33.107 IN  B0 42 31 time digit[2]='1'
+   33.107 IN  B0 41 33 time digit[1]='3'
+   33.107 IN  B0 40 32 time digit[0]='2'
+   33.116 SYNC F8
+   33.137 SYNC F8
+   33.140 IN  B0 41 38 time digit[1]='8'
+   33.140 IN  B0 40 39 time digit[0]='9'
+   33.158 SYNC F8
+   33.173 IN  B0 45 32 time digit[5]='2'
+   33.173 IN  B0 43 31 time digit[3]='1'
+   33.174 IN  B0 42 20 time digit[2]=' '
+   33.174 IN  B0 41 31 time digit[1]='1'
+   33.174 IN  B0 40 37 time digit[0]='7'
+   33.179 SYNC F8
+   33.199 SYNC F8
+   33.207 IN  B0 41 38 time digit[1]='8'
+   33.207 IN  B0 40 30 time digit[0]='0'
+   33.220 SYNC F8
+   33.240 IN  B0 42 31 time digit[2]='1'
+   33.240 IN  B0 41 33 time digit[1]='3'
+   33.241 IN  B0 40 37 time digit[0]='7'
+   33.241 SYNC F8
+   33.262 SYNC F8
+   33.273 IN  B0 42 32 time digit[2]='2'
+   33.274 IN  B0 41 31 time digit[1]='1'
+   33.274 IN  B0 40 32 time digit[0]='2'
+   33.283 SYNC F8
+   33.304 SYNC F8
+   33.306 IN  B0 43 32 time digit[3]='2'
+   33.307 IN  B0 42 20 time digit[2]=' '
+   33.307 IN  B0 41 32 time digit[1]='2'
+   33.307 IN  B0 40 39 time digit[0]='9'
+# > play
+> play
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  1 2 2 29",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 1,
+#       "beat" : 2,
+#       "division" : 2,
+#       "tick" : 29
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 51,
+#       "position_sixteenths" : 5,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.01400825,
+#       "tempo_bpm" : 120.2
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:40:11.850+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  1 2 2 29",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 1,
+#       "beat" : 2,
+#       "division" : 2,
+#       "tick" : 29
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 51,
+#       "position_sixteenths" : 5,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.01400825,
+#       "tempo_bpm" : 120.2
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=on before the call"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Already playing; nothing sent.",
+#   "warnings" : [
+# 
+#   ]
+# }
+   33.324 SYNC F8
+   33.340 IN  B0 41 39 time digit[1]='9'
+   33.340 IN  B0 40 37 time digit[0]='7'
+   33.345 SYNC F8
+   33.366 SYNC F8
+   33.373 IN  B0 42 31 time digit[2]='1'
+   33.374 IN  B0 41 36 time digit[1]='6'
+   33.374 IN  B0 40 30 time digit[0]='0'
+   33.387 SYNC F8
+   33.407 IN  B0 42 32 time digit[2]='2'
+   33.408 IN  B0 41 32 time digit[1]='2'
+   33.408 SYNC F8
+   33.408 IN  B0 40 39 time digit[0]='9'
+   33.429 SYNC F8
+   33.440 IN  B0 43 33 time digit[3]='3'
+   33.440 IN  B0 42 20 time digit[2]=' '
+   33.440 IN  B0 41 35 time digit[1]='5'
+   33.441 IN  B0 40 32 time digit[0]='2'
+   33.449 SYNC F8
+   33.470 SYNC F8
+   33.473 IN  B0 42 31 time digit[2]='1'
+   33.473 IN  B0 41 30 time digit[1]='0'
+   33.474 IN  B0 40 39 time digit[0]='9'
+   33.491 SYNC F8
+   33.506 IN  B0 41 37 time digit[1]='7'
+   33.507 IN  B0 40 37 time digit[0]='7'
+   33.512 SYNC F8
+   33.533 SYNC F8
+   33.540 IN  B0 43 34 time digit[3]='4'
+   33.540 IN  B0 42 20 time digit[2]=' '
+   33.540 IN  B0 41 20 time digit[1]=' '
+   33.541 IN  B0 40 32 time digit[0]='2'
+   33.554 SYNC F8
+   33.573 IN  B0 41 35 time digit[1]='5'
+   33.573 IN  B0 40 37 time digit[0]='7'
+   33.574 SYNC F8
+   33.595 SYNC F8
+   33.607 IN  B0 42 31 time digit[2]='1'
+   33.607 IN  B0 41 33 time digit[1]='3'
+   33.607 IN  B0 40 32 time digit[0]='2'
+   33.616 SYNC F8
+   33.637 SYNC F8
+   33.640 IN  B0 41 38 time digit[1]='8'
+   33.640 IN  B0 40 39 time digit[0]='9'
+   33.658 SYNC F8
+   33.673 IN  B0 45 33 time digit[5]='3'
+   33.673 IN  B0 43 31 time digit[3]='1'
+   33.674 IN  B0 42 20 time digit[2]=' '
+   33.674 IN  B0 41 31 time digit[1]='1'
+   33.674 IN  B0 40 37 time digit[0]='7'
+   33.679 SYNC F8
+   33.699 SYNC F8
+   33.707 IN  B0 41 38 time digit[1]='8'
+   33.707 IN  B0 40 30 time digit[0]='0'
+   33.720 SYNC F8
+# > wait 2
+> wait 2
+   33.740 IN  B0 42 31 time digit[2]='1'
+   33.740 IN  B0 41 33 time digit[1]='3'
+   33.741 IN  B0 40 37 time digit[0]='7'
+   33.741 SYNC F8
+   33.762 SYNC F8
+   33.773 IN  B0 42 32 time digit[2]='2'
+   33.774 IN  B0 41 31 time digit[1]='1'
+   33.774 IN  B0 40 32 time digit[0]='2'
+   33.783 SYNC F8
+   33.804 SYNC F8
+   33.807 IN  B0 43 32 time digit[3]='2'
+   33.807 IN  B0 42 20 time digit[2]=' '
+   33.807 IN  B0 41 32 time digit[1]='2'
+   33.808 IN  B0 40 39 time digit[0]='9'
+   33.824 SYNC F8
+   33.840 IN  B0 41 39 time digit[1]='9'
+   33.840 IN  B0 40 37 time digit[0]='7'
+   33.845 SYNC F8
+   33.870 SYNC F8
+   33.877 IN  B0 42 31 time digit[2]='1'
+   33.877 IN  B0 41 36 time digit[1]='6'
+   33.877 IN  B0 40 30 time digit[0]='0'
+   33.892 SYNC F8
+   33.909 IN  B0 42 32 time digit[2]='2'
+   33.909 IN  B0 41 31 time digit[1]='1'
+   33.909 IN  B0 40 37 time digit[0]='7'
+   33.909 SYNC F8
+   33.933 SYNC F8
+   33.945 IN  B0 43 33 time digit[3]='3'
+   33.945 IN  B0 42 20 time digit[2]=' '
+   33.945 IN  B0 41 35 time digit[1]='5'
+   33.945 IN  B0 40 32 time digit[0]='2'
+   33.949 SYNC F8
+   33.970 SYNC F8
+   33.973 IN  B0 42 31 time digit[2]='1'
+   33.973 IN  B0 41 30 time digit[1]='0'
+   33.974 IN  B0 40 39 time digit[0]='9'
+   33.991 SYNC F8
+   34.007 IN  B0 41 37 time digit[1]='7'
+   34.007 IN  B0 40 37 time digit[0]='7'
+   34.012 SYNC F8
+   34.033 SYNC F8
+   34.040 IN  B0 43 34 time digit[3]='4'
+   34.040 IN  B0 42 20 time digit[2]=' '
+   34.040 IN  B0 41 20 time digit[1]=' '
+   34.040 IN  B0 40 32 time digit[0]='2'
+   34.054 SYNC F8
+   34.073 IN  B0 41 35 time digit[1]='5'
+   34.073 IN  B0 40 37 time digit[0]='7'
+   34.074 SYNC F8
+   34.095 SYNC F8
+   34.107 IN  B0 42 31 time digit[2]='1'
+   34.107 IN  B0 41 33 time digit[1]='3'
+   34.107 IN  B0 40 32 time digit[0]='2'
+   34.116 SYNC F8
+   34.137 SYNC F8
+   34.140 IN  B0 41 38 time digit[1]='8'
+   34.140 IN  B0 40 39 time digit[0]='9'
+   34.158 SYNC F8
+   34.173 IN  B0 45 34 time digit[5]='4'
+   34.173 IN  B0 43 31 time digit[3]='1'
+   34.174 IN  B0 42 20 time digit[2]=' '
+   34.174 IN  B0 41 31 time digit[1]='1'
+   34.174 IN  B0 40 37 time digit[0]='7'
+   34.179 SYNC F8
+   34.199 SYNC F8
+   34.207 IN  B0 41 38 time digit[1]='8'
+   34.207 IN  B0 40 30 time digit[0]='0'
+   34.220 SYNC F8
+   34.240 IN  B0 42 31 time digit[2]='1'
+   34.240 IN  B0 41 33 time digit[1]='3'
+   34.241 IN  B0 40 37 time digit[0]='7'
+   34.241 SYNC F8
+   34.262 SYNC F8
+   34.273 IN  B0 42 32 time digit[2]='2'
+   34.274 IN  B0 41 31 time digit[1]='1'
+   34.274 IN  B0 40 34 time digit[0]='4'
+   34.283 SYNC F8
+   34.304 SYNC F8
+   34.306 IN  B0 43 32 time digit[3]='2'
+   34.307 IN  B0 42 20 time digit[2]=' '
+   34.307 IN  B0 41 32 time digit[1]='2'
+   34.307 IN  B0 40 39 time digit[0]='9'
+   34.324 SYNC F8
+   34.340 IN  B0 41 39 time digit[1]='9'
+   34.340 IN  B0 40 38 time digit[0]='8'
+   34.345 SYNC F8
+   34.366 SYNC F8
+   34.373 IN  B0 42 31 time digit[2]='1'
+   34.373 IN  B0 41 36 time digit[1]='6'
+   34.374 IN  B0 40 31 time digit[0]='1'
+   34.386 SYNC F8
+   34.406 IN  B0 42 32 time digit[2]='2'
+   34.407 SYNC F8
+   34.407 IN  B0 41 32 time digit[1]='2'
+   34.407 IN  B0 40 39 time digit[0]='9'
+   34.427 SYNC F8
+   34.440 IN  B0 43 33 time digit[3]='3'
+   34.440 IN  B0 42 20 time digit[2]=' '
+   34.440 IN  B0 41 35 time digit[1]='5'
+   34.441 IN  B0 40 37 time digit[0]='7'
+   34.447 SYNC F8
+   34.468 SYNC F8
+   34.473 IN  B0 42 31 time digit[2]='1'
+   34.474 IN  B0 41 32 time digit[1]='2'
+   34.474 IN  B0 40 30 time digit[0]='0'
+   34.489 SYNC F8
+   34.507 IN  B0 41 37 time digit[1]='7'
+   34.507 IN  B0 40 37 time digit[0]='7'
+   34.509 SYNC F8
+   34.530 SYNC F8
+   34.540 IN  B0 43 34 time digit[3]='4'
+   34.540 IN  B0 42 20 time digit[2]=' '
+   34.541 IN  B0 41 20 time digit[1]=' '
+   34.541 IN  B0 40 32 time digit[0]='2'
+   34.550 SYNC F8
+   34.571 SYNC F8
+   34.573 IN  B0 41 36 time digit[1]='6'
+   34.574 IN  B0 40 39 time digit[0]='9'
+   34.592 SYNC F8
+   34.606 IN  B0 42 31 time digit[2]='1'
+   34.607 IN  B0 41 33 time digit[1]='3'
+   34.607 IN  B0 40 37 time digit[0]='7'
+   34.613 SYNC F8
+   34.634 SYNC F8
+   34.640 IN  B0 42 32 time digit[2]='2'
+   34.641 IN  B0 41 30 time digit[1]='0'
+   34.641 IN  B0 40 30 time digit[0]='0'
+   34.655 SYNC F8
+   34.673 IN  B0 47 32 time digit[7]='2'
+   34.673 IN  B0 45 31 time digit[5]='1'
+   34.674 IN  B0 43 31 time digit[3]='1'
+   34.674 IN  B0 42 20 time digit[2]=' '
+   34.674 IN  B0 41 31 time digit[1]='1'
+   34.675 IN  B0 40 37 time digit[0]='7'
+   34.675 SYNC F8
+   34.696 SYNC F8
+   34.707 IN  B0 41 38 time digit[1]='8'
+   34.707 IN  B0 40 30 time digit[0]='0'
+   34.717 SYNC F8
+   34.738 SYNC F8
+   34.740 IN  B0 42 31 time digit[2]='1'
+   34.740 IN  B0 41 34 time digit[1]='4'
+   34.741 IN  B0 40 39 time digit[0]='9'
+   34.759 SYNC F8
+   34.773 IN  B0 42 32 time digit[2]='2'
+   34.773 IN  B0 41 31 time digit[1]='1'
+   34.774 IN  B0 40 37 time digit[0]='7'
+   34.780 SYNC F8
+   34.800 SYNC F8
+   34.807 IN  B0 43 32 time digit[3]='2'
+   34.807 IN  B0 42 20 time digit[2]=' '
+   34.807 IN  B0 41 34 time digit[1]='4'
+   34.808 IN  B0 40 30 time digit[0]='0'
+   34.821 SYNC F8
+   34.840 IN  B0 41 39 time digit[1]='9'
+   34.840 IN  B0 40 37 time digit[0]='7'
+   34.842 SYNC F8
+   34.863 SYNC F8
+   34.873 IN  B0 42 31 time digit[2]='1'
+   34.874 IN  B0 41 36 time digit[1]='6'
+   34.874 IN  B0 40 30 time digit[0]='0'
+   34.884 SYNC F8
+   34.905 SYNC F8
+   34.907 IN  B0 42 32 time digit[2]='2'
+   34.907 IN  B0 41 32 time digit[1]='2'
+   34.907 IN  B0 40 39 time digit[0]='9'
+   34.925 SYNC F8
+   34.940 IN  B0 43 33 time digit[3]='3'
+   34.940 IN  B0 42 20 time digit[2]=' '
+   34.941 IN  B0 41 35 time digit[1]='5'
+   34.941 IN  B0 40 37 time digit[0]='7'
+   34.946 SYNC F8
+   34.967 SYNC F8
+   34.973 IN  B0 42 31 time digit[2]='1'
+   34.974 IN  B0 41 32 time digit[1]='2'
+   34.974 IN  B0 40 30 time digit[0]='0'
+   34.988 SYNC F8
+   35.006 IN  B0 41 37 time digit[1]='7'
+   35.007 IN  B0 40 37 time digit[0]='7'
+   35.009 SYNC F8
+   35.030 SYNC F8
+   35.040 IN  B0 43 34 time digit[3]='4'
+   35.040 IN  B0 42 20 time digit[2]=' '
+   35.040 IN  B0 41 20 time digit[1]=' '
+   35.041 IN  B0 40 32 time digit[0]='2'
+   35.050 SYNC F8
+   35.071 SYNC F8
+   35.073 IN  B0 41 36 time digit[1]='6'
+   35.073 IN  B0 40 39 time digit[0]='9'
+   35.092 SYNC F8
+   35.107 IN  B0 42 31 time digit[2]='1'
+   35.107 IN  B0 41 33 time digit[1]='3'
+   35.107 IN  B0 40 37 time digit[0]='7'
+   35.113 SYNC F8
+   35.134 SYNC F8
+   35.140 IN  B0 42 32 time digit[2]='2'
+   35.140 IN  B0 41 30 time digit[1]='0'
+   35.141 IN  B0 40 30 time digit[0]='0'
+   35.155 SYNC F8
+   35.173 IN  B0 45 32 time digit[5]='2'
+   35.173 IN  B0 43 31 time digit[3]='1'
+   35.174 IN  B0 42 20 time digit[2]=' '
+   35.174 IN  B0 41 31 time digit[1]='1'
+   35.174 IN  B0 40 37 time digit[0]='7'
+   35.175 SYNC F8
+   35.196 SYNC F8
+   35.207 IN  B0 41 38 time digit[1]='8'
+   35.207 IN  B0 40 30 time digit[0]='0'
+   35.217 SYNC F8
+   35.238 SYNC F8
+   35.240 IN  B0 42 31 time digit[2]='1'
+   35.240 IN  B0 41 34 time digit[1]='4'
+   35.240 IN  B0 40 39 time digit[0]='9'
+   35.259 SYNC F8
+   35.273 IN  B0 42 32 time digit[2]='2'
+   35.273 IN  B0 41 31 time digit[1]='1'
+   35.274 IN  B0 40 37 time digit[0]='7'
+   35.280 SYNC F8
+   35.300 SYNC F8
+   35.307 IN  B0 43 32 time digit[3]='2'
+   35.307 IN  B0 42 20 time digit[2]=' '
+   35.307 IN  B0 41 34 time digit[1]='4'
+   35.307 IN  B0 40 30 time digit[0]='0'
+   35.321 SYNC F8
+   35.340 IN  B0 41 39 time digit[1]='9'
+   35.340 IN  B0 40 37 time digit[0]='7'
+   35.342 SYNC F8
+   35.363 SYNC F8
+   35.373 IN  B0 42 31 time digit[2]='1'
+   35.373 IN  B0 41 36 time digit[1]='6'
+   35.374 IN  B0 40 30 time digit[0]='0'
+   35.384 SYNC F8
+   35.405 SYNC F8
+   35.406 IN  B0 42 32 time digit[2]='2'
+   35.407 IN  B0 41 32 time digit[1]='2'
+   35.407 IN  B0 40 39 time digit[0]='9'
+   35.425 SYNC F8
+   35.440 IN  B0 43 33 time digit[3]='3'
+   35.440 IN  B0 42 20 time digit[2]=' '
+   35.441 IN  B0 41 35 time digit[1]='5'
+   35.441 IN  B0 40 37 time digit[0]='7'
+   35.446 SYNC F8
+   35.467 SYNC F8
+   35.473 IN  B0 42 31 time digit[2]='1'
+   35.474 IN  B0 41 32 time digit[1]='2'
+   35.474 IN  B0 40 30 time digit[0]='0'
+   35.488 SYNC F8
+   35.507 IN  B0 41 37 time digit[1]='7'
+   35.507 IN  B0 40 37 time digit[0]='7'
+   35.509 SYNC F8
+   35.530 SYNC F8
+   35.540 IN  B0 43 34 time digit[3]='4'
+   35.540 IN  B0 42 20 time digit[2]=' '
+   35.540 IN  B0 41 20 time digit[1]=' '
+   35.541 IN  B0 40 32 time digit[0]='2'
+   35.550 SYNC F8
+   35.571 SYNC F8
+   35.573 IN  B0 41 36 time digit[1]='6'
+   35.574 IN  B0 40 39 time digit[0]='9'
+   35.592 SYNC F8
+   35.607 IN  B0 42 31 time digit[2]='1'
+   35.607 IN  B0 41 33 time digit[1]='3'
+   35.607 IN  B0 40 37 time digit[0]='7'
+   35.613 SYNC F8
+   35.634 SYNC F8
+   35.640 IN  B0 42 32 time digit[2]='2'
+   35.640 IN  B0 41 30 time digit[1]='0'
+   35.640 IN  B0 40 30 time digit[0]='0'
+   35.655 SYNC F8
+   35.673 IN  B0 45 33 time digit[5]='3'
+   35.673 IN  B0 43 31 time digit[3]='1'
+   35.674 IN  B0 42 20 time digit[2]=' '
+   35.674 IN  B0 41 31 time digit[1]='1'
+   35.674 IN  B0 40 37 time digit[0]='7'
+   35.675 SYNC F8
+   35.696 SYNC F8
+   35.707 IN  B0 41 38 time digit[1]='8'
+   35.707 IN  B0 40 30 time digit[0]='0'
+   35.717 SYNC F8
+   35.738 SYNC F8
+   35.740 IN  B0 42 31 time digit[2]='1'
+   35.740 IN  B0 41 34 time digit[1]='4'
+   35.740 IN  B0 40 39 time digit[0]='9'
+   35.759 SYNC F8
+   35.773 IN  B0 42 32 time digit[2]='2'
+   35.774 IN  B0 41 31 time digit[1]='1'
+   35.774 IN  B0 40 37 time digit[0]='7'
+# > status
+> status
+# {
+#   "client_supports_elicitation" : false,
+#   "locate" : "not available yet: chosen after the Phase 1 test in real Logic 13",
+#   "mackie" : {
+#     "handshake" : "queried",
+#     "messages_received" : 858,
+#     "messages_sent" : 13,
+#     "other_model_probes" : [
+#       "10",
+#       "11",
+#       "15",
+#       "17"
+#     ],
+#     "seconds_since_last_message" : 0.002522125,
+#     "surface_active" : true
+#   },
+#   "notes" : [
+# 
+#   ],
+#   "ports" : [
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 1806664337,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Keys",
+#       "unique_id" : 1702008354,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Notes",
+#       "unique_id" : 876914795,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 572403500,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP Sync",
+#       "unique_id" : 1460862762,
+#       "unique_id_applied" : true
+#     }
+#   ],
+#   "server" : "logic-mcp 0.1.0",
+#   "surface" : {
+#     "assignment" : "PN.",
+#     "faders" : [
+#       12443,
+#       12443,
+#       0,
+#       0,
+#       0,
+#       0,
+#       0,
+#       0,
+#       12443
+#     ],
+#     "lcd_lower" : "0                                                       ",
+#     "lcd_upper" : "Pan    -      -      -      -      -      -      -      ",
+#     "leds_lit" : [
+#       "recArm[2]",
+#       "select[2]",
+#       "assignPan",
+#       "automationRead",
+#       "save",
+#       "click",
+#       "play",
+#       "beatsLED"
+#     ],
+#     "time_display" : "  2 3 1217",
+#     "time_display_codes" : [
+#       "20",
+#       "20",
+#       "32",
+#       "20",
+#       "33",
+#       "20",
+#       "31",
+#       "32",
+#       "31",
+#       "37"
+#     ]
+#   },
+#   "sync" : {
+#     "messages_received" : 169,
+#     "position_sixteenths" : 25,
+#     "running" : true,
+#     "seconds_since_last_message" : 0.017673167,
+#     "tempo_bpm" : 120
+#   },
+#   "transport" : {
+#     "cycle" : false,
+#     "display" : "  2 3 1217",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 217
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 169,
+#       "position_sixteenths" : 25,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.017727458,
+#       "tempo_bpm" : 120
+#     }
+#   },
+#   "uptime_seconds" : 35
+# }
+# > stop
+> stop
+   35.777 OUT 90 5D 7F
+   35.780 SYNC F8
+   35.783 SYNC FC
+   35.784 SYNC F2 18 00
+   35.785 IN  90 5D 7F led stop=on
+   35.806 IN  B0 41 32 time digit[1]='2'
+   35.807 IN  B0 40 39 time digit[0]='9'
+   35.808 IN  90 5E 00 led play=off
+   35.812 OUT 90 5D 00
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  2 3 1229",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 229
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 172,
+#       "position_sixteenths" : 24,
+#       "running" : false,
+#       "seconds_since_last_message" : 0.02816325
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:40:14.344+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  2 3 1217",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 217
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 169,
+#       "position_sixteenths" : 25,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.017969083,
+#       "tempo_bpm" : 120
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=off and mcu.led.record=off after 0 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Stop confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+# > wait 0.5
+> wait 0.5
+# > stop
+> stop
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  2 3 1229",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 229
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 172,
+#       "position_sixteenths" : 24,
+#       "running" : false,
+#       "seconds_since_last_message" : 0.559476958
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:40:14.876+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  2 3 1229",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 229
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 172,
+#       "position_sixteenths" : 24,
+#       "running" : false,
+#       "seconds_since_last_message" : 0.559476958
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=off before the call"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Already stopped; nothing sent.",
+#   "warnings" : [
+# 
+#   ]
+# }
+# > record
+> record
+   55.973 OUT 90 5F 7F
+   55.976 SYNC F2 00 00
+   56.005 OUT 90 5F 00
+   56.005 SYNC F2 00 00
+   56.020 SYNC FA
+   56.020 SYNC F8
+   56.021 IN  90 5F 7F led record=on
+   56.022 IN  B0 47 31 time digit[7]='1'
+   56.022 IN  B0 45 31 time digit[5]='1'
+   56.022 IN  B0 42 20 time digit[2]=' '
+   56.023 IN  B0 41 20 time digit[1]=' '
+   56.023 IN  B0 40 37 time digit[0]='7'
+   56.023 IN  90 5D 00 led stop=off
+   56.024 IN  90 5E 7F led play=on
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  1 1 1  7",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 1,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 7
+#     },
+#     "recording" : true,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 176,
+#       "position_sixteenths" : 0,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.003526166
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:40:34.556+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  2 3 1229",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 3,
+#       "division" : 1,
+#       "tick" : 229
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 172,
+#       "position_sixteenths" : 24,
+#       "running" : false,
+#       "seconds_since_last_message" : 20.189250875
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.record=on after 18 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Record confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+   56.033 SYNC F8
+   56.054 SYNC F8
+   56.073 IN  B0 41 39 time digit[1]='9'
+   56.075 SYNC F8
+   56.096 SYNC F8
+   56.106 IN  B0 42 31 time digit[2]='1'
+   56.107 IN  B0 41 36 time digit[1]='6'
+   56.107 IN  B0 40 30 time digit[0]='0'
+   56.116 SYNC F8
+   56.137 SYNC F8
+   56.140 IN  B0 42 32 time digit[2]='2'
+   56.140 IN  B0 41 32 time digit[1]='2'
+   56.140 IN  B0 40 39 time digit[0]='9'
+   56.158 SYNC F8
+   56.173 IN  B0 43 32 time digit[3]='2'
+   56.173 IN  B0 42 20 time digit[2]=' '
+   56.174 IN  B0 41 35 time digit[1]='5'
+   56.174 IN  B0 40 37 time digit[0]='7'
+   56.179 SYNC F8
+   56.200 SYNC F8
+   56.207 IN  B0 42 31 time digit[2]='1'
+   56.207 IN  B0 41 32 time digit[1]='2'
+   56.207 IN  B0 40 30 time digit[0]='0'
+   56.221 SYNC F8
+   56.240 IN  B0 41 37 time digit[1]='7'
+   56.240 IN  B0 40 37 time digit[0]='7'
+   56.241 SYNC F8
+   56.262 SYNC F8
+   56.273 IN  B0 42 32 time digit[2]='2'
+   56.273 IN  B0 41 34 time digit[1]='4'
+   56.274 IN  B0 40 30 time digit[0]='0'
+# > wait 2.5
+> wait 2.5
+   56.283 SYNC F8
+   56.304 SYNC F8
+   56.306 IN  B0 43 33 time digit[3]='3'
+   56.307 IN  B0 42 20 time digit[2]=' '
+   56.307 IN  B0 41 36 time digit[1]='6'
+   56.307 IN  B0 40 39 time digit[0]='9'
+   56.325 SYNC F8
+   56.340 IN  B0 42 31 time digit[2]='1'
+   56.340 IN  B0 41 33 time digit[1]='3'
+   56.340 IN  B0 40 37 time digit[0]='7'
+   56.346 SYNC F8
+   56.366 SYNC F8
+   56.373 IN  B0 42 32 time digit[2]='2'
+   56.374 IN  B0 41 30 time digit[1]='0'
+   56.374 IN  B0 40 30 time digit[0]='0'
+   56.387 SYNC F8
+   56.407 IN  B0 43 34 time digit[3]='4'
+   56.407 IN  B0 42 20 time digit[2]=' '
+   56.407 IN  B0 41 31 time digit[1]='1'
+   56.408 IN  B0 40 37 time digit[0]='7'
+   56.408 SYNC F8
+   56.429 SYNC F8
+   56.440 IN  B0 41 38 time digit[1]='8'
+   56.440 IN  B0 40 30 time digit[0]='0'
+   56.450 SYNC F8
+   56.471 SYNC F8
+   56.473 IN  B0 42 31 time digit[2]='1'
+   56.473 IN  B0 41 34 time digit[1]='4'
+   56.474 IN  B0 40 39 time digit[0]='9'
+   56.491 SYNC F8
+   56.507 IN  B0 42 32 time digit[2]='2'
+   56.508 IN  B0 41 31 time digit[1]='1'
+   56.508 IN  B0 40 37 time digit[0]='7'
+   56.512 SYNC F8
+   56.533 SYNC F8
+   56.540 IN  B0 45 32 time digit[5]='2'
+   56.540 IN  B0 43 31 time digit[3]='1'
+   56.540 IN  B0 42 20 time digit[2]=' '
+   56.541 IN  B0 41 34 time digit[1]='4'
+   56.541 IN  B0 40 30 time digit[0]='0'
+   56.554 SYNC F8
+   56.573 IN  B0 41 39 time digit[1]='9'
+   56.573 IN  B0 40 37 time digit[0]='7'
+   56.575 SYNC F8
+   56.596 SYNC F8
+   56.607 IN  B0 42 31 time digit[2]='1'
+   56.607 IN  B0 41 36 time digit[1]='6'
+   56.607 IN  B0 40 30 time digit[0]='0'
+   56.616 SYNC F8
+   56.637 SYNC F8
+   56.640 IN  B0 42 32 time digit[2]='2'
+   56.640 IN  B0 41 32 time digit[1]='2'
+   56.640 IN  B0 40 39 time digit[0]='9'
+   56.658 SYNC F8
+   56.673 IN  B0 43 32 time digit[3]='2'
+   56.674 IN  B0 42 20 time digit[2]=' '
+   56.674 IN  B0 41 35 time digit[1]='5'
+   56.674 IN  B0 40 37 time digit[0]='7'
+   56.679 SYNC F8
+   56.700 SYNC F8
+   56.707 IN  B0 42 31 time digit[2]='1'
+   56.707 IN  B0 41 32 time digit[1]='2'
+   56.707 IN  B0 40 30 time digit[0]='0'
+   56.721 SYNC F8
+   56.740 IN  B0 41 37 time digit[1]='7'
+   56.740 IN  B0 40 37 time digit[0]='7'
+   56.741 SYNC F8
+   56.762 SYNC F8
+   56.773 IN  B0 42 32 time digit[2]='2'
+   56.773 IN  B0 41 34 time digit[1]='4'
+   56.773 IN  B0 40 30 time digit[0]='0'
+   56.783 SYNC F8
+   56.804 SYNC F8
+   56.807 IN  B0 43 33 time digit[3]='3'
+   56.807 IN  B0 42 20 time digit[2]=' '
+   56.807 IN  B0 41 36 time digit[1]='6'
+   56.807 IN  B0 40 39 time digit[0]='9'
+   56.825 SYNC F8
+   56.840 IN  B0 42 31 time digit[2]='1'
+   56.840 IN  B0 41 33 time digit[1]='3'
+   56.840 IN  B0 40 37 time digit[0]='7'
+   56.846 SYNC F8
+   56.866 SYNC F8
+   56.873 IN  B0 42 32 time digit[2]='2'
+   56.874 IN  B0 41 30 time digit[1]='0'
+   56.874 IN  B0 40 30 time digit[0]='0'
+   56.887 SYNC F8
+   56.907 IN  B0 43 34 time digit[3]='4'
+   56.907 IN  B0 42 20 time digit[2]=' '
+   56.907 IN  B0 41 31 time digit[1]='1'
+   56.907 IN  B0 40 37 time digit[0]='7'
+   56.908 SYNC F8
+   56.929 SYNC F8
+   56.940 IN  B0 41 38 time digit[1]='8'
+   56.940 IN  B0 40 30 time digit[0]='0'
+   56.950 SYNC F8
+   56.971 SYNC F8
+   56.973 IN  B0 42 31 time digit[2]='1'
+   56.973 IN  B0 41 34 time digit[1]='4'
+   56.974 IN  B0 40 39 time digit[0]='9'
+   56.991 SYNC F8
+   57.007 IN  B0 42 32 time digit[2]='2'
+   57.007 IN  B0 41 31 time digit[1]='1'
+   57.008 IN  B0 40 37 time digit[0]='7'
+   57.012 SYNC F8
+   57.033 SYNC F8
+   57.044 IN  B0 45 33 time digit[5]='3'
+   57.044 IN  B0 43 31 time digit[3]='1'
+   57.044 IN  B0 42 20 time digit[2]=' '
+   57.044 IN  B0 41 34 time digit[1]='4'
+   57.044 IN  B0 40 30 time digit[0]='0'
+   57.056 SYNC F8
+   57.076 IN  B0 41 39 time digit[1]='9'
+   57.076 IN  B0 40 37 time digit[0]='7'
+   57.076 SYNC F8
+   57.096 SYNC F8
+   57.107 IN  B0 42 31 time digit[2]='1'
+   57.107 IN  B0 41 36 time digit[1]='6'
+   57.110 IN  B0 40 30 time digit[0]='0'
+   57.117 SYNC F8
+   57.137 SYNC F8
+   57.143 IN  B0 42 32 time digit[2]='2'
+   57.143 IN  B0 41 32 time digit[1]='2'
+   57.143 IN  B0 40 39 time digit[0]='9'
+   57.159 SYNC F8
+   57.176 IN  B0 43 32 time digit[3]='2'
+   57.176 IN  B0 42 20 time digit[2]=' '
+   57.176 IN  B0 41 35 time digit[1]='5'
+   57.176 IN  B0 40 37 time digit[0]='7'
+   57.181 SYNC F8
+   57.201 SYNC F8
+   57.209 IN  B0 42 31 time digit[2]='1'
+   57.209 IN  B0 41 32 time digit[1]='2'
+   57.209 IN  B0 40 30 time digit[0]='0'
+   57.224 SYNC F8
+   57.243 IN  B0 41 37 time digit[1]='7'
+   57.244 IN  B0 40 37 time digit[0]='7'
+   57.244 SYNC F8
+   57.263 SYNC F8
+   57.277 IN  B0 42 32 time digit[2]='2'
+   57.277 IN  B0 41 34 time digit[1]='4'
+   57.277 IN  B0 40 30 time digit[0]='0'
+   57.286 SYNC F8
+   57.304 SYNC F8
+   57.310 IN  B0 43 33 time digit[3]='3'
+   57.310 IN  B0 42 20 time digit[2]=' '
+   57.310 IN  B0 41 36 time digit[1]='6'
+   57.310 IN  B0 40 39 time digit[0]='9'
+   57.326 SYNC F8
+   57.343 IN  B0 42 31 time digit[2]='1'
+   57.344 IN  B0 41 33 time digit[1]='3'
+   57.344 IN  B0 40 37 time digit[0]='7'
+   57.346 SYNC F8
+   57.368 SYNC F8
+   57.376 IN  B0 42 32 time digit[2]='2'
+   57.377 IN  B0 41 30 time digit[1]='0'
+   57.377 IN  B0 40 30 time digit[0]='0'
+   57.388 SYNC F8
+   57.410 IN  B0 43 34 time digit[3]='4'
+   57.410 IN  B0 42 20 time digit[2]=' '
+   57.410 IN  B0 41 32 time digit[1]='2'
+   57.410 IN  B0 40 39 time digit[0]='9'
+   57.410 SYNC F8
+   57.430 SYNC F8
+   57.443 IN  B0 41 39 time digit[1]='9'
+   57.443 IN  B0 40 32 time digit[0]='2'
+   57.450 SYNC F8
+   57.471 SYNC F8
+   57.473 IN  B0 42 31 time digit[2]='1'
+   57.473 IN  B0 41 34 time digit[1]='4'
+   57.474 IN  B0 40 39 time digit[0]='9'
+   57.491 SYNC F8
+   57.506 IN  B0 42 32 time digit[2]='2'
+   57.507 IN  B0 41 31 time digit[1]='1'
+   57.507 IN  B0 40 37 time digit[0]='7'
+   57.511 SYNC F8
+   57.532 SYNC F8
+   57.540 IN  B0 45 34 time digit[5]='4'
+   57.540 IN  B0 43 31 time digit[3]='1'
+   57.540 IN  B0 42 20 time digit[2]=' '
+   57.541 IN  B0 41 34 time digit[1]='4'
+   57.541 IN  B0 40 30 time digit[0]='0'
+   57.553 SYNC F8
+   57.573 IN  B0 42 31 time digit[2]='1'
+   57.573 IN  B0 41 30 time digit[1]='0'
+   57.574 SYNC F8
+   57.574 IN  B0 40 39 time digit[0]='9'
+   57.595 SYNC F8
+   57.607 IN  B0 41 37 time digit[1]='7'
+   57.607 IN  B0 40 32 time digit[0]='2'
+   57.615 SYNC F8
+   57.637 SYNC F8
+   57.640 IN  B0 42 32 time digit[2]='2'
+   57.640 IN  B0 41 32 time digit[1]='2'
+   57.640 IN  B0 40 39 time digit[0]='9'
+   57.657 SYNC F8
+   57.673 IN  B0 43 32 time digit[3]='2'
+   57.674 IN  B0 42 20 time digit[2]=' '
+   57.674 IN  B0 41 35 time digit[1]='5'
+   57.674 IN  B0 40 37 time digit[0]='7'
+   57.678 SYNC F8
+   57.700 SYNC F8
+   57.708 IN  B0 42 31 time digit[2]='1'
+   57.708 IN  B0 41 32 time digit[1]='2'
+   57.708 IN  B0 40 30 time digit[0]='0'
+   57.720 SYNC F8
+   57.741 IN  B0 41 38 time digit[1]='8'
+   57.741 IN  B0 40 39 time digit[0]='9'
+   57.741 SYNC F8
+   57.766 SYNC F8
+   57.777 IN  B0 43 33 time digit[3]='3'
+   57.777 IN  B0 42 20 time digit[2]=' '
+   57.777 IN  B0 41 31 time digit[1]='1'
+   57.777 IN  B0 40 32 time digit[0]='2'
+   57.783 SYNC F8
+   57.804 SYNC F8
+   57.811 IN  B0 41 36 time digit[1]='6'
+   57.811 IN  B0 40 39 time digit[0]='9'
+   57.826 SYNC F8
+   57.842 IN  B0 42 31 time digit[2]='1'
+   57.842 IN  B0 41 33 time digit[1]='3'
+   57.842 IN  B0 40 37 time digit[0]='7'
+   57.846 SYNC F8
+   57.866 SYNC F8
+   57.874 IN  B0 42 32 time digit[2]='2'
+   57.874 IN  B0 41 30 time digit[1]='0'
+   57.874 IN  B0 40 30 time digit[0]='0'
+   57.888 SYNC F8
+   57.908 IN  B0 43 34 time digit[3]='4'
+   57.908 IN  B0 42 20 time digit[2]=' '
+   57.908 IN  B0 41 32 time digit[1]='2'
+   57.908 IN  B0 40 39 time digit[0]='9'
+   57.908 SYNC F8
+   57.928 SYNC F8
+   57.940 IN  B0 41 39 time digit[1]='9'
+   57.940 IN  B0 40 32 time digit[0]='2'
+   57.949 SYNC F8
+   57.970 SYNC F8
+   57.973 IN  B0 42 31 time digit[2]='1'
+   57.973 IN  B0 41 34 time digit[1]='4'
+   57.974 IN  B0 40 39 time digit[0]='9'
+   57.990 SYNC F8
+   58.007 IN  B0 42 32 time digit[2]='2'
+   58.007 IN  B0 41 31 time digit[1]='1'
+   58.007 IN  B0 40 37 time digit[0]='7'
+   58.011 SYNC F8
+   58.032 SYNC F8
+   58.040 IN  B0 47 32 time digit[7]='2'
+   58.040 IN  B0 45 31 time digit[5]='1'
+   58.040 IN  B0 43 31 time digit[3]='1'
+   58.040 IN  B0 42 20 time digit[2]=' '
+   58.041 IN  B0 41 34 time digit[1]='4'
+   58.041 IN  B0 40 30 time digit[0]='0'
+   58.053 SYNC F8
+   58.075 IN  B0 42 31 time digit[2]='1'
+   58.075 IN  B0 41 30 time digit[1]='0'
+   58.075 IN  B0 40 39 time digit[0]='9'
+   58.075 SYNC F8
+   58.095 SYNC F8
+   58.107 IN  B0 41 37 time digit[1]='7'
+   58.107 IN  B0 40 32 time digit[0]='2'
+   58.115 SYNC F8
+   58.136 SYNC F8
+   58.140 IN  B0 42 32 time digit[2]='2'
+   58.140 IN  B0 41 32 time digit[1]='2'
+   58.143 IN  B0 40 39 time digit[0]='9'
+   58.158 SYNC F8
+   58.174 IN  B0 43 32 time digit[3]='2'
+   58.174 IN  B0 42 20 time digit[2]=' '
+   58.174 IN  B0 41 35 time digit[1]='5'
+   58.174 IN  B0 40 37 time digit[0]='7'
+   58.178 SYNC F8
+   58.199 SYNC F8
+   58.207 IN  B0 42 31 time digit[2]='1'
+   58.207 IN  B0 41 32 time digit[1]='2'
+   58.207 IN  B0 40 30 time digit[0]='0'
+   58.220 SYNC F8
+   58.240 IN  B0 41 38 time digit[1]='8'
+   58.240 IN  B0 40 39 time digit[0]='9'
+   58.240 SYNC F8
+   58.261 SYNC F8
+   58.273 IN  B0 43 33 time digit[3]='3'
+   58.273 IN  B0 42 20 time digit[2]=' '
+   58.274 IN  B0 41 31 time digit[1]='1'
+   58.274 IN  B0 40 32 time digit[0]='2'
+   58.282 SYNC F8
+   58.303 SYNC F8
+   58.307 IN  B0 41 36 time digit[1]='6'
+   58.307 IN  B0 40 39 time digit[0]='9'
+   58.324 SYNC F8
+   58.340 IN  B0 42 31 time digit[2]='1'
+   58.340 IN  B0 41 33 time digit[1]='3'
+   58.341 IN  B0 40 37 time digit[0]='7'
+   58.345 SYNC F8
+   58.365 SYNC F8
+   58.373 IN  B0 42 32 time digit[2]='2'
+   58.374 IN  B0 41 30 time digit[1]='0'
+   58.374 IN  B0 40 30 time digit[0]='0'
+   58.386 SYNC F8
+   58.407 IN  B0 43 34 time digit[3]='4'
+   58.407 IN  B0 42 20 time digit[2]=' '
+   58.407 SYNC F8
+   58.407 IN  B0 41 32 time digit[1]='2'
+   58.407 IN  B0 40 39 time digit[0]='9'
+   58.428 SYNC F8
+   58.440 IN  B0 41 39 time digit[1]='9'
+   58.440 IN  B0 40 32 time digit[0]='2'
+   58.449 SYNC F8
+   58.470 SYNC F8
+   58.473 IN  B0 42 31 time digit[2]='1'
+   58.473 IN  B0 41 34 time digit[1]='4'
+   58.474 IN  B0 40 39 time digit[0]='9'
+   58.490 SYNC F8
+   58.507 IN  B0 42 32 time digit[2]='2'
+   58.507 IN  B0 41 31 time digit[1]='1'
+   58.507 IN  B0 40 37 time digit[0]='7'
+   58.511 SYNC F8
+   58.532 SYNC F8
+   58.540 IN  B0 45 32 time digit[5]='2'
+   58.540 IN  B0 43 31 time digit[3]='1'
+   58.540 IN  B0 42 20 time digit[2]=' '
+   58.541 IN  B0 41 34 time digit[1]='4'
+   58.541 IN  B0 40 30 time digit[0]='0'
+   58.553 SYNC F8
+   58.575 IN  B0 42 31 time digit[2]='1'
+   58.575 IN  B0 41 30 time digit[1]='0'
+   58.575 IN  B0 40 39 time digit[0]='9'
+   58.575 SYNC F8
+   58.595 SYNC F8
+   58.608 IN  B0 41 37 time digit[1]='7'
+   58.608 IN  B0 40 32 time digit[0]='2'
+   58.616 SYNC F8
+   58.636 SYNC F8
+   58.642 IN  B0 42 32 time digit[2]='2'
+   58.642 IN  B0 41 32 time digit[1]='2'
+   58.642 IN  B0 40 39 time digit[0]='9'
+   58.657 SYNC F8
+   58.674 IN  B0 43 32 time digit[3]='2'
+   58.674 IN  B0 42 20 time digit[2]=' '
+   58.674 IN  B0 41 35 time digit[1]='5'
+   58.674 IN  B0 40 37 time digit[0]='7'
+   58.678 SYNC F8
+   58.699 SYNC F8
+   58.707 IN  B0 42 31 time digit[2]='1'
+   58.707 IN  B0 41 32 time digit[1]='2'
+   58.707 IN  B0 40 30 time digit[0]='0'
+   58.720 SYNC F8
+   58.740 IN  B0 41 38 time digit[1]='8'
+   58.740 IN  B0 40 39 time digit[0]='9'
+   58.740 SYNC F8
+   58.761 SYNC F8
+   58.773 IN  B0 43 33 time digit[3]='3'
+   58.773 IN  B0 42 20 time digit[2]=' '
+   58.774 IN  B0 41 31 time digit[1]='1'
+   58.774 IN  B0 40 32 time digit[0]='2'
+   58.782 SYNC F8
+   58.803 SYNC F8
+   58.807 IN  B0 41 36 time digit[1]='6'
+   58.807 IN  B0 40 39 time digit[0]='9'
+   58.824 SYNC F8
+   58.840 IN  B0 42 31 time digit[2]='1'
+   58.840 IN  B0 41 33 time digit[1]='3'
+   58.840 IN  B0 40 37 time digit[0]='7'
+   58.844 SYNC F8
+   58.865 SYNC F8
+   58.873 IN  B0 42 32 time digit[2]='2'
+   58.873 IN  B0 41 30 time digit[1]='0'
+   58.874 IN  B0 40 30 time digit[0]='0'
+   58.886 SYNC F8
+   58.907 IN  B0 43 34 time digit[3]='4'
+   58.907 IN  B0 42 20 time digit[2]=' '
+   58.907 SYNC F8
+   58.907 IN  B0 41 32 time digit[1]='2'
+   58.907 IN  B0 40 39 time digit[0]='9'
+   58.928 SYNC F8
+   58.940 IN  B0 41 39 time digit[1]='9'
+   58.940 IN  B0 40 32 time digit[0]='2'
+# > stop
+> stop
+   58.947 OUT 90 5D 7F
+   58.949 SYNC F8
+   58.949 SYNC FC
+   58.950 IN  90 5D 7F led stop=on
+   58.950 IN  90 5E 00 led play=off
+   58.951 IN  90 5F 00 led record=off
+   58.980 IN  B0 42 31 time digit[2]='1'
+   58.980 IN  B0 41 30 time digit[1]='0'
+   58.980 IN  B0 40 38 time digit[0]='8'
+   58.981 OUT 90 5D 00
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  2 2 4108",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 2,
+#       "division" : 4,
+#       "tick" : 108
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 318,
+#       "position_sixteenths" : 23,
+#       "running" : false,
+#       "seconds_since_last_message" : 0.031968375
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:40:37.513+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  2 2 4 92",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 2,
+#       "division" : 4,
+#       "tick" : 92
+#     },
+#     "recording" : true,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 316,
+#       "position_sixteenths" : 23,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.019203542,
+#       "tempo_bpm" : 120
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=off and mcu.led.record=off after 0 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Stop confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+# > wait 0.5
+> wait 0.5
+   59.018 SYNC F2 17 00
+# > press replace
+> press replace
+   59.513 OUT 90 58 7F
+   59.513 IN  90 58 7F led replace=on
+   59.543 OUT 90 58 00
+# pressed replace
+# > wait 0.5
+> wait 0.5
+# > record
+> record
+# {
+#   "as_of" : "2026-11-20T23:40:38.609+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  2 2 4108",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 2,
+#       "division" : 4,
+#       "tick" : 108
+#     },
+#     "recording" : false,
+#     "replace_mode" : true,
+#     "sync" : {
+#       "messages_received" : 319,
+#       "position_sixteenths" : 23,
+#       "running" : false,
+#       "seconds_since_last_message" : 1.058505
+#     }
+#   },
+#   "evidence" : [
+# 
+#   ],
+#   "status" : "needs_confirmation",
+#   "summary" : "Replace mode is on: recording will overwrite existing material on record-enabled tracks.",
+#   "warnings" : [
+# 
+#   ]
+# }
+# > wait 0.5
+> wait 0.5
+# > press replace
+> press replace
+   60.610 OUT 90 58 7F
+   60.610 IN  90 58 00 led replace=off
+   60.641 OUT 90 58 00
+# pressed replace
+# > wait 0.5
+> wait 0.5
+# > status
+> status
+# {
+#   "client_supports_elicitation" : false,
+#   "locate" : "not available yet: chosen after the Phase 1 test in real Logic 13",
+#   "mackie" : {
+#     "handshake" : "queried",
+#     "messages_received" : 1146,
+#     "messages_sent" : 23,
+#     "other_model_probes" : [
+#       "10",
+#       "11",
+#       "15",
+#       "17"
+#     ],
+#     "seconds_since_last_message" : 0.558029167,
+#     "surface_active" : true
+#   },
+#   "notes" : [
+# 
+#   ],
+#   "ports" : [
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 1806664337,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Keys",
+#       "unique_id" : 1702008354,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "source",
+#       "name" : "LogicMCP Notes",
+#       "unique_id" : 876914795,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP MCU",
+#       "unique_id" : 572403500,
+#       "unique_id_applied" : true
+#     },
+#     {
+#       "kind" : "destination",
+#       "name" : "LogicMCP Sync",
+#       "unique_id" : 1460862762,
+#       "unique_id_applied" : true
+#     }
+#   ],
+#   "server" : "logic-mcp 0.1.0",
+#   "surface" : {
+#     "assignment" : "PN.",
+#     "faders" : [
+#       12443,
+#       12443,
+#       0,
+#       0,
+#       0,
+#       0,
+#       0,
+#       0,
+#       12443
+#     ],
+#     "lcd_lower" : "0                                                       ",
+#     "lcd_upper" : "Pan    -      -      -      -      -      -      -      ",
+#     "leds_lit" : [
+#       "recArm[2]",
+#       "select[2]",
+#       "assignPan",
+#       "automationRead",
+#       "save",
+#       "click",
+#       "stop",
+#       "beatsLED"
+#     ],
+#     "time_display" : "  2 2 4108",
+#     "time_display_codes" : [
+#       "20",
+#       "20",
+#       "32",
+#       "20",
+#       "32",
+#       "20",
+#       "34",
+#       "31",
+#       "30",
+#       "38"
+#     ]
+#   },
+#   "sync" : {
+#     "messages_received" : 319,
+#     "position_sixteenths" : 23,
+#     "running" : false,
+#     "seconds_since_last_message" : 2.150271583
+#   },
+#   "transport" : {
+#     "cycle" : false,
+#     "display" : "  2 2 4108",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 2,
+#       "beat" : 2,
+#       "division" : 4,
+#       "tick" : 108
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 319,
+#       "position_sixteenths" : 23,
+#       "running" : false,
+#       "seconds_since_last_message" : 2.15029
+#     }
+#   },
+#   "uptime_seconds" : 61
+# }
+# > key forward-one-bar
+> key forward-one-bar
+# sent forward-one-bar: BF 16 7F on LogicMCP Keys
+  112.186 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+  112.186 IN  B0 49 20 time digit[9]=' '
+  112.186 IN  B0 48 20 time digit[8]=' '
+  112.186 IN  B0 47 32 time digit[7]='2'
+  112.187 IN  B0 46 20 time digit[6]=' '
+  112.187 IN  B0 45 32 time digit[5]='2'
+  112.187 IN  B0 44 20 time digit[4]=' '
+  112.188 IN  B0 43 34 time digit[3]='4'
+  112.188 IN  B0 42 31 time digit[2]='1'
+  112.188 IN  B0 41 30 time digit[1]='0'
+  112.188 IN  B0 40 38 time digit[0]='8'
+  112.189 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+  112.189 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+  112.189 IN  90 00 00 led recArm[1]=off
+  112.190 IN  90 01 7F led recArm[2]=on
+  112.190 IN  90 02 00 led recArm[3]=off
+  112.190 IN  90 03 00 led recArm[4]=off
+  112.190 IN  90 04 00 led recArm[5]=off
+  112.191 IN  90 05 00 led recArm[6]=off
+  112.191 IN  90 06 00 led recArm[7]=off
+  112.191 IN  90 07 00 led recArm[8]=off
+  112.192 IN  90 08 00 led solo[1]=off
+  112.192 IN  90 09 00 led solo[2]=off
+  112.192 IN  90 0A 00 led solo[3]=off
+  112.193 IN  90 0B 00 led solo[4]=off
+  112.193 IN  90 0C 00 led solo[5]=off
+  112.194 IN  90 0D 00 led solo[6]=off
+  112.194 IN  90 0E 00 led solo[7]=off
+  112.194 IN  90 0F 00 led solo[8]=off
+  112.194 IN  90 10 00 led mute[1]=off
+  112.195 IN  90 11 00 led mute[2]=off
+  112.195 IN  90 12 00 led mute[3]=off
+  112.195 IN  90 13 00 led mute[4]=off
+  112.195 IN  90 14 00 led mute[5]=off
+  112.195 IN  90 15 00 led mute[6]=off
+  112.196 IN  90 16 00 led mute[7]=off
+  112.196 IN  90 17 00 led mute[8]=off
+  112.196 IN  90 18 00 led select[1]=off
+  112.197 IN  90 19 7F led select[2]=on
+  112.197 IN  90 1A 00 led select[3]=off
+  112.197 IN  90 1B 00 led select[4]=off
+  112.197 IN  90 1C 00 led select[5]=off
+  112.198 IN  90 1D 00 led select[6]=off
+  112.198 IN  90 1E 00 led select[7]=off
+  112.198 IN  90 1F 00 led select[8]=off
+  112.199 IN  90 20 00 led vPotPush[1]=off
+  112.199 IN  90 21 00 led vPotPush[2]=off
+  112.199 IN  90 22 00 led vPotPush[3]=off
+  112.199 IN  90 23 00 led vPotPush[4]=off
+  112.200 IN  90 24 00 led vPotPush[5]=off
+  112.200 IN  90 25 00 led vPotPush[6]=off
+  112.200 IN  90 26 00 led vPotPush[7]=off
+  112.201 IN  90 27 00 led vPotPush[8]=off
+  112.201 IN  90 28 00 led assignTrack=off
+  112.201 IN  90 29 00 led assignSend=off
+  112.201 IN  90 2A 7F led assignPan=on
+  112.202 IN  90 2B 00 led assignPlugin=off
+  112.202 IN  90 2C 00 led assignEQ=off
+  112.202 IN  90 2D 00 led assignInstrument=off
+  112.203 IN  90 32 00 led flip=off
+  112.203 IN  90 33 00 led globalView=off
+  112.203 IN  90 4A 7F led automationRead=on
+  112.203 IN  90 4B 00 led automationWrite=off
+  112.204 IN  90 4C 00 led automationTrim=off
+  112.204 IN  90 4D 00 led automationTouch=off
+  112.204 IN  90 4E 00 led automationLatch=off
+  112.205 IN  90 4F 00 led group=off
+  112.205 IN  90 50 7F led save=on
+  112.205 IN  90 51 00 led undo=off
+  112.205 IN  90 54 00 led marker=off
+  112.206 IN  90 55 00 led nudge=off
+  112.206 IN  90 56 00 led cycle=off
+  112.206 IN  90 57 00 led drop=off
+  112.207 IN  90 58 00 led replace=off
+  112.207 IN  90 59 7F led click=on
+  112.207 IN  90 5A 00 led soloGlobal=off
+  112.207 IN  90 5B 00 led rewind=off
+  112.208 IN  90 5C 00 led fastForward=off
+  112.208 IN  90 5D 7F led stop=on
+  112.208 IN  90 5E 00 led play=off
+  112.209 IN  90 5F 00 led record=off
+  112.209 IN  90 64 00 led zoom=off
+  112.209 IN  90 65 00 led scrub=off
+  112.210 IN  90 71 00 led smpteLED=off
+  112.210 IN  90 72 7F led beatsLED=on
+  112.210 IN  90 73 00 led rudeSoloLED=off
+  112.210 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+  112.211 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+  112.211 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+  112.211 IN  E2 00 00 faderPosition(fader: 2, value: 0)
+  112.212 IN  E3 00 00 faderPosition(fader: 3, value: 0)
+  112.212 IN  E4 00 00 faderPosition(fader: 4, value: 0)
+  112.212 IN  E5 00 00 faderPosition(fader: 5, value: 0)
+  112.212 IN  E6 00 00 faderPosition(fader: 6, value: 0)
+  112.213 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+  112.213 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+  112.213 IN  E9 00 00 unknown(E9 00 00)
+  112.214 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+  112.214 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+  112.214 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+  112.214 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+  112.215 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+  112.215 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+  112.215 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+  112.216 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+  112.216 IN  D0 00 meter(strip: 0, level: 0)
+  112.216 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+  112.216 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+  112.217 IN  D0 10 meter(strip: 1, level: 0)
+  112.217 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+  112.217 IN  D0 20 meter(strip: 2, level: 0)
+  112.218 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+  112.218 IN  D0 30 meter(strip: 3, level: 0)
+  112.218 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+  112.218 IN  D0 40 meter(strip: 4, level: 0)
+  112.219 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+  112.219 IN  D0 50 meter(strip: 5, level: 0)
+  112.219 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+  112.219 IN  D0 60 meter(strip: 6, level: 0)
+  112.220 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+  112.220 IN  D0 70 meter(strip: 7, level: 0)
+  112.220 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+  112.221 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+  112.221 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+  112.221 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+  113.240 IN  F0 00 00 66 14 0E 00 03 F7 command(id: 14, data: [0, 3])
+  113.240 IN  F0 00 00 66 14 0E 01 03 F7 command(id: 14, data: [1, 3])
+  113.240 IN  F0 00 00 66 14 0E 02 03 F7 command(id: 14, data: [2, 3])
+  113.241 IN  F0 00 00 66 14 0E 03 03 F7 command(id: 14, data: [3, 3])
+  113.241 IN  F0 00 00 66 14 0E 04 03 F7 command(id: 14, data: [4, 3])
+  113.241 IN  F0 00 00 66 14 0E 05 03 F7 command(id: 14, data: [5, 3])
+  113.242 IN  F0 00 00 66 14 0E 06 03 F7 command(id: 14, data: [6, 3])
+  113.242 IN  F0 00 00 66 14 0E 07 03 F7 command(id: 14, data: [7, 3])
+  113.242 IN  F0 00 00 66 14 0E 08 03 F7 command(id: 14, data: [8, 3])
+# > key go-to-position
+> key go-to-position
+# sent go-to-position: BF 14 7F on LogicMCP Keys
+# > key go-to-beginning
+> key go-to-beginning
+# sent go-to-beginning: BF 15 7F on LogicMCP Keys
+# > key go-to-beginning
+> key go-to-beginning
+# sent go-to-beginning: BF 15 7F on LogicMCP Keys
+  179.273 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0                                                      "
+  179.274 IN  B0 49 20 time digit[9]=' '
+  179.274 IN  B0 48 20 time digit[8]=' '
+  179.274 IN  B0 47 32 time digit[7]='2'
+  179.276 IN  B0 46 20 time digit[6]=' '
+  179.278 IN  B0 45 32 time digit[5]='2'
+  179.279 IN  B0 44 20 time digit[4]=' '
+  179.279 IN  B0 43 34 time digit[3]='4'
+  179.279 IN  B0 42 31 time digit[2]='1'
+  179.279 IN  B0 41 30 time digit[1]='0'
+  179.279 IN  B0 40 38 time digit[0]='8'
+  179.279 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+  179.279 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+  179.279 IN  90 00 00 led recArm[1]=off
+  179.279 IN  90 01 7F led recArm[2]=on
+  179.279 IN  90 02 00 led recArm[3]=off
+  179.279 IN  90 03 00 led recArm[4]=off
+  179.279 IN  90 04 00 led recArm[5]=off
+  179.279 IN  90 05 00 led recArm[6]=off
+  179.279 IN  90 06 00 led recArm[7]=off
+  179.279 IN  90 07 00 led recArm[8]=off
+  179.282 IN  90 08 00 led solo[1]=off
+  179.282 IN  90 09 00 led solo[2]=off
+  179.282 IN  90 0A 00 led solo[3]=off
+  179.282 IN  90 0B 00 led solo[4]=off
+  179.282 IN  90 0C 00 led solo[5]=off
+  179.282 IN  90 0D 00 led solo[6]=off
+  179.282 IN  90 0E 00 led solo[7]=off
+  179.282 IN  90 0F 00 led solo[8]=off
+  179.284 IN  90 10 00 led mute[1]=off
+  179.284 IN  90 11 00 led mute[2]=off
+  179.284 IN  90 12 00 led mute[3]=off
+  179.286 IN  90 13 00 led mute[4]=off
+  179.287 IN  90 14 00 led mute[5]=off
+  179.287 IN  90 15 00 led mute[6]=off
+  179.287 IN  90 16 00 led mute[7]=off
+  179.287 IN  90 17 00 led mute[8]=off
+  179.287 IN  90 18 00 led select[1]=off
+  179.287 IN  90 19 7F led select[2]=on
+  179.288 IN  90 1A 00 led select[3]=off
+  179.288 IN  90 1B 00 led select[4]=off
+  179.288 IN  90 1C 00 led select[5]=off
+  179.288 IN  90 1D 00 led select[6]=off
+  179.290 IN  90 1E 00 led select[7]=off
+  179.291 IN  90 1F 00 led select[8]=off
+  179.291 IN  90 20 00 led vPotPush[1]=off
+  179.291 IN  90 21 00 led vPotPush[2]=off
+  179.294 IN  90 22 00 led vPotPush[3]=off
+  179.294 IN  90 23 00 led vPotPush[4]=off
+  179.294 IN  90 24 00 led vPotPush[5]=off
+  179.294 IN  90 25 00 led vPotPush[6]=off
+  179.294 IN  90 26 00 led vPotPush[7]=off
+  179.294 IN  90 27 00 led vPotPush[8]=off
+  179.294 IN  90 28 00 led assignTrack=off
+  179.294 IN  90 29 00 led assignSend=off
+  179.294 IN  90 2A 7F led assignPan=on
+  179.295 IN  90 2B 00 led assignPlugin=off
+  179.295 IN  90 2C 00 led assignEQ=off
+  179.295 IN  90 2D 00 led assignInstrument=off
+  179.295 IN  90 32 00 led flip=off
+  179.295 IN  90 33 00 led globalView=off
+  179.295 IN  90 4A 7F led automationRead=on
+  179.295 IN  90 4B 00 led automationWrite=off
+  179.296 IN  90 4C 00 led automationTrim=off
+  179.296 IN  90 4D 00 led automationTouch=off
+  179.296 IN  90 4E 00 led automationLatch=off
+  179.296 IN  90 4F 00 led group=off
+  179.296 IN  90 50 7F led save=on
+  179.296 IN  90 51 00 led undo=off
+  179.297 IN  90 54 00 led marker=off
+  179.298 IN  90 55 00 led nudge=off
+  179.299 IN  90 56 00 led cycle=off
+  179.299 IN  90 57 00 led drop=off
+  179.299 IN  90 58 00 led replace=off
+  179.300 IN  90 59 7F led click=on
+  179.300 IN  90 5A 00 led soloGlobal=off
+  179.300 IN  90 5B 00 led rewind=off
+  179.300 IN  90 5C 00 led fastForward=off
+  179.300 IN  90 5D 7F led stop=on
+  179.300 IN  90 5E 00 led play=off
+  179.300 IN  90 5F 00 led record=off
+  179.300 IN  90 64 00 led zoom=off
+  179.300 IN  90 65 00 led scrub=off
+  179.300 IN  90 71 00 led smpteLED=off
+  179.300 IN  90 72 7F led beatsLED=on
+  179.300 IN  90 73 00 led rudeSoloLED=off
+  179.300 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+  179.301 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+  179.301 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+  179.302 IN  E2 00 00 faderPosition(fader: 2, value: 0)
+  179.302 IN  E3 00 00 faderPosition(fader: 3, value: 0)
+  179.302 IN  E4 00 00 faderPosition(fader: 4, value: 0)
+  179.302 IN  E5 00 00 faderPosition(fader: 5, value: 0)
+  179.302 IN  E6 00 00 faderPosition(fader: 6, value: 0)
+  179.302 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+  179.302 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+  179.302 IN  E9 00 00 unknown(E9 00 00)
+  179.302 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+  179.302 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+  179.302 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+  179.302 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+  179.302 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+  179.302 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+  179.302 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+  179.302 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+  179.302 IN  D0 00 meter(strip: 0, level: 0)
+  179.302 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+  179.303 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+  179.303 IN  D0 10 meter(strip: 1, level: 0)
+  179.303 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+  179.303 IN  D0 20 meter(strip: 2, level: 0)
+  179.303 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+  179.303 IN  D0 30 meter(strip: 3, level: 0)
+  179.303 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+  179.303 IN  D0 40 meter(strip: 4, level: 0)
+  179.303 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+  179.303 IN  D0 50 meter(strip: 5, level: 0)
+  179.303 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+  179.304 IN  D0 60 meter(strip: 6, level: 0)
+  179.304 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+  179.304 IN  D0 70 meter(strip: 7, level: 0)
+  179.305 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+  179.306 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+  179.307 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+  179.311 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+  180.307 IN  F0 00 00 66 14 0E 00 03 F7 command(id: 14, data: [0, 3])
+  180.307 IN  F0 00 00 66 14 0E 01 03 F7 command(id: 14, data: [1, 3])
+  180.307 IN  F0 00 00 66 14 0E 02 03 F7 command(id: 14, data: [2, 3])
+  180.307 IN  F0 00 00 66 14 0E 03 03 F7 command(id: 14, data: [3, 3])
+  180.308 IN  F0 00 00 66 14 0E 04 03 F7 command(id: 14, data: [4, 3])
+  180.308 IN  F0 00 00 66 14 0E 05 03 F7 command(id: 14, data: [5, 3])
+  180.308 IN  F0 00 00 66 14 0E 06 03 F7 command(id: 14, data: [6, 3])
+  180.309 IN  F0 00 00 66 14 0E 07 03 F7 command(id: 14, data: [7, 3])
+  180.309 IN  F0 00 00 66 14 0E 08 03 F7 command(id: 14, data: [8, 3])
+# > key go-to-beginning
+> key go-to-beginning
+# sent go-to-beginning: BF 15 7F on LogicMCP Keys
+# > key go-to-beginning
+> key go-to-beginning
+# sent go-to-beginning: BF 15 7F on LogicMCP Keys
+# > step 5
+> step 5
+  229.729 SYNC F2 00 00
+  229.875 IN  B0 47 31 time digit[7]='1'
+  229.875 IN  B0 45 31 time digit[5]='1'
+  229.875 IN  B0 43 31 time digit[3]='1'
+  229.876 IN  B0 42 20 time digit[2]=' '
+  229.876 IN  B0 41 20 time digit[1]=' '
+  229.876 IN  B0 40 31 time digit[0]='1'
+# after Go to Beginning: time=  1 1 1  1 position=1.1.1.1
+  230.140 SYNC F2 10 00
+  230.174 IN  B0 47 32 time digit[7]='2'
+# forward #1: time=  2 1 1  1 position=2.1.1.1
+  230.290 SYNC F2 20 00
+  230.341 IN  B0 47 33 time digit[7]='3'
+# forward #2: time=  3 1 1  1 position=3.1.1.1
+  230.445 SYNC F2 30 00
+  230.507 IN  B0 47 34 time digit[7]='4'
+# forward #3: time=  4 1 1  1 position=4.1.1.1
+  230.601 SYNC F2 40 00
+  230.641 IN  B0 47 35 time digit[7]='5'
+# forward #4: time=  5 1 1  1 position=5.1.1.1
+# > dialog 17
+> dialog 17
+# before: time=  5 1 1  1
+#   lcd1="Pan    -      -      -      -      -      -      -      "
+#   lcd2="0                                                       "
+  260.991 IN  F0 00 00 66 14 12 00 20 2D 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 " -                                                       "
+  260.992 IN  F0 00 00 66 14 12 69 4F 4B F7 lcd @105 "OK"
+  260.992 IN  B0 47 20 time digit[7]=' '
+  260.992 IN  B0 45 20 time digit[5]=' '
+  260.992 IN  B0 43 20 time digit[3]=' '
+  260.993 IN  B0 40 20 time digit[0]=' '
+  260.993 IN  90 24 7F led vPotPush[5]=on
+  260.993 IN  90 25 7F led vPotPush[6]=on
+  260.994 IN  90 26 7F led vPotPush[7]=on
+  260.994 IN  90 27 7F led vPotPush[8]=on
+  260.994 IN  B0 30 41 vPotRing(strip: 0, value: 65)
+  260.994 IN  B0 31 41 vPotRing(strip: 1, value: 65)
+  260.995 IN  B0 32 41 vPotRing(strip: 2, value: 65)
+  260.995 IN  B0 33 41 vPotRing(strip: 3, value: 65)
+  260.995 IN  B0 34 41 vPotRing(strip: 4, value: 65)
+  260.996 IN  B0 35 41 vPotRing(strip: 5, value: 65)
+  260.996 IN  B0 36 41 vPotRing(strip: 6, value: 65)
+# after Go to Position (LCD changed after 147 ms):
+#   lcd1=" -                                                      "
+#   lcd2="                                                 OK     "
+  260.996 IN  B0 37 41 vPotRing(strip: 7, value: 65)
+  260.997 OUT 90 36 7F
+  261.030 OUT 90 36 00
+# digit 1 via f1: lcd1=" -                                                      "
+  261.189 OUT 90 3C 7F
+  261.222 OUT 90 3C 00
+# digit 7 via f7: lcd1=" -                                                      "
+  261.379 OUT 90 53 7F
+  261.407 SYNC F2 00 00
+  261.414 OUT 90 53 00
+  261.440 IN  F0 00 00 66 14 12 01 20 F7 lcd @1 " "
+  261.440 IN  F0 00 00 66 14 12 69 20 20 F7 lcd @105 "  "
+  261.441 IN  90 24 00 led vPotPush[5]=off
+  261.441 IN  90 25 00 led vPotPush[6]=off
+  261.441 IN  90 26 00 led vPotPush[7]=off
+  261.441 IN  90 27 00 led vPotPush[8]=off
+  261.442 IN  B0 30 00 vPotRing(strip: 0, value: 0)
+  261.442 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+  261.442 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+  261.443 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+  261.443 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+  261.443 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+  261.443 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+  261.444 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+  261.491 IN  B0 47 31 time digit[7]='1'
+  261.491 IN  B0 45 31 time digit[5]='1'
+  261.491 IN  B0 43 31 time digit[3]='1'
+  261.492 IN  B0 40 31 time digit[0]='1'
+# after Enter (time display changed): time=  1 1 1  1 position=1.1.1.1
+#   lcd1="                                                        "
+  261.497 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 30 F7 lcd @0 "Pan    -      -      -      -      -      -      -      0"
+  261.497 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+# > step 12
+> step 12
+  288.492 SYNC F2 00 00
+# after Go to Beginning: time=  1 1 1  1 position=1.1.1.1
+  288.917 SYNC F2 10 00
+  288.974 IN  B0 47 32 time digit[7]='2'
+# forward #1: time=  2 1 1  1 position=2.1.1.1
+  289.072 SYNC F2 20 00
+  289.107 IN  B0 47 33 time digit[7]='3'
+# forward #2: time=  3 1 1  1 position=3.1.1.1
+  289.230 SYNC F2 30 00
+  289.274 IN  B0 47 34 time digit[7]='4'
+# forward #3: time=  4 1 1  1 position=4.1.1.1
+  289.380 SYNC F2 40 00
+  289.440 IN  B0 47 35 time digit[7]='5'
+# forward #4: time=  5 1 1  1 position=5.1.1.1
+  289.530 SYNC F2 50 00
+  289.574 IN  B0 47 36 time digit[7]='6'
+# forward #5: time=  6 1 1  1 position=6.1.1.1
+  289.687 SYNC F2 60 00
+  289.740 IN  B0 47 37 time digit[7]='7'
+# forward #6: time=  7 1 1  1 position=7.1.1.1
+  289.838 SYNC F2 70 00
+  289.873 IN  B0 47 38 time digit[7]='8'
+# forward #7: time=  8 1 1  1 position=8.1.1.1
+  289.991 SYNC F2 00 01
+  290.040 IN  B0 47 39 time digit[7]='9'
+# forward #8: time=  9 1 1  1 position=9.1.1.1
+  290.147 SYNC F2 10 01
+  290.207 IN  B0 48 31 time digit[8]='1'
+  290.207 IN  B0 47 30 time digit[7]='0'
+# forward #9: time= 10 1 1  1 position=10.1.1.1
+  290.299 SYNC F2 20 01
+  290.340 IN  B0 47 31 time digit[7]='1'
+# forward #10: time= 11 1 1  1 position=11.1.1.1
+  290.455 SYNC F2 30 01
+  290.507 IN  B0 47 32 time digit[7]='2'
+# forward #11: time= 12 1 1  1 position=12.1.1.1
+# > jog 1
+> jog 1
+  290.628 OUT B0 3C 01
+  290.641 SYNC F2 40 01
+  290.707 IN  B0 47 33 time digit[7]='3'
+# jogged 1; time display:  13 1 1  1
+# > jog 1
+> jog 1
+  291.635 OUT B0 3C 01
+  291.641 SYNC F2 50 01
+  291.707 IN  B0 47 34 time digit[7]='4'
+# jogged 1; time display:  14 1 1  1
+# > jog 4
+> jog 4
+  292.645 OUT B0 3C 01
+  292.670 OUT B0 3C 01
+  292.674 SYNC F2 60 01
+  292.693 OUT B0 3C 01
+  292.711 SYNC F2 70 01
+  292.714 OUT B0 3C 01
+  292.740 IN  B0 47 36 time digit[7]='6'
+  292.745 SYNC F2 10 02
+  292.773 IN  B0 47 38 time digit[7]='8'
+# jogged 4; time display:  18 1 1  1
+# > jog -6
+> jog -6
+  293.853 OUT B0 3C 41
+  293.874 SYNC F2 00 02
+  293.876 OUT B0 3C 41
+  293.900 OUT B0 3C 41
+  293.909 SYNC F2 60 01
+  293.925 OUT B0 3C 41
+  293.940 IN  B0 47 35 time digit[7]='5'
+  293.944 SYNC F2 40 01
+  293.949 OUT B0 3C 41
+  293.971 OUT B0 3C 41
+  293.973 IN  B0 47 33 time digit[7]='3'
+  293.977 SYNC F2 00 01
+  294.007 IN  B0 48 20 time digit[8]=' '
+  294.007 IN  B0 47 39 time digit[7]='9'
+# jogged -6; time display:   9 1 1  1
+# > jog -1
+> jog -1
+  306.225 OUT B0 3C 41
+  306.241 SYNC F2 70 00
+  306.326 IN  B0 47 38 time digit[7]='8'
+# jogged -1; time display:   8 1 1  1
+# > jog -1
+> jog -1
+  307.430 OUT B0 3C 41
+  307.440 SYNC F2 60 00
+  307.507 IN  B0 47 37 time digit[7]='7'
+# jogged -1; time display:   7 1 1  1
+# > jog -1
+> jog -1
+  308.638 OUT B0 3C 41
+  308.641 SYNC F2 50 00
+  308.707 IN  B0 47 36 time digit[7]='6'
+# jogged -1; time display:   6 1 1  1
+# > jog 1
+> jog 1
+  309.846 OUT B0 3C 01
+  309.874 SYNC F2 60 00
+  309.940 IN  B0 47 37 time digit[7]='7'
+# jogged 1; time display:   7 1 1  1
+# > jog 3
+> jog 3
+  311.050 OUT B0 3C 01
+  311.074 OUT B0 3C 01
+  311.074 SYNC F2 70 00
+  311.095 OUT B0 3C 01
+  311.109 SYNC F2 00 01
+  311.140 IN  B0 47 39 time digit[7]='9'
+# jogged 3; time display:   9 1 1  1
+# > jog -3
+> jog -3
+  312.258 OUT B0 3C 41
+  312.274 SYNC F2 70 00
+  312.283 OUT B0 3C 41
+  312.308 OUT B0 3C 41
+  312.313 SYNC F2 50 00
+  312.340 IN  B0 47 36 time digit[7]='6'
+# jogged -3; time display:   6 1 1  1
+# > play
+> play
+  329.179 OUT 90 5E 7F
+  329.184 SYNC F2 4F 00
+  329.213 OUT 90 5E 00
+  329.214 SYNC F2 4F 00
+  329.238 SYNC FB
+  329.238 IN  90 5E 7F led play=on
+  329.238 SYNC F8
+  329.238 SYNC F8
+  329.238 SYNC F8
+  329.239 IN  90 5D 00 led stop=off
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  6 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 6,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 360,
+#       "position_sixteenths" : 79,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.006110292
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:45:07.778+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  6 1 1  1",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 6,
+#       "beat" : 1,
+#       "division" : 1,
+#       "tick" : 1
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 354,
+#       "position_sixteenths" : 80,
+#       "running" : false,
+#       "seconds_since_last_message" : 16.866184708
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=on or sync.running after 30 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Play confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+  329.256 SYNC F8
+  329.273 IN  B0 47 35 time digit[7]='5'
+  329.273 IN  B0 45 34 time digit[5]='4'
+  329.274 IN  B0 43 34 time digit[3]='4'
+  329.274 IN  B0 42 31 time digit[2]='1'
+  329.274 IN  B0 41 33 time digit[1]='3'
+  329.274 IN  B0 40 37 time digit[0]='7'
+  329.276 SYNC F8
+  329.297 SYNC F8
+  329.307 IN  B0 42 32 time digit[2]='2'
+  329.307 IN  B0 41 30 time digit[1]='0'
+  329.307 IN  B0 40 30 time digit[0]='0'
+  329.318 SYNC F8
+  329.339 SYNC F8
+  329.340 IN  B0 47 36 time digit[7]='6'
+  329.340 IN  B0 45 31 time digit[5]='1'
+  329.340 IN  B0 43 31 time digit[3]='1'
+  329.340 IN  B0 42 20 time digit[2]=' '
+  329.341 IN  B0 41 32 time digit[1]='2'
+  329.342 IN  B0 40 39 time digit[0]='9'
+  329.359 SYNC F8
+  329.373 IN  B0 41 39 time digit[1]='9'
+  329.373 IN  B0 40 32 time digit[0]='2'
+  329.380 SYNC F8
+  329.401 SYNC F8
+  329.407 IN  B0 42 31 time digit[2]='1'
+  329.407 IN  B0 41 36 time digit[1]='6'
+  329.407 IN  B0 40 30 time digit[0]='0'
+  329.422 SYNC F8
+  329.440 IN  B0 42 32 time digit[2]='2'
+  329.441 IN  B0 41 31 time digit[1]='1'
+  329.441 IN  B0 40 37 time digit[0]='7'
+  329.443 SYNC F8
+  329.464 SYNC F8
+  329.473 IN  B0 43 32 time digit[3]='2'
+  329.473 IN  B0 42 20 time digit[2]=' '
+  329.474 IN  B0 41 34 time digit[1]='4'
+  329.474 IN  B0 40 30 time digit[0]='0'
+  329.484 SYNC F8
+# > wait 1.3
+> wait 1.3
+  329.505 SYNC F8
+  329.507 IN  B0 42 31 time digit[2]='1'
+  329.507 IN  B0 41 30 time digit[1]='0'
+  329.508 IN  B0 40 39 time digit[0]='9'
+  329.526 SYNC F8
+  329.540 IN  B0 41 37 time digit[1]='7'
+  329.540 IN  B0 40 32 time digit[0]='2'
+  329.547 SYNC F8
+  329.568 SYNC F8
+  329.574 IN  B0 42 32 time digit[2]='2'
+  329.574 IN  B0 41 34 time digit[1]='4'
+  329.574 IN  B0 40 30 time digit[0]='0'
+  329.589 SYNC F8
+  329.607 IN  B0 43 33 time digit[3]='3'
+  329.607 IN  B0 42 20 time digit[2]=' '
+  329.607 IN  B0 41 35 time digit[1]='5'
+  329.608 IN  B0 40 37 time digit[0]='7'
+  329.609 SYNC F8
+  329.630 SYNC F8
+  329.641 IN  B0 42 31 time digit[2]='1'
+  329.641 IN  B0 41 32 time digit[1]='2'
+  329.641 IN  B0 40 30 time digit[0]='0'
+  329.651 SYNC F8
+  329.672 SYNC F8
+  329.673 IN  B0 41 38 time digit[1]='8'
+  329.673 IN  B0 40 39 time digit[0]='9'
+  329.693 SYNC F8
+  329.707 IN  B0 43 34 time digit[3]='4'
+  329.707 IN  B0 42 20 time digit[2]=' '
+  329.707 IN  B0 41 31 time digit[1]='1'
+  329.707 IN  B0 40 32 time digit[0]='2'
+  329.714 SYNC F8
+  329.734 SYNC F8
+  329.740 IN  B0 41 38 time digit[1]='8'
+  329.740 IN  B0 40 30 time digit[0]='0'
+  329.755 SYNC F8
+  329.774 IN  B0 42 31 time digit[2]='1'
+  329.774 IN  B0 41 33 time digit[1]='3'
+  329.774 IN  B0 40 37 time digit[0]='7'
+  329.776 SYNC F8
+  329.797 SYNC F8
+  329.807 IN  B0 42 32 time digit[2]='2'
+  329.807 IN  B0 41 30 time digit[1]='0'
+  329.807 IN  B0 40 30 time digit[0]='0'
+  329.818 SYNC F8
+  329.839 SYNC F8
+  329.840 IN  B0 45 32 time digit[5]='2'
+  329.840 IN  B0 43 31 time digit[3]='1'
+  329.841 IN  B0 42 20 time digit[2]=' '
+  329.841 IN  B0 41 32 time digit[1]='2'
+  329.841 IN  B0 40 39 time digit[0]='9'
+  329.859 SYNC F8
+  329.873 IN  B0 41 39 time digit[1]='9'
+  329.874 IN  B0 40 32 time digit[0]='2'
+  329.880 SYNC F8
+  329.901 SYNC F8
+  329.907 IN  B0 42 31 time digit[2]='1'
+  329.907 IN  B0 41 36 time digit[1]='6'
+  329.907 IN  B0 40 30 time digit[0]='0'
+  329.922 SYNC F8
+  329.940 IN  B0 42 32 time digit[2]='2'
+  329.940 IN  B0 41 31 time digit[1]='1'
+  329.941 IN  B0 40 37 time digit[0]='7'
+  329.943 SYNC F8
+  329.964 SYNC F8
+  329.973 IN  B0 43 32 time digit[3]='2'
+  329.973 IN  B0 42 20 time digit[2]=' '
+  329.974 IN  B0 41 34 time digit[1]='4'
+  329.974 IN  B0 40 30 time digit[0]='0'
+  329.984 SYNC F8
+  330.005 SYNC F8
+  330.007 IN  B0 42 31 time digit[2]='1'
+  330.007 IN  B0 41 30 time digit[1]='0'
+  330.007 IN  B0 40 39 time digit[0]='9'
+  330.026 SYNC F8
+  330.040 IN  B0 41 37 time digit[1]='7'
+  330.041 IN  B0 40 37 time digit[0]='7'
+  330.047 SYNC F8
+  330.068 SYNC F8
+  330.074 IN  B0 42 32 time digit[2]='2'
+  330.074 IN  B0 41 34 time digit[1]='4'
+  330.074 IN  B0 40 30 time digit[0]='0'
+  330.089 SYNC F8
+  330.107 IN  B0 43 33 time digit[3]='3'
+  330.107 IN  B0 42 20 time digit[2]=' '
+  330.107 IN  B0 41 35 time digit[1]='5'
+  330.107 IN  B0 40 37 time digit[0]='7'
+  330.109 SYNC F8
+  330.130 SYNC F8
+  330.140 IN  B0 42 31 time digit[2]='1'
+  330.140 IN  B0 41 32 time digit[1]='2'
+  330.141 IN  B0 40 30 time digit[0]='0'
+  330.151 SYNC F8
+  330.172 SYNC F8
+  330.173 IN  B0 41 38 time digit[1]='8'
+  330.174 IN  B0 40 39 time digit[0]='9'
+  330.193 SYNC F8
+  330.207 IN  B0 43 34 time digit[3]='4'
+  330.207 IN  B0 42 20 time digit[2]=' '
+  330.207 IN  B0 41 31 time digit[1]='1'
+  330.207 IN  B0 40 32 time digit[0]='2'
+  330.214 SYNC F8
+  330.234 SYNC F8
+  330.240 IN  B0 41 38 time digit[1]='8'
+  330.240 IN  B0 40 30 time digit[0]='0'
+  330.255 SYNC F8
+  330.274 IN  B0 42 31 time digit[2]='1'
+  330.274 IN  B0 41 33 time digit[1]='3'
+  330.275 IN  B0 40 37 time digit[0]='7'
+  330.276 SYNC F8
+  330.297 SYNC F8
+  330.307 IN  B0 42 32 time digit[2]='2'
+  330.307 IN  B0 41 30 time digit[1]='0'
+  330.308 IN  B0 40 30 time digit[0]='0'
+  330.318 SYNC F8
+  330.339 SYNC F8
+  330.340 IN  B0 45 33 time digit[5]='3'
+  330.340 IN  B0 43 31 time digit[3]='1'
+  330.341 IN  B0 42 20 time digit[2]=' '
+  330.341 IN  B0 41 32 time digit[1]='2'
+  330.341 IN  B0 40 39 time digit[0]='9'
+  330.359 SYNC F8
+  330.374 IN  B0 41 39 time digit[1]='9'
+  330.374 IN  B0 40 37 time digit[0]='7'
+  330.380 SYNC F8
+  330.401 SYNC F8
+  330.407 IN  B0 42 31 time digit[2]='1'
+  330.408 IN  B0 41 36 time digit[1]='6'
+  330.408 IN  B0 40 30 time digit[0]='0'
+  330.422 SYNC F8
+  330.440 IN  B0 42 32 time digit[2]='2'
+  330.440 IN  B0 41 31 time digit[1]='1'
+  330.441 IN  B0 40 37 time digit[0]='7'
+  330.443 SYNC F8
+  330.464 SYNC F8
+  330.473 IN  B0 43 32 time digit[3]='2'
+  330.474 IN  B0 42 20 time digit[2]=' '
+  330.474 IN  B0 41 34 time digit[1]='4'
+  330.474 IN  B0 40 30 time digit[0]='0'
+  330.484 SYNC F8
+  330.505 SYNC F8
+  330.507 IN  B0 42 31 time digit[2]='1'
+  330.508 IN  B0 41 30 time digit[1]='0'
+  330.508 IN  B0 40 39 time digit[0]='9'
+  330.526 SYNC F8
+  330.541 IN  B0 41 37 time digit[1]='7'
+  330.541 IN  B0 40 37 time digit[0]='7'
+  330.547 SYNC F8
+  330.568 SYNC F8
+  330.573 IN  B0 42 32 time digit[2]='2'
+  330.574 IN  B0 41 34 time digit[1]='4'
+  330.574 IN  B0 40 30 time digit[0]='0'
+  330.589 SYNC F8
+  330.607 IN  B0 43 33 time digit[3]='3'
+  330.607 IN  B0 42 20 time digit[2]=' '
+  330.607 IN  B0 41 35 time digit[1]='5'
+  330.607 IN  B0 40 37 time digit[0]='7'
+  330.609 SYNC F8
+  330.630 SYNC F8
+  330.641 IN  B0 42 31 time digit[2]='1'
+  330.641 IN  B0 41 32 time digit[1]='2'
+  330.641 IN  B0 40 30 time digit[0]='0'
+  330.651 SYNC F8
+  330.672 SYNC F8
+  330.673 IN  B0 41 38 time digit[1]='8'
+  330.674 IN  B0 40 39 time digit[0]='9'
+  330.693 SYNC F8
+  330.707 IN  B0 43 34 time digit[3]='4'
+  330.707 IN  B0 42 20 time digit[2]=' '
+  330.707 IN  B0 41 31 time digit[1]='1'
+  330.707 IN  B0 40 32 time digit[0]='2'
+  330.714 SYNC F8
+  330.734 SYNC F8
+  330.740 IN  B0 41 38 time digit[1]='8'
+  330.740 IN  B0 40 30 time digit[0]='0'
+  330.755 SYNC F8
+  330.773 IN  B0 42 31 time digit[2]='1'
+  330.774 IN  B0 41 33 time digit[1]='3'
+  330.774 IN  B0 40 37 time digit[0]='7'
+  330.776 SYNC F8
+  330.797 SYNC F8
+# > stop
+> stop
+  330.797 OUT 90 5D 7F
+  330.799 SYNC FC
+  330.801 SYNC F2 5B 00
+  330.804 IN  90 5D 7F led stop=on
+  330.807 IN  B0 41 39 time digit[1]='9'
+  330.807 IN  B0 40 33 time digit[0]='3'
+  330.828 OUT 90 5D 00
+  330.841 IN  90 5E 00 led play=off
+# {
+#   "after" : {
+#     "cycle" : false,
+#     "display" : "  6 3 4193",
+#     "display_mode" : "beats",
+#     "playing" : false,
+#     "position" : {
+#       "bar" : 6,
+#       "beat" : 3,
+#       "division" : 4,
+#       "tick" : 193
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 437,
+#       "position_sixteenths" : 91,
+#       "running" : false,
+#       "seconds_since_last_message" : 0.044769542
+#     }
+#   },
+#   "as_of" : "2026-11-20T23:45:09.380+09:00",
+#   "before" : {
+#     "cycle" : false,
+#     "display" : "  6 3 4137",
+#     "display_mode" : "beats",
+#     "playing" : true,
+#     "position" : {
+#       "bar" : 6,
+#       "beat" : 3,
+#       "division" : 4,
+#       "tick" : 137
+#     },
+#     "recording" : false,
+#     "replace_mode" : false,
+#     "sync" : {
+#       "messages_received" : 435,
+#       "position_sixteenths" : 92,
+#       "running" : true,
+#       "seconds_since_last_message" : 0.000309542,
+#       "tempo_bpm" : 120
+#     }
+#   },
+#   "evidence" : [
+#     "mcu.led.play=off and mcu.led.record=off after 17 ms"
+#   ],
+#   "status" : "verified",
+#   "summary" : "Stop confirmed by Logic.",
+#   "warnings" : [
+# 
+#   ]
+# }
+# > jog 1
+> jog 1
+  332.610 OUT B0 3C 01
+  332.641 SYNC F2 60 00
+  332.707 IN  B0 47 37 time digit[7]='7'
+  332.707 IN  B0 45 31 time digit[5]='1'
+  332.707 IN  B0 43 31 time digit[3]='1'
+  332.708 IN  B0 42 20 time digit[2]=' '
+  332.708 IN  B0 41 20 time digit[1]=' '
+  332.708 IN  B0 40 31 time digit[0]='1'
+# jogged 1; time display:   7 1 1  1
+# > jog -1
+> jog -1
+  333.819 OUT B0 3C 41
+  333.840 SYNC F2 50 00
+  333.907 IN  B0 47 36 time digit[7]='6'
+# jogged -1; time display:   6 1 1  1
+# > jog -1
+> jog -1
+  335.026 OUT B0 3C 41
+  335.041 SYNC F2 40 00
+  335.107 IN  B0 47 35 time digit[7]='5'
+# jogged -1; time display:   5 1 1  1
+  394.231 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Inst 1 Inst 2                                     "
+  394.232 IN  F0 00 00 66 14 12 3F 30 F7 lcd @63 "0"
+  394.232 IN  B0 4A 0E assignmentDigit(position: 0, code: 14)
+  394.232 IN  F0 00 00 66 14 72 04 02 07 07 07 07 07 07 F7 command(id: 114, data: [4, 2, 7, 7, 7, 7, 7, 7])
+  394.232 IN  B0 31 56 vPotRing(strip: 1, value: 86)
+  394.241 IN  F0 00 00 66 14 12 00 49 6E 73 74 20 31 20 49 6E 73 74 20 32 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 30 20 20 20 20 20 20 30 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 F7 lcd @0 "Inst 1 Inst 2                                           0      0                                               "
+  394.241 IN  B0 49 20 time digit[9]=' '
+  394.242 IN  B0 48 20 time digit[8]=' '
+  394.242 IN  B0 47 35 time digit[7]='5'
+  394.242 IN  B0 46 20 time digit[6]=' '
+  394.243 IN  B0 45 31 time digit[5]='1'
+  394.243 IN  B0 44 20 time digit[4]=' '
+  394.243 IN  B0 43 31 time digit[3]='1'
+  394.244 IN  B0 42 20 time digit[2]=' '
+  394.244 IN  B0 41 20 time digit[1]=' '
+  394.244 IN  B0 40 31 time digit[0]='1'
+  394.244 IN  B0 4B 10 assignmentDigit(position: 1, code: 16)
+  394.245 IN  B0 4A 0E assignmentDigit(position: 0, code: 14)
+  394.245 IN  90 00 00 led recArm[1]=off
+  394.245 IN  90 01 7F led recArm[2]=on
+  394.246 IN  90 02 00 led recArm[3]=off
+  394.246 IN  90 03 00 led recArm[4]=off
+  394.246 IN  90 04 00 led recArm[5]=off
+  394.246 IN  90 05 00 led recArm[6]=off
+  394.247 IN  90 06 00 led recArm[7]=off
+  394.247 IN  90 07 00 led recArm[8]=off
+  394.247 IN  90 08 00 led solo[1]=off
+  394.248 IN  90 09 00 led solo[2]=off
+  394.248 IN  90 0A 00 led solo[3]=off
+  394.248 IN  90 0B 00 led solo[4]=off
+  394.248 IN  90 0C 00 led solo[5]=off
+  394.249 IN  90 0D 00 led solo[6]=off
+  394.249 IN  90 0E 00 led solo[7]=off
+  394.249 IN  90 0F 00 led solo[8]=off
+  394.250 IN  90 10 00 led mute[1]=off
+  394.250 IN  90 11 00 led mute[2]=off
+  394.250 IN  90 12 00 led mute[3]=off
+  394.250 IN  90 13 00 led mute[4]=off
+  394.251 IN  90 14 00 led mute[5]=off
+  394.251 IN  90 15 00 led mute[6]=off
+  394.251 IN  90 16 00 led mute[7]=off
+  394.252 IN  90 17 00 led mute[8]=off
+  394.252 IN  90 18 00 led select[1]=off
+  394.252 IN  90 19 7F led select[2]=on
+  394.252 IN  90 1A 00 led select[3]=off
+  394.253 IN  90 1B 00 led select[4]=off
+  394.253 IN  90 1C 00 led select[5]=off
+  394.253 IN  90 1D 00 led select[6]=off
+  394.254 IN  90 1E 00 led select[7]=off
+  394.255 IN  90 1F 00 led select[8]=off
+  394.255 IN  90 20 00 led vPotPush[1]=off
+  394.255 IN  90 21 00 led vPotPush[2]=off
+  394.255 IN  90 22 00 led vPotPush[3]=off
+  394.255 IN  90 23 00 led vPotPush[4]=off
+  394.256 IN  90 24 00 led vPotPush[5]=off
+  394.256 IN  90 25 00 led vPotPush[6]=off
+  394.256 IN  90 26 00 led vPotPush[7]=off
+  394.256 IN  90 27 00 led vPotPush[8]=off
+  394.257 IN  90 28 00 led assignTrack=off
+  394.257 IN  90 29 00 led assignSend=off
+  394.257 IN  90 2A 7F led assignPan=on
+  394.257 IN  90 2B 00 led assignPlugin=off
+  394.258 IN  90 2C 00 led assignEQ=off
+  394.258 IN  90 2D 00 led assignInstrument=off
+  394.258 IN  90 32 00 led flip=off
+  394.258 IN  90 33 00 led globalView=off
+  394.259 IN  90 4A 7F led automationRead=on
+  394.259 IN  90 4B 00 led automationWrite=off
+  394.260 IN  90 4C 00 led automationTrim=off
+  394.261 IN  90 4D 00 led automationTouch=off
+  394.261 IN  90 4E 00 led automationLatch=off
+  394.261 IN  90 4F 00 led group=off
+  394.262 IN  90 50 7F led save=on
+  394.262 IN  90 51 00 led undo=off
+  394.262 IN  90 54 00 led marker=off
+  394.263 IN  90 55 00 led nudge=off
+  394.263 IN  90 56 00 led cycle=off
+  394.263 IN  90 57 00 led drop=off
+  394.264 IN  90 58 00 led replace=off
+  394.264 IN  90 59 7F led click=on
+  394.264 IN  90 5A 00 led soloGlobal=off
+  394.264 IN  90 5B 00 led rewind=off
+  394.265 IN  90 5C 00 led fastForward=off
+  394.265 IN  90 5D 7F led stop=on
+  394.265 IN  90 5E 00 led play=off
+  394.266 IN  90 5F 00 led record=off
+  394.266 IN  90 64 00 led zoom=off
+  394.266 IN  90 65 00 led scrub=off
+  394.266 IN  90 71 00 led smpteLED=off
+  394.267 IN  90 72 7F led beatsLED=on
+  394.267 IN  90 73 00 led rudeSoloLED=off
+  394.268 IN  F0 00 00 66 14 72 04 02 07 07 07 07 07 07 F7 command(id: 114, data: [4, 2, 7, 7, 7, 7, 7, 7])
+  394.268 IN  E0 1B 61 faderPosition(fader: 0, value: 12443)
+  394.269 IN  E1 1B 61 faderPosition(fader: 1, value: 12443)
+  394.269 IN  E2 00 00 faderPosition(fader: 2, value: 0)
+  394.270 IN  E3 00 00 faderPosition(fader: 3, value: 0)
+  394.271 IN  E4 00 00 faderPosition(fader: 4, value: 0)
+  394.271 IN  E5 00 00 faderPosition(fader: 5, value: 0)
+  394.272 IN  E6 00 00 faderPosition(fader: 6, value: 0)
+  394.272 IN  E7 00 00 faderPosition(fader: 7, value: 0)
+  394.273 IN  E8 1B 61 faderPosition(fader: 8, value: 12443)
+  394.273 IN  E9 00 00 unknown(E9 00 00)
+  394.274 IN  B0 30 56 vPotRing(strip: 0, value: 86)
+  394.275 IN  B0 31 56 vPotRing(strip: 1, value: 86)
+  394.275 IN  B0 32 00 vPotRing(strip: 2, value: 0)
+  394.276 IN  B0 33 00 vPotRing(strip: 3, value: 0)
+  394.276 IN  B0 34 00 vPotRing(strip: 4, value: 0)
+  394.277 IN  B0 35 00 vPotRing(strip: 5, value: 0)
+  394.277 IN  B0 36 00 vPotRing(strip: 6, value: 0)
+  394.278 IN  B0 37 00 vPotRing(strip: 7, value: 0)
+  394.279 IN  D0 00 meter(strip: 0, level: 0)
+  394.279 IN  F0 00 00 66 14 21 01 F7 command(id: 33, data: [1])
+  394.280 IN  F0 00 00 66 14 20 00 07 F7 command(id: 32, data: [0, 7])
+  394.280 IN  D0 10 meter(strip: 1, level: 0)
+  394.280 IN  F0 00 00 66 14 20 01 07 F7 command(id: 32, data: [1, 7])
+  394.281 IN  D0 20 meter(strip: 2, level: 0)
+  394.281 IN  F0 00 00 66 14 20 02 07 F7 command(id: 32, data: [2, 7])
+  394.281 IN  D0 30 meter(strip: 3, level: 0)
+  394.282 IN  F0 00 00 66 14 20 03 07 F7 command(id: 32, data: [3, 7])
+  394.282 IN  D0 40 meter(strip: 4, level: 0)
+  394.282 IN  F0 00 00 66 14 20 04 07 F7 command(id: 32, data: [4, 7])
+  394.282 IN  D0 50 meter(strip: 5, level: 0)
+  394.283 IN  F0 00 00 66 14 20 05 07 F7 command(id: 32, data: [5, 7])
+  394.283 IN  D0 60 meter(strip: 6, level: 0)
+  394.283 IN  F0 00 00 66 14 20 06 07 F7 command(id: 32, data: [6, 7])
+  394.284 IN  D0 70 meter(strip: 7, level: 0)
+  394.284 IN  F0 00 00 66 14 20 07 07 F7 command(id: 32, data: [7, 7])
+  394.284 IN  F0 00 00 66 14 0A 01 F7 command(id: 10, data: [1])
+  394.284 IN  F0 00 00 66 14 0C 00 F7 command(id: 12, data: [0])
+  394.285 IN  F0 00 00 66 14 0B 0F F7 command(id: 11, data: [15])
+  395.274 IN  F0 00 00 66 14 0E 00 03 F7 command(id: 14, data: [0, 3])
+  395.274 IN  F0 00 00 66 14 0E 01 03 F7 command(id: 14, data: [1, 3])
+  395.274 IN  F0 00 00 66 14 0E 02 03 F7 command(id: 14, data: [2, 3])
+  395.275 IN  F0 00 00 66 14 0E 03 03 F7 command(id: 14, data: [3, 3])
+  395.275 IN  F0 00 00 66 14 0E 04 03 F7 command(id: 14, data: [4, 3])
+  395.275 IN  F0 00 00 66 14 0E 05 03 F7 command(id: 14, data: [5, 3])
+  395.276 IN  F0 00 00 66 14 0E 06 03 F7 command(id: 14, data: [6, 3])
+  395.276 IN  F0 00 00 66 14 0E 07 03 F7 command(id: 14, data: [7, 3])
+  395.276 IN  F0 00 00 66 14 0E 08 03 F7 command(id: 14, data: [8, 3])
+  396.340 IN  F0 00 00 66 14 12 00 50 61 6E 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D 20 20 20 20 20 20 2D F7 lcd @0 "Pan    -      -      -      -      -      -      -"
+  396.341 IN  F0 00 00 66 14 12 3F 20 F7 lcd @63 " "
+  396.341 IN  B0 4A 4E assignmentDigit(position: 0, code: 78)
+  396.341 IN  F0 00 00 66 14 72 02 02 02 02 02 02 02 02 F7 command(id: 114, data: [2, 2, 2, 2, 2, 2, 2, 2])
+  396.341 IN  B0 31 00 vPotRing(strip: 1, value: 0)
+# > quit
+> quit

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "logic-pro": {
+      "command": "/absolute/path/to/logic-pro-mcp/.build/release/logic-mcp",
+      "args": ["serve"]
+    }
+  }
+}
