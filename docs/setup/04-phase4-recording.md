@@ -60,3 +60,11 @@ Logic's "Overlapping MIDI recordings" setting (merge with the existing region, c
 The console's `write` command accepts `offset=<ms>`, which shifts all notes later (positive) or earlier (negative). Use it only if testing (checklist B) finds that Logic records the notes with a **fixed offset of some milliseconds**, and tell Claude the measured value so that it can become the default. Whatever the offset, **no** note is sent before Logic's clock reaches the first beat of the start bar: a negative offset makes notes near the start go out at that moment at the earliest (checklist B7).
 
 The server aligns to the CoreMIDI timestamps Logic puts on its MIDI clock when they are present; without timestamps it uses the time each clock message reached the server. The result's `evidence` and `timing.clocks_with_timestamp` show which one was used (checklist A7).
+
+## 9. Crackles while recording
+
+If you hear crackles or pops while `write_midi` records but the recorded region plays back clean, the notes themselves are fine. What crackles is Logic's live playback of the record-enabled software instrument: while a track is record-enabled, Logic plays its instrument in real time with the I/O buffer, and on playback it uses a larger buffer. A heavy instrument with a small I/O buffer crackles the same way when played from a keyboard.
+
+- Raise **I/O Buffer Size** in **Logic Pro > Settings > Audio > Devices** (for example to 256 or 512 samples). The extra monitoring latency does not change when the server sends the notes: it follows Logic's MIDI clock, not what you hear.
+- Observed on this Mac (2026-11-21): the crackles during `write_midi` stopped after Logic's audio settings were adjusted; the recorded regions had no crackles before or after.
+- Whether the buffer size shifts where Logic records the notes, and so the +3 ms default (section 7), has not been tested yet (checklist B6). After changing it, look at a few notes in the Event List; if they are off the grid by a fixed amount, see section 8.
